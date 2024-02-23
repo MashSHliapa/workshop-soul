@@ -1,7 +1,10 @@
-import './App.scss';
+import './App.scss'
+import { Layout } from './components/Layout'
 
 export function App() {
-  return(
-    <div>Hello</div>
+  return (
+    <div>
+      <Layout />
+    </div>
   )
 }

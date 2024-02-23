@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+body {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 18px;
+  color: #18362B;
+}
+
+._container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+
+  @media screen and (max-width: 1199.98px) {
+    max-width: 1050px;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    max-width: 984px;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    max-width: none;
+  }
+}
