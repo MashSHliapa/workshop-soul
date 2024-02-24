@@ -1,0 +1,161 @@
+.main {
+  position: relative;
+
+  &__container {}
+
+  &__body {
+    padding: 85px 0 10px;
+    color: #F6F6F6;
+    position: relative;
+    z-index: 2;
+    line-height: 136%;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 70px;
+    font-weight: 700;
+  }
+
+  &__title span {
+    font-weight: 400;
+    font-size: 36px;
+    display: block;
+    padding-top: 10px;
+  }
+
+  &__info {
+    margin: 45px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 20px;
+    max-width: 730px;
+    padding: 0 20px 0 0;
+  }
+
+  &__button {
+    align-self: self-end;
+    color: #18362B;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 70px;
+    background: #D8C562;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &__button:hover {
+    // background: #84af7d;
+    background: #f8cd25;
+    transition: 0.2s;
+  }
+
+  &__button:active {
+    // border: 3px solid #84af7d;
+    box-shadow: 5px 5px 5px black;
+  }
+
+  &__down {
+    text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image img {
+    object-position: right;
+  }
+
+  @media screen and (max-width: 991.98px) {
+
+    &__body {
+      padding: 85px 0 15px;
+    }
+
+    &__title span {
+      font-size: 28px;
+    }
+
+    &__info {
+      margin: 65px 0 35px;
+    }
+
+    &__text {
+      font-size: 16px;
+      max-width: 638px;
+    }
+
+    &__button {
+      font-size: 16px;
+      padding: 12px 50px;
+    }
+
+    &__down {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+
+    &__body {
+      padding: 70px 0 20px;
+    }
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__title span {
+      font-size: 23px;
+    }
+
+    &__info {
+      margin: 50px 0 40px;
+      flex-wrap: wrap;
+    }
+
+    &__text {
+      padding: 0 40px 40px 0;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+
+    &__body {
+      padding: 50px 0 20px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__title span {
+      font-size: 18px;
+      padding-top: 5px;
+    }
+
+    &__info {
+      margin: 30px 0 0px;
+    }
+
+    &__text {
+      font-size: 14px;
+      padding: 0 40px 40px 0;
+    }
+
+    &__button {
+      padding: 7px 30px;
+      font-size: 14px;
+    }
+  }
+}
