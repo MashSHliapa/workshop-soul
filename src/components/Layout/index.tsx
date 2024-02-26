@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom'
 import { Header } from '../Header'
 import './Layout.scss'
 import { Main } from '../Main'
+import { NewItems } from '../NewItems'
+
 
 export function Layout() {
   return(
@@ -9,6 +11,7 @@ export function Layout() {
       <Header/>
       <Main/>
       <Outlet/>
+      <NewItems/>
     </div>
   )
 }
