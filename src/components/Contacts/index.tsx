@@ -1,0 +1,81 @@
+import background from '../../components/images/contacts/background_contacts.png'
+import icon from '../../components/images/contacts/contacts_icon.png'
+import image_parachute from '../../components/images/contacts/contacts_image.png'
+import image_box from '../../components/images/contacts/contacts_box.png'
+import viber from '../../components/images/contacts/viber.svg'
+import instagram from '../../components/images/contacts/instagram.svg'
+import vk from '../../components/images/contacts/vk.svg'
+import './contacts.scss'
+
+export function Contacts() {
+  return (
+    <div className="contacts">
+      <div className="contacts__container _container">
+        <div className="contacts__body">
+          <div className="contacts__info">
+            <div className="contacts__text-question">Вам что-то понравилось?</div>
+            <div className="contacts__slogan">Закажи с доставкой любое изделие!</div>
+            <div className="contacts__description">
+              <div className="contacts__title"><span>КАК</span> КУПИТЬ</div>
+              <div className="contacts__subtitle">Авторские изделия <span>ручной работы</span></div>
+            </div>
+          </div>
+
+          <div className="contacts__row">
+
+            <div className="contacts__column">
+              <div className="contacts__icon">
+                <img src={icon} alt="icon" />
+              </div>
+              <div className="contacts__image">
+                <img src={image_parachute} alt="image_parachute" />
+              </div>
+              <div className="contacts__data">ЗАКАЗ</div>
+              <div className="contacts__text">На данном сайте Вы можете ознакомиться с моими <span>изделиями</span>. Выбрав понравившееся, отправьте его мне, удобным для Вас способом: <br />
+                <span> Viber, Telegram, Instagram, VK. </span>
+                После чего я вышлю сообщение в котором будет указана <span>стоимость изделия, способы оплаты и доставки</span>.</div>
+            </div>
+
+            <div className="contacts__column">
+              <div className="contacts__icon">
+                <img src={icon} alt="icon" />
+              </div>
+              <div className="contacts__data">ДОСТАВКА</div>
+              <div className="contacts__text">Доставка осуществляется
+                при помощи курьерской службы <span> СДЭК </span>, после внесения <span> 100% предоплаты </span> за изделие.
+                <p>* Почтовые услуги оплачивает получатель посылки в момент самого получения.</p>
+                Стоимость доставки просчитывается службой СДЭК исходя из габаритов посылки   -   <span>от 4,13 BYN </span></div>
+            </div>
+
+            <div className="contacts__column">
+              <div className="contacts__icon">
+                <img src={icon} alt="icon" />
+              </div>
+              <div className="contacts__data">контакты</div>
+              <div className="contacts__image-box">
+                <img src={image_box} alt="image_box" />
+              </div>
+              <ul className="contacts__list">
+                <li className="contacts__item">
+                  <img src={viber} alt="viber" />
+                  <a href="tel:+375291216051" target="_blank"><b>+375(29) 12 16 051</b></a>
+                </li>
+                <li className="contacts__item">
+                  <img src={instagram} alt="instagram" />
+                  <a href="https://www.instagram.com/masterskayasoul2023/" target="_blank">masterskayasoul2023</a>
+                </li>
+                <li className="contacts__item">
+                  <img src={vk} alt="vk" />
+                  <a href="https://vk.com/soul_borisov" target="_blank">soul_borisov</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="contacts__background _ibg">
+        <img src={background} alt="background" />
+      </div>
+    </div >
+  )
+}

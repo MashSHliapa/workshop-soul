@@ -21,7 +21,7 @@ export function Main() {
 
       </div>
       <div className="main__image _ibg">
-        <img src={background} alt="main" />
+        <img src={background} alt="background" />
       </div>
 
     </div>

@@ -3,6 +3,7 @@ import { Header } from '../Header'
 import './Layout.scss'
 import { Main } from '../Main'
 import { NewItems } from '../NewItems'
+import { Contacts } from '../Contacts'
 
 
 export function Layout() {
@@ -12,6 +13,7 @@ export function Layout() {
       <Main/>
       <Outlet/>
       <NewItems/>
+      <Contacts/>
     </div>
   )
 }
