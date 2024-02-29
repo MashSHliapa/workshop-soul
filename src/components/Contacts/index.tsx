@@ -22,15 +22,14 @@ export function Contacts() {
           </div>
 
           <div className="contacts__row">
-
             <div className="contacts__column">
               <div className="contacts__icon">
                 <img src={icon} alt="icon" />
               </div>
-              <div className="contacts__image">
+              <div className="contacts__image-decor">
                 <img src={image_parachute} alt="image_parachute" />
               </div>
-              <div className="contacts__data">ЗАКАЗ</div>
+              <div className="contacts__service">ЗАКАЗ</div>
               <div className="contacts__text">На данном сайте Вы можете ознакомиться с моими <span>изделиями</span>. Выбрав понравившееся, отправьте его мне, удобным для Вас способом: <br />
                 <span> Viber, Telegram, Instagram, VK. </span>
                 После чего я вышлю сообщение в котором будет указана <span>стоимость изделия, способы оплаты и доставки</span>.</div>
@@ -40,7 +39,7 @@ export function Contacts() {
               <div className="contacts__icon">
                 <img src={icon} alt="icon" />
               </div>
-              <div className="contacts__data">ДОСТАВКА</div>
+              <div className="contacts__service">ДОСТАВКА</div>
               <div className="contacts__text">Доставка осуществляется
                 при помощи курьерской службы <span> СДЭК </span>, после внесения <span> 100% предоплаты </span> за изделие.
                 <p>* Почтовые услуги оплачивает получатель посылки в момент самого получения.</p>
@@ -51,24 +50,26 @@ export function Contacts() {
               <div className="contacts__icon">
                 <img src={icon} alt="icon" />
               </div>
-              <div className="contacts__data">контакты</div>
-              <div className="contacts__image-box">
-                <img src={image_box} alt="image_box" />
+              <div className="contacts__service">контакты</div>
+              <div className="contacts__contacts-box">
+                <div className="contacts__image-contacts-box">
+                  <img src={image_box} alt="image_box" />
+                </div>
+                <ul className="contacts__list">
+                  <li className="contacts__item">
+                    <img src={viber} alt="viber" />
+                    <a href="tel:+375291216051" target="_blank"><b>+375(29) 12 16 051</b></a>
+                  </li>
+                  <li className="contacts__item">
+                    <img src={instagram} alt="instagram" />
+                    <a href="https://www.instagram.com/masterskayasoul2023/" target="_blank">masterskayasoul2023</a>
+                  </li>
+                  <li className="contacts__item">
+                    <img src={vk} alt="vk" />
+                    <a href="https://vk.com/soul_borisov" target="_blank">soul_borisov</a>
+                  </li>
+                </ul>
               </div>
-              <ul className="contacts__list">
-                <li className="contacts__item">
-                  <img src={viber} alt="viber" />
-                  <a href="tel:+375291216051" target="_blank"><b>+375(29) 12 16 051</b></a>
-                </li>
-                <li className="contacts__item">
-                  <img src={instagram} alt="instagram" />
-                  <a href="https://www.instagram.com/masterskayasoul2023/" target="_blank">masterskayasoul2023</a>
-                </li>
-                <li className="contacts__item">
-                  <img src={vk} alt="vk" />
-                  <a href="https://vk.com/soul_borisov" target="_blank">soul_borisov</a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
