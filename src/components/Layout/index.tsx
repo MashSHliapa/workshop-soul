@@ -4,6 +4,7 @@ import './Layout.scss'
 import { Main } from '../Main'
 import { NewItems } from '../NewItems'
 import { Contacts } from '../Contacts'
+import { Tagline } from '../Tagline'
 
 
 export function Layout() {
@@ -14,6 +15,7 @@ export function Layout() {
       <Outlet/>
       <NewItems/>
       <Contacts/>
+      <Tagline/>
     </div>
   )
 }

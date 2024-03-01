@@ -1,0 +1,106 @@
+.tagline {
+  background: #E9E9E9, linear-gradient(#E9E9E9, #fff);
+
+  &__container {}
+
+  &__body {}
+
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__column {}
+
+  &__info {
+    font-size: 48px;
+    line-height: 1.1;
+    max-width: 420px;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+  }
+
+  &__title {
+    line-height: 1.1;
+    font-weight: 600;
+    text-indent: 40px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__subtitle {
+    padding: 15px 20px 0 0;
+    color: #D8C562;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    transform: rotate(-7deg);
+    text-align: end;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 36px;
+    text-align: end;
+  }
+
+  &__image {}
+
+
+  @media screen and (max-width: 991.98px) {
+    &__body {
+      padding: 0 0 0px 30px;
+    }
+
+    &__info {
+      font-size: 34px; // не по проекту
+      max-width: 370px;
+    }
+
+    &__subtitle {
+      padding: 15px 10px 0 0px;
+    }
+
+    &__text {
+      font-size: 28px; // не по проекту
+    }
+
+    &__image img {
+      max-width: 320px;
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    &__body {
+      padding: 60px 0 10px 0;
+    }
+
+    &__row {
+      flex-direction: column;
+    }
+
+    &__image img {
+      max-width: 280px; // не по проекту
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+
+    &__column {}
+
+    &__info {
+      font-size: 25px;
+      max-width: 280px;
+    }
+
+    &__text {
+      font-size: 18px;
+      letter-spacing: -1px;
+    }
+
+    &__image img {
+      max-width: 190px; // не по проекту
+    }
+  }
+}
