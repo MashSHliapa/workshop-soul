@@ -1,0 +1,135 @@
+.catalog {
+  position: relative;
+  background: linear-gradient(#cfcfcf, #fffefe);
+
+  &__container {}
+
+  &__body {
+    padding: 60px 0 70px;
+    line-height: 1.5;
+  }
+
+  &__row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: end;
+  }
+
+  &__column {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__title {
+    font-size: 128px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  &__title span {
+    font-size: 67px;
+    display: block;
+    text-align: end;
+  }
+
+  &__subtitle {
+    color: #909090;
+    font-size: 20px;
+    text-align: end;
+  }
+
+  &__separator {
+    width: 100%;
+    height: 3px;
+    background-color: #18362B;
+    margin: 3px 0 10px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 1199.98px) {
+    &__title {
+      font-size: 100px;
+    }
+
+    &__title span {
+      font-size: 55px;
+    }
+
+    &__separator {
+      margin: 3px 0 8px;
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+
+    &__body {
+      padding: 40px 0 65px;
+    }
+
+    &__row {
+      flex-wrap: wrap;
+      padding: 0 30px;
+    }
+
+    &__column {
+      width: 490px;
+    }
+
+    &__title {
+      font-size: 90px;
+    }
+
+    &__title span {
+      font-size: 55px;
+    }
+
+    &__subtitle {
+      margin-top: 15px;
+    }
+
+    &__separator {
+      margin: 0px 0 0px;
+    }
+  }
+
+
+  @media screen and (max-width: 575.98px) {
+    &__body {
+      padding: 40px 0 40px;
+    }
+
+    &__row {
+      padding: 0 15px;
+    }
+
+    &__column {
+      max-width: 370px;
+    }
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__title span {
+      font-size: 32px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      margin-top: 5px; // предложить вариант
+    }
+
+    &__separator {
+      margin: 0px 0 0px;
+    }
+  }
+}
