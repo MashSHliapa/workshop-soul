@@ -5,7 +5,7 @@
   &__container {}
 
   &__body {
-    padding: 60px 0 70px;
+    padding: 60px 0 142px;
     line-height: 1.5;
   }
 
@@ -14,6 +14,7 @@
     gap: 10px;
     justify-content: center;
     align-items: end;
+    margin-bottom: 115px;
   }
 
   &__column {
@@ -78,6 +79,7 @@
     &__row {
       flex-wrap: wrap;
       padding: 0 30px;
+      // margin-bottom: 70px;
     }
 
     &__column {
@@ -109,6 +111,7 @@
 
     &__row {
       padding: 0 15px;
+      // margin-bottom: 70px;
     }
 
     &__column {

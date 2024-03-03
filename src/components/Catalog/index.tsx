@@ -1,3 +1,4 @@
+import { CatalogCardsOdd } from '../CatalogCardsOdd'
 import background from '../images/background_catalog.png'
 import './Catalog.scss'
 
@@ -17,7 +18,9 @@ export function Catalog() {
               <div className="catalog__separator"></div>
             </div>
           </div>
+          <CatalogCardsOdd />
         </div>
+
       </div>
       <div className="catalog__background _ibg">
         <img src={background} alt="background" />
