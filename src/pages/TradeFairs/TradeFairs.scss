@@ -1,0 +1,61 @@
+.trade-fairs {
+  background-color: antiquewhite;
+
+  &__container {}
+
+  &__body {
+    line-height: 1.35;
+    padding: 40px 0 50px;
+    text-align: center;
+    max-width: 755px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+  }
+
+  &__subtitle {
+    color: #2A2A2A;
+    margin: 40px 0 50px;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    &__body {
+      padding: 40px 10px 50px;
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    &__body {
+      padding: 40px 10px 50px;
+    }
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__subtitle {
+      margin: 20px 0 50px;
+    }
+  }
+
+
+  @media screen and (max-width: 575.98px) {
+    &__body {
+      padding: 30px 10px 50px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__subtitle {
+      margin: 10px 0 50px;
+      font-size: 16px; // по проекту 18
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { NewItems } from '../NewItems'
 import { Contacts } from '../Contacts'
 import { Tagline } from '../Tagline'
 import { Catalog } from '../Catalog'
+import { TradeFairs } from '../../pages/TradeFairs'
 
 
 export function Layout() {
@@ -18,6 +19,7 @@ export function Layout() {
       <Catalog/>
       <Contacts/>
       <Tagline/>
+      <TradeFairs/>
     </div>
   )
 }
