@@ -1,3 +1,4 @@
+import { CatalogCardsEven } from '../CatalogCardsEven'
 import { CatalogCardsOdd } from '../CatalogCardsOdd'
 import background from '../images/background_catalog.png'
 import './Catalog.scss'
@@ -18,7 +19,10 @@ export function Catalog() {
               <div className="catalog__separator"></div>
             </div>
           </div>
-          <CatalogCardsOdd />
+          <div className="catalog__cards">
+            <CatalogCardsOdd />
+            <CatalogCardsEven />
+          </div>
         </div>
 
       </div>
