@@ -1,44 +1,46 @@
 import './TradeFairsCard.scss'
-import image from '../images/newitems/picture8.jpg'
 
-export function TradeFairsCard() {
+export function TradeFairsCard(props) {
+
   return (
     <div className="fairs-card">
       <div className="fairs-card__body">
         <div className="fairs-card__info-fairs info-fairs">
           <div className="info-fairs__image">
-            <img src={image} alt="img" />
+            <img src={props.post.image} alt="img" />
           </div>
           <div className="info-fairs__name">
-            <div className="info-fairs__title">Горошекмаркетgggg ggggggg gggggg</div>
-            <div className="info-fairs__subtitle">в ТЦ МОМО</div>
+            <div className="info-fairs__title">{props.post.title}</div>
+            <div className="info-fairs__subtitle">{props.post.subtitle}</div>
           </div>
 
           <div className="info-fairs__date date">
             <div className="date__deadlines">
-              <span className='date__deadlines-pretext'>с</span>
-              <span className='date__number'>27</span>сентября
+              <span className='date__deadlines-pretext'>{props.post["date-pretext-from"]}</span>
+              <span className='date__number'>{props.post["number-from"]}</span>{props.post["month-from"]}
             </div>
             <div className="date__deadlines">
-              <span className='date__deadlines-pretext'>по</span>
-              <span className='date__number'>5</span>октября
+              <span className='date__deadlines-pretext'>{props.post["date-pretext-to"]}</span>
+              <span className='date__number'>{props.post["number-to"]}</span>{props.post["month-to"]}
             </div>
-            <div className="date__year">2024</div>
+            {/* <div className="date__year">{props.post.year}</div> */}
+            <div className="date__year" style={{ marginBottom: '10px' }}>{props.post.year}</div>
+
           </div>
         </div>
 
         <div className="fairs-card__description-fairs description-fairs">
-          <div className="description-fairs__title">Тёплый «Горошекмаркет» <br />
-            27 и 28 февраля в ТЦ МОМО на 2 этаже.
+          <div className="description-fairs__title">{props.post["title-description"]}<br />
+            {props.post["subtitle-description"]}
           </div>
-          <div className="description-fairs__text"><p>Уютная встреча с любимыми мастерами, у которых вы найдёте множестводушевных вещиц ручной работы:</p>
-            Обложки на документы из натуральной кожи с забавными изображениямисвечи из соевого воска и арома-диффузоры с оригинальными ароматамиигрушки из кожи и меха, дерева и текстиля, которые порадуют не только детей, но и взрослых пряники, мёд и домашний квас</div>
+          <div className="description-fairs__text"><p>{props.post.text1}</p><p>{props.post.text2}</p>
+          </div>
           <div className="description-fairs__info">
-            27, 28 января 2024 года<br />
-            <b>10:00-22:00</b><br />
-            2 этаж ТЦ МОМО (пр-т Партизанский, 150А)<br />
-            вход свободный!<br />
-            <b>0+</b><br />
+            {props.post['date-description']}<br />
+            <b>{props.post['time-description']}</b><br />
+           {props.post['adress-description']}<br />
+            {props.post.condition}<br />
+            <b>{props.post.age}</b><br />
           </div>
         </div>
       </div>

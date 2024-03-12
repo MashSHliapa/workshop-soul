@@ -3,7 +3,7 @@
 
   &__body {
     display: flex;
-    gap: 70px;
+    gap: 40px;
     line-height: 1.5;
     color: #1E1E1E;
     text-align: start;
@@ -12,7 +12,7 @@
 
   &__info-fairs {
     // border: 1px solid #1E1E1E;
-    max-width: 270px;
+    min-width: 280px;
   }
 
   &__description-fairs {}
