@@ -11,21 +11,44 @@
   }
 
   &__info-fairs {
-    // border: 1px solid #1E1E1E;
     min-width: 280px;
   }
 
   &__description-fairs {}
+
+  @media screen and (max-width: 767.98px) {
+    &__body {
+      flex-direction: column;
+      gap: 10px;
+      padding: 35px 25px 15px 25px;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    &__body {
+      gap: 0px;
+      padding: 20px 15px 15px 15px;
+    }
+
+    &__info-fairs {
+      min-width: 250px;
+    }
+  }
 }
 
 
 .info-fairs>div:not(:last-child) {
   margin-bottom: 24px;
+
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 20px;
+  }
 }
 
 .info-fairs {
   font-weight: 700;
   letter-spacing: -1.7px;
+  position: relative;
 
   &__image {
     position: relative;
@@ -45,13 +68,35 @@
   &__title {
     font-size: 24px;
   }
+
+  @media screen and (max-width: 767.98px) {
+    text-align: center;
+
+    &__image {
+      margin: 0 auto;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    &__image {
+      height: 200px;
+      width: 200px;
+    }
+  }
 }
 
 
 .date {
-  // border: 1px solid #1E1E1E;
   line-height: 1.1;
-  font-size: 35px;
+  font-size: 30px;
 
   &__deadlines {}
 
@@ -59,21 +104,43 @@
 
   &__number {
     font-size: 50px;
-    margin: 0 7px 0 5px;
+    margin: 0 7px 0 0px;
   }
 
   &__year {
     font-size: 20px;
     line-height: 1.8;
+    position: absolute;
+    bottom: 0;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    &__number {
+      font-size: 42px;
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    &__number {
+      font-size: 38px;
+    }
+
+    &__year {
+      display: none;
+    }
   }
 }
 
 
-.description-fairs>div:not(:last-child) {
+.description-fairs>*div:not(:last-child) {
   margin-bottom: 20px;
 }
 
 .description-fairs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   &__title {
     font-weight: 800;
   }
@@ -84,5 +151,9 @@
 
   &__text p {
     margin-bottom: 20px;
+  }
+
+  &__info {
+    align-self: end;
   }
 }
