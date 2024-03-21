@@ -1,5 +1,4 @@
-// import background from '../../components/images/background.png'
-import background from '../../components/images/background1.png'
+import background from '../../components/images/background_main.png'
 import dowm from '../images/main_down.png'
 import './Main.scss'
 
@@ -16,14 +15,11 @@ export function Main() {
           <div className="main__down">
             <img src={dowm} alt="down" />
           </div>
-
         </div>
-
       </div>
-      <div className="main__image _ibg">
+      <div className="main__background _ibg">
         <img src={background} alt="background" />
       </div>
-
     </div>
   )
 }

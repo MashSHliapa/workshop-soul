@@ -50,13 +50,11 @@
   }
 
   &__button:hover {
-    // background: #84af7d;
     background: #f8cd25;
     transition: 0.2s;
   }
 
   &__button:active {
-    // border: 3px solid #84af7d;
     box-shadow: 5px 5px 5px black;
   }
 
@@ -64,7 +62,7 @@
     text-align: center;
   }
 
-  &__image {
+  &__background {
     position: absolute;
     top: 0;
     left: 0;
@@ -72,9 +70,6 @@
     height: 100%;
   }
 
-  &__image img {
-    // object-position: right;
-  }
 
   @media screen and (max-width: 991.98px) {
 
