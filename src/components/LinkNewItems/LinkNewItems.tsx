@@ -1,3 +1,4 @@
+import './LinkNewItems.scss'
 export function LinkNewItems() {
   return (
     <div className="link-new-items">

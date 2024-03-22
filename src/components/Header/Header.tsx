@@ -1,3 +1,4 @@
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu'
 import { LinkBlog } from '../LinkBlog/LinkBlog'
 import { LinkContacts } from '../LinkContacts/LinkContacts'
 import { Logo } from '../Logo/Logo'
@@ -10,8 +11,12 @@ export function Header() {
       <div className="header__container _container">
         <div className="header__body">
           <div className="header__brand">
-            <Logo />
-            <Name />
+            <div className="header__logo">
+              <Logo />
+            </div>
+            <div className="header__name">
+              <Name />
+            </div>
           </div>
           <div className="header__navbar">
             <ul className="header__list">
@@ -22,6 +27,9 @@ export function Header() {
                 <LinkBlog />
               </li>
             </ul>
+          </div>
+          <div className="header__burger">
+            <BurgerMenu />
           </div>
         </div>
       </div>
