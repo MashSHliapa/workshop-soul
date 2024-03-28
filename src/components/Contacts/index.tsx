@@ -1,5 +1,5 @@
 import background from '../../components/images/contacts/background_contacts.png'
-import icon from '../../components/images/contacts/contacts_icon.png'
+import icon from '../../components/images/icon_eye.png'
 import image_parachute from '../../components/images/contacts/contacts_image.png'
 import image_box from '../../components/images/contacts/contacts_box.png'
 import viber from '../../components/images/contacts/viber.svg'

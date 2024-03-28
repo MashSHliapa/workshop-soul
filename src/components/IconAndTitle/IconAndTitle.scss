@@ -1,0 +1,16 @@
+.icon-title {
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+
+  &__icon {
+    max-width: 31px;
+    margin-right: 22px;
+    margin-top: 5px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}

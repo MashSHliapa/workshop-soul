@@ -1,7 +1,6 @@
-import icon from '../images/contacts/contacts_icon.png'
+import { IconAndTitle} from '../IconAndTitle/IconAndTitle'
 import vector from '../images/catalog/catalog_vector_right.png'
 import image1 from '../images/newitems/picture7.jpg'
-
 
 export function CatalogCardsEven() {
   return (
@@ -13,11 +12,8 @@ export function CatalogCardsEven() {
         </div>
 
         <div className="card-even__info-catalog info-catalog">
-          <div className="info-catalog__name">
-            <div className="info-catalog__icon">
-              <img src={icon} alt="icon" />
-            </div>
-            <div className="info-catalog__title">освещение</div>
+          <div className="info-catalog__icon-and-title">
+            <IconAndTitle>Освещение</IconAndTitle>
           </div>
 
           <div className="info-catalog__subtitle">Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
