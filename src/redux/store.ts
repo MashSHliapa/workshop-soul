@@ -6,3 +6,5 @@ export const store = configureStore({
     tradeFairs: tradeFairsReducer
   },
 })
+
+export type RootState = ReturnType<typeof store.getState>
