@@ -1,8 +1,6 @@
 .main {
   position: relative;
 
-  &__container {}
-
   &__body {
     padding: 85px 0 10px;
     color: #F6F6F6;
@@ -36,28 +34,6 @@
     padding: 0 20px 0 0;
   }
 
-  &__button {
-    align-self: self-end;
-    color: #18362B;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 70px;
-    background: #D8C562;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-
-  &__button:hover {
-    background: #f8cd25;
-    transition: 0.2s;
-  }
-
-  &__button:active {
-    box-shadow: 5px 5px 5px black;
-  }
-
   &__down {
     text-align: center;
   }
@@ -70,9 +46,7 @@
     height: 100%;
   }
 
-
   @media screen and (max-width: 991.98px) {
-
     &__body {
       padding: 85px 0 15px;
     }
@@ -90,18 +64,12 @@
       max-width: 638px;
     }
 
-    &__button {
-      font-size: 16px;
-      padding: 12px 50px;
-    }
-
     &__down {
       display: none;
     }
   }
 
   @media screen and (max-width: 767.98px) {
-
     &__body {
       padding: 70px 0 20px;
     }
@@ -146,11 +114,6 @@
     &__text {
       font-size: 14px;
       padding: 0 40px 40px 0;
-    }
-
-    &__button {
-      padding: 7px 30px;
-      font-size: 14px;
     }
   }
 }

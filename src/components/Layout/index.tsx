@@ -8,6 +8,7 @@ import { Tagline } from '../Tagline'
 import { Catalog } from '../Catalog'
 import { TradeFairs } from '../../pages/TradeFairs'
 import { Footer } from '../Footer/Footer'
+import { Blog } from '../../pages/Blog/Blog'
 
 
 export function Layout() {
@@ -21,6 +22,7 @@ export function Layout() {
       <Contacts/>
       <Tagline/>
       <TradeFairs/>
+      <Blog/>
       <Footer/>
     </div>
   )

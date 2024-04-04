@@ -1,0 +1,124 @@
+.blog {
+  background-color: #F4F4F4;
+  position: relative;
+
+  &__body {
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+
+  @media screen and (max-width: 767.98px) {
+    &__title {
+      margin: 0;
+    }
+
+    &__cards-blog {
+      margin-top: 10px;
+    }
+  }
+}
+
+.card-blog {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+
+  &__info {
+    max-width: 470px;
+  }
+
+  &__icon-and-title {
+    font-size: 35px;
+    color: #1E1E1E;
+  }
+
+  &__icon-and-title span {
+    padding-top: 5px;
+    font-size: 18px;
+    display: block;
+  }
+
+  &__subtitle {
+    margin-top: 25px;
+    line-height: 1.5;
+  }
+
+  &__date {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #757575;
+  }
+
+  &__button {
+    align-self: center;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    padding: 50px 30px 50px 100px;
+    gap: 60px;
+    font-size: 17px;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    &__button {
+      align-self: center;
+      padding: 17px 50px;
+    }
+  }
+
+  @media screen and (max-width: 768.98px) {
+    padding: 30px 50px 30px 50px;
+
+    &__button {
+      padding: 15px 40px;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    padding: 40px 10px;
+
+    &__icon-and-title {
+      font-size: 28px;
+    }
+
+    &__icon-and-title span {
+      font-size: 16px;
+      min-width: 50px;
+    }
+
+    &__button {
+      padding: 14px 30px;
+    }
+  }
+}
+
+.card-blog:hover {
+  color: #E9E9E9;
+  background-image: url('../../components/images/blog_image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__date {
+    color: #D8C562;
+  }
+}
+
+.blog__card-blog:hover .icon-title__icon {
+  background: #D8C562;
+}
+
+.blog__card-blog:hover .icon-title__title {
+  color: #E9E9E9;
+}
+
+.blog__card-blog:hover .card-blog__icon-and-title span {
+  color: #D8C562;
+}

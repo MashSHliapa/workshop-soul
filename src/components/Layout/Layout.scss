@@ -74,11 +74,40 @@ body {
   position: relative;
 }
 
-._ibg img{
+._ibg img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+._button {
+  align-self: self-end;
+  color: #18362B;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 70px;
+  text-align: center;
+  background: #D8C562;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  @media screen and (max-width: 991.98px) {
+    font-size: 16px;
+    padding: 12px 50px;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    padding: 7px 30px;
+    font-size: 14px;
+  }
+}
+
+._button:hover {
+  background: #f8cd25;
+  transition: 0.2s;
 }
