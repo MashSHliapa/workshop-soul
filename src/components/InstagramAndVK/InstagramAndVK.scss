@@ -1,0 +1,14 @@
+.instagram-and-vk {
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item img {
+    margin-right: 15px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

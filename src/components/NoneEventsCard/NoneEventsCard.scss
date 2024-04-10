@@ -1,0 +1,89 @@
+.none-events-card {
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(6, 1, 1, 0.9), rgba(98, 38, 38, 0.9)), url('../../components/images/none_events.png') 0 0/cover no-repeat;
+
+  &__body {
+    padding: 30px 50px 40px;
+    color: #E9E9E9;
+    font-weight: 700;
+    text-align: start;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-size: 45px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    margin: 30px 0 20px;
+  }
+
+  &__social-media {
+    font-size: 25px;
+  }
+
+  &__text {
+    margin: 35px 0 10px;
+  }
+
+  &__link {
+    color: #909090;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 992.98px) {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__social-media {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 768.98px) {
+    &__body {
+      padding: 30px 40px 30px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__subtitle {
+      font-size: 25px;
+      margin: 25px 0 25px;
+    }
+  }
+
+  @media screen and (max-width: 576.98px) {
+    &__body {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      margin: 20px 0 20px;
+    }
+
+    &__social-media {
+      font-size: 16px;
+    }
+
+    &__text {
+      margin: 25px 0 10px;
+      font-size: 16px;
+    }
+
+    &__link {
+      font-size: 16px;
+    }
+  }
+}

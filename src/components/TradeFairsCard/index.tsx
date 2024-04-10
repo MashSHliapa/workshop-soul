@@ -1,6 +1,7 @@
+import { IPropsTradeCard } from '../../types/Interfaces'
 import './TradeFairsCard.scss'
 
-export function TradeFairsCard(props) {
+export function TradeFairsCard(props: {post: IPropsTradeCard}) {
 
   return (
     <div className="fairs-card">

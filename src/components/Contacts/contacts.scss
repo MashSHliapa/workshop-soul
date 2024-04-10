@@ -123,9 +123,7 @@
     margin-top: 10px;
   }
 
-  &__list {}
-
-  &__item {
+  &__list {
     font-size: 20px;
   }
 
@@ -235,10 +233,6 @@
     &__image-contacts-box {
       margin-top: 0px;
     }
-
-    &__item:not(:last-child) {
-      margin-bottom: 7px;
-    }
   }
 
 
@@ -308,10 +302,6 @@
     &__image-contacts-box img {
       max-width: 169px;
     }
-
-    &__item:not(:last-child) {
-      margin-bottom: 10px;
-    }
   }
 
 
@@ -366,7 +356,7 @@
       max-width: 133px;
     }
 
-    &__item {
+    &__list {
       font-size: 16px;
     }
   }

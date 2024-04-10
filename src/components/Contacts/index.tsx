@@ -6,10 +6,11 @@ import viber from '../../components/images/contacts/viber.svg'
 import instagram from '../../components/images/contacts/instagram.svg'
 import vk from '../../components/images/contacts/vk.svg'
 import './contacts.scss'
+import { InstagramAndVK } from '../InstagramAndVK/InstagramAndVK'
 
 export function Contacts() {
   return (
-    <div className="contacts">
+    <div className="contacts" id="contacts">
       <div className="contacts__container _container">
         <div className="contacts__body">
           <div className="contacts__info">
@@ -60,14 +61,7 @@ export function Contacts() {
                     <img src={viber} alt="viber" />
                     <a href="tel:+375291216051" target="_blank"><b>+375(29) 12 16 051</b></a>
                   </li>
-                  <li className="contacts__item">
-                    <img src={instagram} alt="instagram" />
-                    <a href="https://www.instagram.com/masterskayasoul2023/" target="_blank">masterskayasoul2023</a>
-                  </li>
-                  <li className="contacts__item">
-                    <img src={vk} alt="vk" />
-                    <a href="https://vk.com/soul_borisov" target="_blank">soul_borisov</a>
-                  </li>
+                  <InstagramAndVK />
                 </ul>
               </div>
             </div>

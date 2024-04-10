@@ -5,7 +5,7 @@ import './Catalog.scss'
 
 export function Catalog() {
   return (
-    <div className="catalog">
+    <div className="catalog" id="catalog">
       <div className="catalog__container _container">
         <div className="catalog__body">
 

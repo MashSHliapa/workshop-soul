@@ -3,6 +3,7 @@ import { TradeFairsCard } from '../../components/TradeFairsCard'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import { RootState } from '../../redux/store'
 import './TradeFairs.scss'
+import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
 
 export function TradeFairs() {
   const { data: posts } = useSelector((state: RootState) => state.tradeFairs)
@@ -20,6 +21,7 @@ export function TradeFairs() {
           <ul className="cakes__list d-flex flex-wrap justify-content-center gap-5 m-3">
             {tradeFairsPage}
           </ul>
+          <NoneEventsCard />
         </div>
       </div>
     </div>
