@@ -20,3 +20,12 @@ export interface IPropsTradeCard {
   age?: string
   image?: string
 }
+
+export interface IPropsNewItems {
+  id: number
+  image: string
+  item: string
+  name: string
+  size: string
+  material: string
+}

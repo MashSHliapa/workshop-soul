@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux'
 import { TradeFairsCard } from '../../components/TradeFairsCard'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import { RootState } from '../../redux/store'
-import './TradeFairs.scss'
 import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
+import './TradeFairs.scss'
 
 export function TradeFairs() {
   const { data: posts } = useSelector((state: RootState) => state.tradeFairs)

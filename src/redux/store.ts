@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { tradeFairsReducer } from './tradeFairsSlice'
+import { newItemsAddReducer } from './newItemsAddSlice'
 
 export const store = configureStore({
   reducer: {
-    tradeFairs: tradeFairsReducer
+    tradeFairs: tradeFairsReducer,
+    newItemsAdd: newItemsAddReducer
   },
 })
 

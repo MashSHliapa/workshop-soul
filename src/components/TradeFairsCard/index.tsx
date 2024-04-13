@@ -1,4 +1,4 @@
-import { IPropsTradeCard } from '../../types/Interfaces'
+import { IPropsTradeCard } from '../../types/interfaces'
 import './TradeFairsCard.scss'
 
 export function TradeFairsCard(props: {post: IPropsTradeCard}) {
