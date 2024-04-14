@@ -4,6 +4,7 @@ import { RootState } from '../../redux/store'
 import newitems4 from '../../components/images/newitems/picture6.jpg'
 import label from '../../components/images/newitems/new_label.png'
 import './NewItems.scss'
+import { NewItem } from '../NewItem/NewItem'
 
 export function NewItems() {
 
@@ -15,24 +16,7 @@ export function NewItems() {
     <div className="new-items">
       <div className="new-items__container _container">
         <div className="new-items__body">
-
-          <div className="new-items__card card">
-            <div className="card__body">
-              <div className="card__image">
-                <img src={newitems4} alt="newitems1" />
-              </div>
-              <div className="card__image-label">
-                <img src={label} alt="label" />
-              </div>
-              <div className="card__data">
-                <h4 className="card__title">ОБЕРЕГ <span>“ночной лес”</span></h4>
-                <div className="card__separator"></div>
-                <div className="card__text-size">Размер: 40х25мм</div>
-                <div className="card__text-material">Материал: серебряная цепочка, природный камень и  дерево хвойных пород</div>
-              </div>
-            </div>
-          </div>
-
+          <NewItem />
           <div className="new-items__info info">
             <div className="info__body">
               <div className="info__chapter">
