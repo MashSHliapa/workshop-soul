@@ -9,7 +9,7 @@ const newItemsAddSlice = createSlice({
   initialState: {
     data: [
       {
-        id: 1,
+        id: '1',
         image: newitems5,
         item: 'Подвеска',
         name: '“ВАСИЛЁК”',
@@ -17,7 +17,7 @@ const newItemsAddSlice = createSlice({
         material: 'серебряная цепочка, природный камень и дерево хвойных пород',
       },
       {
-        id: 2,
+        id: '2',
         image: image1,
         item: 'Подвеска',
         name: '“ВАСИЛЁК”',
@@ -25,7 +25,7 @@ const newItemsAddSlice = createSlice({
         material: 'серебряная цепочка, природный камень',
       },
       {
-        id: 3,
+        id: '3',
         image: newitems1,
         item: 'Подвеска',
         name: '“ВАСИЛЁК”',
@@ -33,7 +33,7 @@ const newItemsAddSlice = createSlice({
         material: 'камень и дерево хвойных пород камень и дерево хвойных пород',
       },
       {
-        id: 4,
+        id: '4',
         image: newitems3,
         item: 'Подвеска',
         name: '“ВАСИЛЁК”',

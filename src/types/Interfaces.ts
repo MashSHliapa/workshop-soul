@@ -22,7 +22,7 @@ export interface IPropsTradeCard {
 }
 
 export interface IPropsNewItems {
-  id: number
+  id: string
   image: string
   item: string
   name: string

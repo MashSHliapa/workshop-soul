@@ -1,10 +1,8 @@
 import { useSelector } from 'react-redux'
-import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
 import { RootState } from '../../redux/store'
-import newitems4 from '../../components/images/newitems/picture6.jpg'
-import label from '../../components/images/newitems/new_label.png'
-import './NewItems.scss'
+import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
 import { NewItem } from '../NewItem/NewItem'
+import './NewItems.scss'
 
 export function NewItems() {
 
