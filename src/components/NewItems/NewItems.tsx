@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
 import { NewItem } from '../NewItem/NewItem'
+import Slider from 'react-slick';
+import { sliderSettings } from './sliderSettings';
 import './NewItems.scss'
 
 export function NewItems() {
@@ -29,7 +31,12 @@ export function NewItems() {
               </div>
             </div>
             <div className="info__new-cards">
-              {newItems}
+              <div className="slider">
+                <Slider
+                  {...sliderSettings}>
+                  {newItems}
+                </Slider>
+              </div>
             </div>
           </div>
         </div>
