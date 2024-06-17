@@ -1,16 +1,29 @@
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { RootState } from '../../redux/store'
-import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
-import { NewItem } from '../NewItem/NewItem'
 import Slider from 'react-slick';
 import { sliderSettings } from './sliderSettings';
+import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
+import { NewItem } from '../NewItem/NewItem'
+import { IPropsNewItems } from '../../types/interfaces';
 import './NewItems.scss'
 
 export function NewItems() {
+  const [newItem, setNewItem] = useState<IPropsNewItems>()
+  const { newItemId } = useParams<{ newItemId: string }>()
 
   const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
+  const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
 
-  const newItems = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
+  useEffect(() => {
+    const currentItem = posts.find((item) => item.id === newItemId)
+    if (currentItem) {
+      setNewItem(currentItem)
+    }
+  }, [newItemId, posts])
+
+  const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== newItemId)
 
   return (
     <div className="new-items">
@@ -23,10 +36,10 @@ export function NewItems() {
                 <div className="info__text">Новинки</div>
                 <div className="info__separator"></div>
               </div>
-
               <div className="info__description">
-                <h3 className="info__title">ОБЕРЕГ <span>“ЛУНА”</span></h3>
-                <div className="info__subtitle">Сказочна и богата природа. Какие разнообразные чувства переполняют нас при встрече с ней! В любое время года она открывает свои прелести по-разному, давая простор фантазии и творчеству, укрепляя нежные и добрые чувства в человеке.  Сказочна и богата природа. Какие разнообразные чувства переполняют нас при встрече с ней!
+                <h3 className="info__title">{newItem?.item} <span>{newItem?.name}</span></h3>
+                <div className="info__subtitle">
+                  {newItem?.description}
                 </div>
               </div>
             </div>
@@ -34,7 +47,7 @@ export function NewItems() {
               <div className="slider">
                 <Slider
                   {...sliderSettings}>
-                  {newItems}
+                  {itemsWithoutReceivedItem}
                 </Slider>
               </div>
             </div>

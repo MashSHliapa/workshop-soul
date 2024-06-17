@@ -28,4 +28,5 @@ export interface IPropsNewItems {
   name: string
   size: string
   material: string
+  description: string
 }

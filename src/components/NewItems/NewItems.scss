@@ -77,6 +77,10 @@
     &__title {
       margin: 25px 0 25px;
     }
+
+    &__description {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 575.98px) {

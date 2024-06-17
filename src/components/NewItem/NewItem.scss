@@ -4,6 +4,9 @@
 
   &__body {
     max-width: 468px;
+    min-width: 468px;
+    min-height: 690px;
+    max-height: 690px;
     padding: 43px 50px 35px 50px;
     color: #18362B;
     text-align: center;
@@ -62,22 +65,22 @@
     margin: 0 auto;
   }
 
-  &__text-size {}
-
-  &__text-material {}
-
-
   @media screen and (max-width: 1199.98px) {
     &__body {
       max-width: 450px;
+      min-width: 450px;
+      min-height: 670px;
+      max-height: 670px;
     }
   }
 
   @media screen and (max-width: 991.98px) {
     &__body {
       max-width: 390px;
-      padding: 35px 40px 30px 40px;
-
+      min-width: 390px;
+      padding: 30px 40px 25px 40px;
+      min-height: 600px;
+      max-height: 600px;
     }
 
     &__data {
@@ -86,6 +89,13 @@
   }
 
   @media screen and (max-width: 575.98px) {
+    &__body {
+      max-width: 270px;
+      min-width: 270px;
+      min-height: 530px;
+      max-height: 530px;
+      padding: 35px 20px 30px 20px;
+    }
 
     &__data>*:not(:last-child) {
       margin-bottom: 7px;
