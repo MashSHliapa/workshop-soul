@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom'
 import { IPropsNewItems } from '../../types/interfaces'
+import { useRef } from 'react'
+import { newItemsScroll } from '../../helpers/newItemsScroll'
 import './NewItemAdd.scss'
 
 export function NewItemAdd(props: { post: IPropsNewItems }) {
+
+  const pageElement = useRef(null)
+
+  function handleClickPageWithScroll() {
+    newItemsScroll(pageElement)
+  }
   return (
-    <Link to={`/selected/${props.post.id}`}>
-      <div className="new-item-add">
+    <Link to={`/selected/${props.post.id}`} ref={pageElement}>
+      <div className="new-item-add" onClick={handleClickPageWithScroll}>
         <div className="new-item-add__body">
           <div className="new-item-add__image">
             <img src={props.post.image} alt="newitems2" />

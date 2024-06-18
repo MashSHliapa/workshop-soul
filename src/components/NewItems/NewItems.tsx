@@ -26,7 +26,7 @@ export function NewItems() {
   const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== newItemId)
 
   return (
-    <div className="new-items">
+    <div className="new-items" id="new-items">
       <div className="new-items__container _container">
         <div className="new-items__body">
           <NewItem />

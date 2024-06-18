@@ -5,7 +5,7 @@ import './Blog.scss'
 
 export function Blog() {
   return (
-    <div className="blog">
+    <div className="blog" id="blog">
       <div className="blog__container _container">
         <div className="blog__body">
           <div className="blog__title">
