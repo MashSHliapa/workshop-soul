@@ -1,6 +1,7 @@
 .new-item-add {
-  max-width: 132px;
-  min-height: 160px;
+  min-width: 120px;
+  max-width: 128px;
+  min-height: 165px;
   max-height: 170px;
   background-color: #E9E9E9;
   border-radius: 20px;
@@ -51,7 +52,7 @@
 
   &__separator {
     width: 100%;
-    height: 1px;
+    height: 0.8px;
     background-color: #000000;
   }
 
@@ -59,6 +60,12 @@
     background-color: #fbf9f9;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    min-width: 110px;
+    max-width: 120px;
+    padding: 20px 15px 10px 15px;
   }
 
   @media screen and (max-width: 575.98px) {
