@@ -5,24 +5,28 @@ import './BurgerMenu.scss'
 export function BurgerMenu() {
 
   const [isOpenNavbar, setIsOpenNavbar] = useState(false)
-
-  const burgerIcon = document.querySelector('.burger-menu__icon')
-
   function handleClickToggleNavbar() {
     setIsOpenNavbar(!isOpenNavbar)
-    document.body.style.overflow = isOpenNavbar ? 'auto' : 'hidden';
+    document.body.style.overflow = isOpenNavbar ? 'auto' : 'hidden'
+
+    const burgerIcon = document.querySelector('.burger-menu__icon')
     burgerIcon?.classList.toggle('_active')
+    console.log('burger')
+
     const navbarBody = document.querySelector('.navbar__body')
     navbarBody?.classList.toggle('_active')
+    console.log('navbar')
   }
 
   useEffect(() => {
     const handleClickCloseNavbar = (event: MouseEvent | React.MouseEvent) => {
       if (!(event.target as HTMLElement).closest('.burger-menu__icon')) {
         setIsOpenNavbar(false)
-        document.body.style.overflow = !isOpenNavbar ? 'auto' : 'hidden';
+        document.body.style.overflow = !isOpenNavbar ? 'auto' : 'hidden'
+        const burgerIcon = document.querySelector('.burger-menu__icon')
         burgerIcon?.classList.remove('_active')
       }
+      console.log('click')
     }
 
     document.addEventListener('click', handleClickCloseNavbar)
