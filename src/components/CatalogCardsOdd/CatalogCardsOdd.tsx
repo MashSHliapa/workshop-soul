@@ -1,6 +1,6 @@
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import image1 from '../images/newitems/picture6.jpg'
-import './CatalogCardsOdd.scss'
+import './CatalogCards.scss'
 
 export function CatalogCardsOdd() {
   return (

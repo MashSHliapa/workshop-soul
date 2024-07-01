@@ -1,4 +1,6 @@
 .item-card {
+  position: relative;
+  z-index: 2;
   min-width: 540px;
   max-width: 540px;
   background-color: #F4F4F4;
