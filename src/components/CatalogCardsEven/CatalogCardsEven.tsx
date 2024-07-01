@@ -1,5 +1,4 @@
 import { IconAndTitle} from '../IconAndTitle/IconAndTitle'
-import vector from '../images/catalog/catalog_vector_right.png'
 import image1 from '../images/newitems/picture7.jpg'
 
 export function CatalogCardsEven() {
@@ -21,9 +20,7 @@ export function CatalogCardsEven() {
 
           <div className="info-catalog__direction">
             <div className="info-catalog__text">СМОТРЕТЬ ИЗДЕЛИЯ</div>
-            <div className="info-catalog__vector">
-              <img src={vector} alt="vector" />
-            </div>
+            <div className="info-catalog__vector"></div>
           </div>
         </div>
       </div>

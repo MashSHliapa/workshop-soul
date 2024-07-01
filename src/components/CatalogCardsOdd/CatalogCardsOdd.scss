@@ -80,6 +80,18 @@
     align-items: center;
     justify-content: end;
     gap: 10px;
+
+    &:hover {
+      cursor: pointer;
+      color: black;
+    }
+  }
+
+  &__vector {
+    height: 17px;
+    width: 100px;
+    background: url('../images/catalog/catalog_vector_right.svg') no-repeat;
+    mask: url('../images/catalog/catalog_vector_right.svg') no-repeat;
   }
 
   &__text {
@@ -133,4 +145,8 @@
       margin: 0 10px;
     }
   }
+}
+
+.info-catalog__direction:hover .info-catalog__vector {
+  background: rgb(34, 30, 30);
 }

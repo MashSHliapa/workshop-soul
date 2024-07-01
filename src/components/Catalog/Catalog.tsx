@@ -1,5 +1,5 @@
-import { CatalogCardsEven } from '../CatalogCardsEven'
-import { CatalogCardsOdd } from '../CatalogCardsOdd'
+import { CatalogCardsEven } from '../CatalogCardsEven/CatalogCardsEven'
+import { CatalogCardsOdd } from '../CatalogCardsOdd/CatalogCardsOdd'
 import { ItemCard } from '../ItemCard/ItemCard'
 import background from '../images/background_catalog.png'
 import './Catalog.scss'
@@ -24,8 +24,8 @@ export function Catalog() {
           <div className="catalog__cards">
             <CatalogCardsOdd />
             <div className="catalog__esoterics">
-            <ItemCard />
-          </div>
+              <ItemCard />
+            </div>
             <CatalogCardsEven />
           </div>
         </div>
