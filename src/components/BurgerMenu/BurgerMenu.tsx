@@ -26,7 +26,6 @@ export function BurgerMenu() {
         const burgerIcon = document.querySelector('.burger-menu__icon')
         burgerIcon?.classList.remove('_active')
       }
-      console.log('click')
     }
 
     document.addEventListener('click', handleClickCloseNavbar)

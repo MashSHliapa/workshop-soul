@@ -43,8 +43,8 @@ export function NewItems() {
                 </div>
               </div>
             </div>
-            <div className="info__new-cards">
-              <div className="slider">
+            <div className="info__slider slider-newItems">
+              <div className="slider-newItems slider">
                 <Slider
                   {...sliderSettings}>
                   {itemsWithoutReceivedItem}

@@ -1,6 +1,6 @@
 import { IPropsNewItems } from '../../types/interfaces'
-
 import './ItemCard.scss'
+
 export const ItemCard = (props : { post: IPropsNewItems}) => {
   return (
     <div className="item-card">

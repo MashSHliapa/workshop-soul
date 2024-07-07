@@ -118,3 +118,33 @@ body {
     color: black;
   }
 }
+
+//для всех слайдеров
+.slider {
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.slick-slider {
+  min-width: 0;
+}
+
+.slick-list {
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.slick-track {
+  display: flex;
+  gap: 5px;
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  font-size: 0;
+  width: 26px;
+  height: 20px;
+}

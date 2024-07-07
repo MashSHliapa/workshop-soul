@@ -1,11 +1,11 @@
 .item-card {
-  position: relative;
-  z-index: 2;
   min-width: 540px;
   max-width: 540px;
+  min-height: 350px;
+  max-height: 350px;
   background-color: #F4F4F4;
   border-radius: 20px;
-  padding: 60px 52px 60px 52px;
+  padding: 60px 50px 60px 50px;
 
   &__body {
     display: flex;
@@ -19,6 +19,7 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     min-height: 220px;
+    max-height: 220px;
   }
 
   &__image img {
