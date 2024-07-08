@@ -33,6 +33,22 @@
     text-align: end;
   }
 
+  &__section {
+    animation: slideIn 1s forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes slideIn {
+
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
   &__subtitle {
     color: #909090;
     font-size: 20px;
@@ -85,7 +101,6 @@
     &__row {
       flex-wrap: wrap;
       padding: 0 30px;
-      // margin-bottom: 70px;
     }
 
     &__column {
@@ -117,7 +132,6 @@
 
     &__row {
       padding: 0 15px;
-      // margin-bottom: 70px;
     }
 
     &__column {
@@ -134,7 +148,7 @@
 
     &__subtitle {
       font-size: 16px;
-      margin-top: 5px; // предложить вариант
+      margin-top: 5px;
     }
 
     &__separator {

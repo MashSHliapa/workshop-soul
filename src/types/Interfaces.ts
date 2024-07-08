@@ -30,3 +30,9 @@ export interface IPropsNewItems {
   material: string
   description?: string
 }
+
+export interface IPropsCatalogCards {
+  name: string
+  description: string
+  handleClickOpenSection: () => void
+}
