@@ -87,13 +87,14 @@
       margin: 3px 0 8px;
     }
   }
+
   @media screen and (max-width: 991.98px) {
     &__cards>*:not(:last-child) {
       margin-bottom: 70px;
     }
   }
-  @media screen and (max-width: 767.98px) {
 
+  @media screen and (max-width: 767.98px) {
     &__body {
       padding: 40px 0 65px;
     }
@@ -123,7 +124,6 @@
       margin: 0px 0 0px;
     }
   }
-
 
   @media screen and (max-width: 575.98px) {
     &__body {

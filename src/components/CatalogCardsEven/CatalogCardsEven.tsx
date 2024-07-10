@@ -1,7 +1,8 @@
+import { IPropsCatalogCards } from '../../types/interfaces'
 import { IconAndTitle} from '../IconAndTitle/IconAndTitle'
 import image1 from '../images/newitems/picture7.jpg'
 
-export function CatalogCardsEven() {
+export function CatalogCardsEven({ handleClickOpenSection, ...props }: IPropsCatalogCards) {
   return (
     <div className="card-even _card-catalog">
       <div className="card-even__body _body-catalog">
@@ -12,13 +13,12 @@ export function CatalogCardsEven() {
 
         <div className="card-even__info-catalog info-catalog">
           <div className="info-catalog__icon-and-title">
-            <IconAndTitle>Освещение</IconAndTitle>
+            <IconAndTitle>{props.name}</IconAndTitle>
           </div>
 
-          <div className="info-catalog__subtitle">Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
-            Насладитесь мягким светом неповторимых ночников "Soul"</div>
+          <div className="info-catalog__subtitle">{props.description}</div>
 
-          <div className="info-catalog__direction">
+          <div className="info-catalog__direction" onClick={handleClickOpenSection}>
             <div className="info-catalog__text">СМОТРЕТЬ ИЗДЕЛИЯ</div>
             <div className="info-catalog__vector"></div>
           </div>

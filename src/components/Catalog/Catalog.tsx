@@ -31,7 +31,15 @@ export function Catalog() {
                 <SectionBijouterie />
               </div>}
             </div>
-            <CatalogCardsEven />
+
+            <CatalogCardsEven handleClickOpenSection={handleClickOpenSection} name="Эзотерика" description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." />
+
+            <CatalogCardsOdd handleClickOpenSection={handleClickOpenSection} name="Декор" description="Дом - это то место, куда хочется возвращаться каждый день, место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой." />
+
+            <CatalogCardsEven handleClickOpenSection={handleClickOpenSection} name="Освещение" description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
+            Насладитесь мягким светом неповторимых ночников 'Soul'" />
+
+            <CatalogCardsOdd handleClickOpenSection={handleClickOpenSection} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
           </div>
         </div>
       </div>
