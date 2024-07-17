@@ -19,8 +19,8 @@ export function NewItemAdd(props: { post: IPropsNewItems }) {
             <img src={props.post.image} alt="newitems2" />
           </div>
           <div className="new-item-add__data">
-            <h6 className="new-item-add__title">{props.post.item} <span>{props.post.name}</span></h6>
-            <div className="new-item-add__separator"></div>
+            <h6 className="new-item-add__title _title">{props.post.item} <span>{props.post.name}</span></h6>
+            <div className="new-item-add__separator _separator"></div>
           </div>
         </div>
       </div>

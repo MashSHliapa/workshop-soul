@@ -19,8 +19,8 @@ export function NewItem() {
           <img src={label} alt="label" />
         </div>
         <div className="new-item__data">
-          <h4 className="new-item__title">{selectedNewItem?.item} <span>{selectedNewItem?.name}</span></h4>
-          <div className="new-item__separator"></div>
+          <h4 className="new-item__title _title">{selectedNewItem?.item} <span>{selectedNewItem?.name}</span></h4>
+          <div className="new-item__separator _separator"></div>
           <div className="new-item__text-size">Размер: {selectedNewItem?.size}мм</div>
           <div className="new-item__text-material">Материал: {selectedNewItem?.material}</div>
         </div>

@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CatalogCardsEven } from '../CatalogCardsEven/CatalogCardsEven'
 import { CatalogCardsOdd } from '../CatalogCardsOdd/CatalogCardsOdd'
 import { BijouterieItems } from '../Sections/BijouterieItems'
 import background from '../images/background_catalog.png'
 import { DecorItems } from '../Sections/DecorItems'
 import './Catalog.scss'
+import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -19,6 +20,21 @@ export function Catalog() {
       setIsSectionBijouterieOpen(false);
     }
   }
+
+  useEffect(() => {
+    if (isSectionBijouterieOpen) {
+      const element = document.getElementById('bijouterie');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (isSectionDecorOpen) {
+      const element = document.getElementById('decor');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+    , [isSectionBijouterieOpen, isSectionDecorOpen])
 
   return (
     <div className="catalog" id="catalog">
@@ -53,6 +69,7 @@ export function Catalog() {
             Насладитесь мягким светом неповторимых ночников 'Soul'" />
 
             <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
+            <SectionEsotericCard />
           </div>
         </div>
       </div>
