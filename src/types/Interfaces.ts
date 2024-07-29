@@ -36,3 +36,9 @@ export interface IPropsCatalogCards {
   description: string
   handleClickOpenSection: () => void
 }
+
+export interface IPropsSectionEsotericCard {
+  image: string
+  item: string
+  description: string
+}

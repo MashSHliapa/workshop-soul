@@ -1,17 +1,18 @@
-import image from '../../components/images/newitems/picture6.jpg'
+import { IPropsSectionEsotericCard } from '../../types/interfaces'
 import './SectionEsotericCard.scss'
-export const SectionEsotericCard = () => {
+
+export const SectionEsotericCard = (props: IPropsSectionEsotericCard) => {
   return (
     <div className="section-esoteric-card">
       <div className="section-esoteric-card__body">
         <div className="section-esoteric-card__data">
           <div className="section-esoteric-card__image">
-            <img src={image} alt="newitem" />
+            <img src={props.image} alt="newitem" />
           </div>
           <div className="section-esoteric-card__info">
-            <h5 className="section-esoteric-card__title _title">Обереги</h5>
+            <h5 className="section-esoteric-card__title _title">{props.item}</h5>
             <div className="section-esoteric-card__separator _separator"></div>
-            <div className="section-esoteric-card__text">В каждом завершенном образе можно увидеть "изюминку"- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа.</div>
+            <div className="section-esoteric-card__text">{props.description}</div>
           </div>
         </div>
         <div className="section-esoteric-card__button _button">

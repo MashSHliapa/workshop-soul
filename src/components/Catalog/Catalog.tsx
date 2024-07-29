@@ -5,7 +5,7 @@ import { BijouterieItems } from '../Sections/BijouterieItems'
 import background from '../images/background_catalog.png'
 import { DecorItems } from '../Sections/DecorItems'
 import './Catalog.scss'
-import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
+import { SectionEsotericCards } from '../SectionEsotericCards/SectionEsotericCards'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -69,7 +69,7 @@ export function Catalog() {
             Насладитесь мягким светом неповторимых ночников 'Soul'" />
 
             <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
-            <SectionEsotericCard />
+            <SectionEsotericCards />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@
 
   &__body {
     background-color: #E9E9E9;
+    min-width: 540px;
     max-width: 540px;
     border-radius: 20px;
     padding: 23px 20px 23px 20px;
@@ -22,6 +23,7 @@
 
   &__info {
     flex: 0 1 55%;
+    align-self: self-start;
   }
 
   &__info>*:not(:last-child) {
