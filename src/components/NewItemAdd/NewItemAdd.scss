@@ -18,16 +18,6 @@
     padding: 0 0 100% 0;
   }
 
-  &__image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
   &__data {
     font-size: 6px;
     margin-top: 7px;

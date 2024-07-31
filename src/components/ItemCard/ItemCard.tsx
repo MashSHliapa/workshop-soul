@@ -5,7 +5,7 @@ export const ItemCard = (props: { post: IPropsNewItems }) => {
   return (
     <div className="item-card">
       <div className="item-card__body">
-        <div className="item-card__image">
+        <div className="item-card__image _image">
           <img src={props.post.image} alt="img" />
         </div>
         <div className="item-card__info">

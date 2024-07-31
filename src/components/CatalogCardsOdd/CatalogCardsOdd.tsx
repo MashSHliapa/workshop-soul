@@ -1,13 +1,11 @@
 import { IPropsCatalogCards } from '../../types/interfaces'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
-import image1 from '../images/newitems/picture6.jpg'
 import './CatalogCards.scss'
 
 export function CatalogCardsOdd({ handleClickOpenSection, ...props }: IPropsCatalogCards) {
   return (
     <div className="card-odd _card-catalog">
       <div className="card-odd__body _body-catalog">
-
         <div className="card-odd__info-catalog info-catalog">
           <div className="info-catalog__icon-and-title">
             <IconAndTitle>{props.name}</IconAndTitle>
@@ -20,7 +18,7 @@ export function CatalogCardsOdd({ handleClickOpenSection, ...props }: IPropsCata
         </div>
 
         <div className="card-odd__image _image-catalog">
-          <img src={image1} alt="image1" />
+          <img src={props.image} alt="image" />
         </div>
 
       </div>

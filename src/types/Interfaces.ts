@@ -33,6 +33,7 @@ export interface IPropsNewItems {
 
 export interface IPropsCatalogCards {
   name: string
+  image: string
   description: string
   handleClickOpenSection: () => void
 }

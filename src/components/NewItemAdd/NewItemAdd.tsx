@@ -15,7 +15,7 @@ export function NewItemAdd(props: { post: IPropsNewItems }) {
     <Link to={`/selected/${props.post.id}`} ref={pageElement}>
       <div className="new-item-add" onClick={handleClickPageWithScroll}>
         <div className="new-item-add__body">
-          <div className="new-item-add__image">
+          <div className="new-item-add__image _image">
             <img src={props.post.image} alt="newitems2" />
           </div>
           <div className="new-item-add__data">

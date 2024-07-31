@@ -5,6 +5,12 @@ import { BijouterieItems } from '../Sections/BijouterieItems'
 import { DecorItems } from '../Sections/DecorItems'
 import { SectionEsotericCards } from '../SectionEsotericCards/SectionEsotericCards'
 import background from '../images/background_catalog.png'
+import bijouterie from '../images/catalog/bijouterie.jpg'
+import decor from '../images/catalog/decor.jpg'
+import esoteric from '../images/catalog/esoterics.jpg'
+import lighting from '../images/catalog/light.jpg'
+import music from '../images/catalog/music.jpg'
+
 import './Catalog.scss'
 
 export function Catalog() {
@@ -24,7 +30,7 @@ export function Catalog() {
     }
     if (cardId === 'esoteric') {
       setIsSectionEsotericOpen(prevState => !prevState);
-      // setIsSectionBijouterieOpen(false);
+      setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
     }
   }
@@ -63,26 +69,26 @@ export function Catalog() {
           </div>
           <div className="catalog__cards">
             <div className="catalog__card">
-              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Бижутерия" description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
+              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Бижутерия" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
                 <BijouterieItems />
               </div>}
             </div>
 
-            {!isSectionEsotericOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoteric')} name="Эзотерика" description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." /> :
+            {!isSectionEsotericOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoteric')} name="Эзотерика" image={esoteric} description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." /> :
               <div className="catalog__section">
                 <SectionEsotericCards />
               </div>}
             <div className="catalog__card">
-              {!isSectionDecorOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('decor')} name="Декор" description="Дом - это то место, куда хочется возвращаться каждый день, место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой." /> : <div
+              {!isSectionDecorOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('decor')} name="Декор" image={decor} description="Дом - это то место, куда хочется возвращаться каждый день, место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой." /> : <div
                 className="catalog__section">
                 <DecorItems />
               </div>}
             </div>
 
-            <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
+            <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
             Насладитесь мягким светом неповторимых ночников 'Soul'" />
 
-            <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
+            <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
           </div>
         </div>
       </div>

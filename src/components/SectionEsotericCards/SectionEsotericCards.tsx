@@ -16,8 +16,8 @@ export const SectionEsotericCards = () => {
           <div className="sectionEsotericCards__title _title-catalog">
             <IconAndTitle>Эзотерика</IconAndTitle>
           </div>
-          <div className="sectionEsotericCards__slider slider-sectionEsotericCards">
-            <div className="slider-sectionEsotericCards slider">
+          <div className="sectionEsotericCards__slider slider-items">
+            <div className="slider-items slider">
               <Slider
                 {...sliderSettings}
               >
