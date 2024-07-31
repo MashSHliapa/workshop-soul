@@ -15,7 +15,7 @@ export function BijouterieItems() {
     <div className="section-items" id="bijouterie">
       <div className="section-items__container _container">
         <div className="section-items__body">
-          <div className="section-items__title">
+          <div className="section-items__title _title-catalog">
             <IconAndTitle>Бижутерия</IconAndTitle>
           </div>
           <div className="section-items__slider slider-items">

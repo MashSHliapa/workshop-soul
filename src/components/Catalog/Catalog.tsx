@@ -2,22 +2,30 @@ import { useEffect, useState } from 'react'
 import { CatalogCardsEven } from '../CatalogCardsEven/CatalogCardsEven'
 import { CatalogCardsOdd } from '../CatalogCardsOdd/CatalogCardsOdd'
 import { BijouterieItems } from '../Sections/BijouterieItems'
-import background from '../images/background_catalog.png'
 import { DecorItems } from '../Sections/DecorItems'
-import './Catalog.scss'
 import { SectionEsotericCards } from '../SectionEsotericCards/SectionEsotericCards'
+import background from '../images/background_catalog.png'
+import './Catalog.scss'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
   const [isSectionDecorOpen, setIsSectionDecorOpen] = useState(false)
+  const [isSectionEsotericOpen, setIsSectionEsotericOpen] = useState(false)
 
   const handleClickOpenSection = (cardId: string) => {
     if (cardId === 'bijouterie') {
       setIsSectionBijouterieOpen(prevState => !prevState);
       setIsSectionDecorOpen(false);
+      setIsSectionEsotericOpen(false);
     } else if (cardId === 'decor') {
       setIsSectionDecorOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
+      setIsSectionEsotericOpen(false);
+    }
+    if (cardId === 'esoteric') {
+      setIsSectionEsotericOpen(prevState => !prevState);
+      // setIsSectionBijouterieOpen(false);
+      setIsSectionDecorOpen(false);
     }
   }
 
@@ -32,9 +40,13 @@ export function Catalog() {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    } else if (isSectionEsotericOpen) {
+      const element = document.getElementById('esoteric');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-  }
-    , [isSectionBijouterieOpen, isSectionDecorOpen])
+  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen])
 
   return (
     <div className="catalog" id="catalog">
@@ -56,8 +68,10 @@ export function Catalog() {
               </div>}
             </div>
 
-            <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoterics')} name="Эзотерика" description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." />
-
+            {!isSectionEsotericOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoteric')} name="Эзотерика" description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." /> :
+              <div className="catalog__section">
+                <SectionEsotericCards />
+              </div>}
             <div className="catalog__card">
               {!isSectionDecorOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('decor')} name="Декор" description="Дом - это то место, куда хочется возвращаться каждый день, место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой." /> : <div
                 className="catalog__section">
@@ -69,7 +83,6 @@ export function Catalog() {
             Насладитесь мягким светом неповторимых ночников 'Soul'" />
 
             <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
-            <SectionEsotericCards />
           </div>
         </div>
       </div>

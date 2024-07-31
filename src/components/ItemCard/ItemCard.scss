@@ -81,7 +81,7 @@
     left: 0;
   }
 
-  &__data {
+  &__info {
     line-height: 150%;
     max-width: 190px;
 
@@ -90,7 +90,7 @@
     }
   }
 
-  &__data>*:not(:last-child) {
+  &__info>*:not(:last-child) {
     margin-bottom: 12px;
 
     @media screen and (max-width: 1199.98px) {

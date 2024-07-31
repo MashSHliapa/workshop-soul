@@ -1,12 +1,3 @@
-.sectionEsotericCards {
-  // padding-top: 30px;
-
-  &__title { //обратить внимание
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-}
-
 .slider-sectionEsotericCards .slick-track {
   position: relative;
   z-index: 1;
@@ -14,14 +5,35 @@
 
 .slider-sectionEsotericCards .slick-arrow {
   top: -10%;
+
+  @media screen and (max-width: 991.98px) {
+    top: -7%;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    top: -7.5%;
+    display: none;
+  }
 }
 
 .slider-sectionEsotericCards .slick-arrow.slick-prev {
   background: url('../images/arrow_rigth.svg') 0 0 / 100% no-repeat;
   left: 87%;
+
+  @media screen and (max-width: 767.98px) {
+    left: 84%;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    left: 72%;
+  }
 }
 
 .slider-sectionEsotericCards .slick-arrow.slick-next {
   background: url('../images/arrow_left.svg') 0 0 / 100% no-repeat;
   right: 5%;
+
+  @media screen and (max-width: 991.98px) {
+    right: 3%;
+  }
 }

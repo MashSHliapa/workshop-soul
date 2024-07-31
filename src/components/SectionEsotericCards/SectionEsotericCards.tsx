@@ -1,11 +1,11 @@
 import Slider from 'react-slick'
+import { sliderSettings } from './sliderSettings'
+import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
+import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
-import image3 from '../images/newitems/picture5.jpg'
-import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
-import { sliderSettings } from './sliderSettings'
-import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
+import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
 import './SectionEsotericCards.scss'
 
 export const SectionEsotericCards = () => {
@@ -13,7 +13,7 @@ export const SectionEsotericCards = () => {
     <div className="sectionEsotericCards">
       <div className="sectionEsotericCards__container">
         <div className="sectionEsotericCards__body">
-          <div className="sectionEsotericCards__title">
+          <div className="sectionEsotericCards__title _title-catalog">
             <IconAndTitle>Эзотерика</IconAndTitle>
           </div>
           <div className="sectionEsotericCards__slider slider-sectionEsotericCards">
@@ -32,7 +32,7 @@ export const SectionEsotericCards = () => {
                   <SectionEsotericCard
                     image={runes}
                     item="Руны"
-                    description="Руны считаются настолько мощными артефактами, что одно лишь их изображение на чём угодно притворяет в жизнь их чудотворные свойства" />
+                    description="Руны считаются настолько мощными артефактами, что одно лишь их изображение притворяет в жизнь их чудотворные свойства" />
                 </div>
 
                 <div className="sectionEsotericCards__card">
@@ -42,12 +42,11 @@ export const SectionEsotericCards = () => {
                     description="Талисман — предмет, который, приносит счастье, удачу и другие желанные вещи" />
                 </div>
 
-
                 <div className="sectionEsotericCards__card">
                   <SectionEsotericCard
-                    image={image3}
+                    image={dreamCatcher}
                     item="Ловцы снов"
-                    description="В каждом завершенном образе можно увидеть 'изюминку'. Это необходимая часть гардероба." />
+                    description="Ловец снов — это особый талисман для защиты от негатива и создания счастливых сновидений" />
                 </div>
               </Slider>
             </div>
