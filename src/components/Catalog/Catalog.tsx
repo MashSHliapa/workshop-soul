@@ -4,6 +4,8 @@ import { CatalogCardsOdd } from '../CatalogCardsOdd/CatalogCardsOdd'
 import { BijouterieItems } from '../Sections/BijouterieItems'
 import { DecorItems } from '../Sections/DecorItems'
 import { SectionEsotericCards } from '../SectionEsotericCards/SectionEsotericCards'
+import { ForderProducts } from '../Sections/forgedProducts'
+import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
 import background from '../images/background_catalog.png'
 import bijouterie from '../images/catalog/bijouterie.jpg'
 import decor from '../images/catalog/decor.jpg'
@@ -11,9 +13,7 @@ import esoteric from '../images/catalog/esoterics.jpg'
 import lighting from '../images/catalog/light.jpg'
 import music from '../images/catalog/music.jpg'
 import forgedProducts from '../images/catalog/forged_products.jpg'
-
 import './Catalog.scss'
-import { ForderProducts } from '../Sections/forgedProducts'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -48,23 +48,11 @@ export function Catalog() {
   }
 
   useEffect(() => {
-    if (isSectionBijouterieOpen) {
-      const element = document.getElementById('bijouterie');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } if (isSectionDecorOpen) {
-      const element = document.getElementById('decor');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } if (isSectionEsotericOpen) {
-      const element = document.getElementById('esoteric');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen])
+    catalogSectionsScroll(isSectionBijouterieOpen, 'bijouterie')
+    catalogSectionsScroll(isSectionDecorOpen, 'decor')
+    catalogSectionsScroll(isSectionEsotericOpen, 'esoteric')
+    catalogSectionsScroll(isSectionforgedProductsOpen, 'forgedProducts')
+  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen])
 
   return (
     <div className="catalog" id="catalog">
