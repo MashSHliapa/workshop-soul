@@ -15,9 +15,9 @@ export const SectionEsotericCard = (props: IPropsSectionEsotericCard) => {
             <div className="section-esoteric-card__text">{props.description}</div>
           </div>
         </div>
-        <div className="section-esoteric-card__button _button">
-          <a href="#">Смотреть</a>
-        </div>
+        <button className="section-esoteric-card__button _button" onClick={() => window.location.href = "#"}>
+          Смотреть
+        </button>
       </div>
     </div>
   )

@@ -1,7 +1,5 @@
 .trade-fairs {
-  background-color: antiquewhite;
-
-  &__container {}
+  background-color: #ededed;
 
   &__body {
     line-height: 1.35;
@@ -37,7 +35,6 @@
       margin: 10px 0 10px;
     }
   }
-
 
   @media screen and (max-width: 575.98px) {
     &__body {

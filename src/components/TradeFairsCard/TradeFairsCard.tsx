@@ -7,7 +7,7 @@ export function TradeFairsCard(props: {post: IPropsTradeCard}) {
     <div className="fairs-card">
       <div className="fairs-card__body">
         <div className="fairs-card__info-fairs info-fairs">
-          <div className="info-fairs__image">
+          <div className="info-fairs__image _image">
             <img src={props.post.image} alt="img" />
           </div>
           <div className="info-fairs__name">

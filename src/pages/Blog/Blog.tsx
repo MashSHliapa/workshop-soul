@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import image from '../../components/images/blog_image.png'
@@ -19,9 +20,9 @@ export function Blog() {
                 </div>
                 <h5 className="card-blog__subtitle">ТЕКСТ О ТЕБЕ: Об обучении, об улечениях, о развитии... имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения. Но его германские корни очевидны – jahr-markt – ежегодный рынок, регулярные торжища широкого значения.</h5>
               </div>
-              <div className="card-blog__button _button">
-                <a href="#">Читать далее</a>
-              </div>
+              <button className="card-blog__button _button">
+                Читать далее
+              </button>
             </div>
 
             <div className="blog__card-blog card-blog">
@@ -32,9 +33,9 @@ export function Blog() {
                 <h5 className="card-blog__subtitle">Ярмарки имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения. Но его германские корни очевидны – jahr-markt – ежегодный рынок, регулярные торжища широкого значения.</h5>
                 <div className="card-blog__date">Опубликовано 5 мая, 2024</div>
               </div>
-              <div className="card-blog__button _button">
-                <a href="#">Читать далее</a>
-              </div>
+              <button className="card-blog__button _button">
+                <NavLink to="/selected/1/blog/tradeFairs">Читать далее</NavLink>
+              </button>
             </div>
           </div>
         </div>

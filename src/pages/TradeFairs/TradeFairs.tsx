@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
-import { TradeFairsCard } from '../../components/TradeFairsCard'
+import { TradeFairsCard } from '../../components/TradeFairsCard/TradeFairsCard'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
-import { RootState } from '../../redux/store'
 import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
+import { RootState } from '../../redux/store'
 import './TradeFairs.scss'
 
 export function TradeFairs() {

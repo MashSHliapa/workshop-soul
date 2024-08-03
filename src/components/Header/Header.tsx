@@ -1,5 +1,5 @@
+import { NavLink } from 'react-router-dom'
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu'
-import { LinkBlog } from '../LinkBlog/LinkBlog'
 import { LinkContacts } from '../LinkContacts/LinkContacts'
 import { Logo } from '../Logo/Logo'
 import { Name } from '../Name/Name'
@@ -20,12 +20,14 @@ export function Header() {
           </div>
           <div className="header__navbar">
             <ul className="header__list">
-              <li className="header__item">
-                <LinkContacts />
-              </li>
-              <li className="header__item">
-                <LinkBlog />
-              </li>
+              <NavLink to="/selected/1" className="header__item">
+                <div onClick={() => window.location.href = "#contacts"}>
+                  <LinkContacts />
+                </div>
+              </NavLink>
+              <NavLink to="/selected/1/blog" className="header__item">
+                Блог
+              </NavLink>
             </ul>
           </div>
           <div className="header__burger">

@@ -1,5 +1,8 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
+import { Blog } from "./pages/Blog/Blog";
+import { TradeFairs } from "./pages/TradeFairs/TradeFairs";
+import { Main } from "./components/Main/Main";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +14,15 @@ export const router = createBrowserRouter([
       },
       {
         path: 'selected/:newItemId',
-        element: <></>,
+        element: <Main />,
+      },
+      {
+        path: 'selected/:newItemId/blog',
+        element: <Blog />,
+      },
+      {
+        path: 'selected/:newItemId/blog/tradeFairs',
+        element: <TradeFairs />,
       },
     ]
   }

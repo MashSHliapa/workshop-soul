@@ -1,4 +1,4 @@
-import { LinkBlog } from '../LinkBlog/LinkBlog'
+import { NavLink } from 'react-router-dom'
 import { LinkCatalog } from '../LinkCatalog/LinkCatalog'
 import { LinkContacts } from '../LinkContacts/LinkContacts'
 import { LinkNewItems } from '../LinkNewItems/LinkNewItems'
@@ -9,9 +9,9 @@ export function Navbar() {
     <div className="navbar">
       <nav className="navbar__body">
         <ul className="navbar__list">
-          <li className="navbar__item">
-            <LinkBlog />
-          </li>
+          <NavLink to="/selected/1/blog" className="navbar__item">
+            Блог
+          </NavLink>
           <li className="navbar__item">
             <LinkContacts />
           </li>
