@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { InstagramAndVK } from '../InstagramAndVK/InstagramAndVK'
 import './NoneEventsCard.scss'
 
@@ -12,7 +13,7 @@ export function NoneEventsCard() {
         </div>
         <p className="none-events-card__text">А что бы не скучать, переходите в каталог и закажите что-то для себя!</p>
         <p className="none-events-card__link">
-          <a href="#catalog">перейти в каталог</a>
+          <NavLink to="/catalog">перейти в каталог</NavLink>
         </p>
       </div>
     </div>

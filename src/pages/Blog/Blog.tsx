@@ -34,7 +34,7 @@ export function Blog() {
                 <div className="card-blog__date">Опубликовано 5 мая, 2024</div>
               </div>
               <button className="card-blog__button _button">
-                <NavLink to="/selected/1/blog/tradeFairs">Читать далее</NavLink>
+                <NavLink to="/blog/tradeFairs">Читать далее</NavLink>
               </button>
             </div>
           </div>

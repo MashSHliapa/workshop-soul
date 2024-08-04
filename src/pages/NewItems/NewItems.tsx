@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { RootState } from '../../redux/store'
 import Slider from 'react-slick';
 import { sliderSettings } from './sliderSettings';
-import { NewItemAdd } from '../NewItemAdd/NewItemAdd'
-import { NewItem } from '../NewItem/NewItem'
+import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
+import { NewItem } from '../../components/NewItem/NewItem'
 import { IPropsNewItems } from '../../types/interfaces';
 import './NewItems.scss'
 

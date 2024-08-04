@@ -3,6 +3,9 @@ import { Layout } from "./components/Layout/Layout";
 import { Blog } from "./pages/Blog/Blog";
 import { TradeFairs } from "./pages/TradeFairs/TradeFairs";
 import { Main } from "./components/Main/Main";
+import { Contacts } from "./pages/Contacts/TradeFairs";
+import { NewItems } from "./pages/NewItems/NewItems";
+import { Catalog } from "./pages/Catalog/Catalog";
 
 export const router = createBrowserRouter([
   {
@@ -17,12 +20,24 @@ export const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: 'selected/:newItemId/blog',
+        path: 'blog',
         element: <Blog />,
       },
       {
-        path: 'selected/:newItemId/blog/tradeFairs',
+        path: 'blog/tradeFairs',
         element: <TradeFairs />,
+      },
+      {
+        path: 'newItems/:newItemId',
+        element: <NewItems />,
+      },
+      {
+        path: 'catalog',
+        element: <Catalog />,
+      },
+      {
+        path: 'contacts',
+        element: <Contacts />,
       },
     ]
   }

@@ -1,12 +1,11 @@
+import { InstagramAndVK } from '../../components/InstagramAndVK/InstagramAndVK'
 import background from '../../components/images/contacts/background_contacts.png'
-import icon from '../images/icon_eye_contacts.svg'
+import icon from '../../components/images/icon_eye_contacts.svg'
 import image_parachute from '../../components/images/contacts/contacts_image.png'
 import image_box from '../../components/images/contacts/contacts_box.png'
 import viber from '../../components/images/contacts/viber.svg'
-import instagram from '../../components/images/contacts/instagram.svg'
-import vk from '../../components/images/contacts/vk.svg'
 import './contacts.scss'
-import { InstagramAndVK } from '../InstagramAndVK/InstagramAndVK'
+
 
 export function Contacts() {
   return (
