@@ -1,5 +1,5 @@
 import { Catalog } from '../../pages/Catalog/Catalog'
-import { Contacts } from '../../pages/Contacts/TradeFairs'
+import { Contacts } from '../../pages/Contacts/Contacts'
 import { NewItems } from '../../pages/NewItems/NewItems'
 import { Tagline } from '../Tagline'
 import dowm from '../images/main_down.png'

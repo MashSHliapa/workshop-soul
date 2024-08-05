@@ -1,0 +1,23 @@
+.breadCrumbs {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item,
+  &__slash {
+    color: #757575;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__item:not(:last-child):hover,
+  &__item_active {
+    color: black;
+  }
+
+  &__slash {
+    padding: 0 5px;
+  }
+}
