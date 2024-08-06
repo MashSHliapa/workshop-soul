@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import { TradeFairsCard } from '../../components/TradeFairsCard/TradeFairsCard'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { RootState } from '../../redux/store'
 import './TradeFairs.scss'
 
@@ -10,10 +11,19 @@ export function TradeFairs() {
 
   const tradeFairsPage = posts.map((item) => <TradeFairsCard key={item.id} post={item} />)
 
+  const breadCrumbs = [
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' },
+    { name: 'Ярмарки', path: '/tradeFairs' }
+  ]
+
   return (
     <div className="trade-fairs">
       <div className="trade-fairs__container _container">
         <div className="trade-fairs__body">
+          <div className="trade-fairs__breadCrumbs">
+            <BreadCrumbs crumbs={breadCrumbs} />
+          </div>
           <div className="trade-fairs__title">
             <TitleBlog>Ярмарки</TitleBlog>
           </div>

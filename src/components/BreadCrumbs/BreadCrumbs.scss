@@ -10,6 +10,10 @@
     color: #757575;
     font-weight: 500;
     line-height: 1.5;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 16px;
+    }
   }
 
   &__item:not(:last-child):hover,

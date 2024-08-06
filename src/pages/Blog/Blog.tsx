@@ -3,12 +3,19 @@ import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import image from '../../components/images/blog_image.png'
 import './Blog.scss'
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 
 export function Blog() {
+  const breadCrumbs = [
+    { name: 'Главная', path: '/' },
+    { name: 'Блог', path: '/blog' }
+  ]
+
   return (
-    <div className="blog" id="blog">
+    <div className="blog">
       <div className="blog__container _container">
         <div className="blog__body">
+          <BreadCrumbs crumbs={breadCrumbs} />
           <div className="blog__title">
             <TitleBlog>Рубрика: Блог</TitleBlog>
           </div>
@@ -43,6 +50,6 @@ export function Blog() {
       <div className='blog__background _ibg'>
         <img src={image} alt="background" />
       </div>
-    </div>
+    </div >
   )
 }

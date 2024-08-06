@@ -12,14 +12,27 @@
     text-align: center;
   }
 
-
   @media screen and (max-width: 767.98px) {
+    &__body {
+      padding: 40px 0px 20px;
+    }
+
     &__title {
-      margin: 0;
+      margin: 30px 0 10px;
     }
 
     &__cards-blog {
       margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    &__body {
+      padding: 15px 10px 20px;
+    }
+
+    &__title {
+      margin: 20px 0 10px;
     }
   }
 }
