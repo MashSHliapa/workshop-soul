@@ -18,7 +18,7 @@ export function Footer() {
             </div>
           </div>
           <div className="footer__navbar">
-            <Navbar />
+            <Navbar blog="Блог" contacts="Контакты / Доставка" newItems="Новинки" catalog="Каталог изделий" />
           </div>
           <p className="footer__copyright">Все права защищены 2024</p>
         </div>

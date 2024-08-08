@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu'
 import { Logo } from '../Logo/Logo'
 import { Name } from '../Name/Name'
+import { Navbar } from '../Navbar/Navbar'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import './Header.scss'
 
@@ -23,20 +24,7 @@ export function Header() {
             </div>
           </NavLink>
           <div className="header__navbar">
-            <ul className="header__list">
-              {pathnameMainPage(location) ? (
-                <div className="header__item" style={{ cursor: 'pointer' }} onClick={() => window.location.href = "#contacts"}>
-                  Контакты / Доставка
-                </div>
-              ) : (
-                <NavLink to="contacts" className="header__item">
-                  Контакты / Доставка
-                </NavLink>
-              )}
-              <NavLink to="blog" className="header__item">
-                Блог
-              </NavLink>
-            </ul>
+            <Navbar blog="Блог" contacts="Контакты" newItems="Новинки" catalog="Каталог" />
           </div>
           <div className="header__burger">
             <BurgerMenu />

@@ -43,3 +43,10 @@ export interface IPropsSectionEsotericCard {
   item: string
   description: string
 }
+
+export interface IPropsNavbar {
+  blog: string
+  contacts: string
+  newItems: string
+  catalog: string
+}

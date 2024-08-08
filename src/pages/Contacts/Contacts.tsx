@@ -6,7 +6,6 @@ import image_box from '../../components/images/contacts/contacts_box.png'
 import viber from '../../components/images/contacts/viber.svg'
 import './Contacts.scss'
 
-
 export function Contacts() {
   return (
     <div className="contacts" id="contacts">

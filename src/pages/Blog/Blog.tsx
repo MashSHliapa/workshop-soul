@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import image from '../../components/images/blog_image.png'
 import './Blog.scss'
-import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 
 export function Blog() {
   const breadCrumbs = [

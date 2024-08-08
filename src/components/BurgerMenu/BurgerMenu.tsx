@@ -11,11 +11,9 @@ export function BurgerMenu() {
 
     const burgerIcon = document.querySelector('.burger-menu__icon')
     burgerIcon?.classList.toggle('_active')
-    console.log('burger')
 
     const navbarBody = document.querySelector('.navbar__body')
     navbarBody?.classList.toggle('_active')
-    console.log('navbar')
   }
 
   useEffect(() => {
@@ -39,7 +37,7 @@ export function BurgerMenu() {
       </div>
       <div className={`nav ${isOpenNavbar ? 'nav__display-block' : 'nav__display-none'}`}>
         <div className="burger-menu__navbar">
-          <Navbar />
+          <Navbar blog="Блог" contacts="Контакты / Доставка" newItems="Новинки" catalog="Каталог изделий" />
         </div>
       </div>
     </nav>

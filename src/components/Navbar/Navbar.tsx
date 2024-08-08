@@ -1,8 +1,9 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
+import { IPropsNavbar } from '../../types/interfaces'
 import './Navbar.scss'
 
-export function Navbar() {
+export function Navbar(props: IPropsNavbar) {
 
   const location = useLocation()
   pathnameMainPage(location)
@@ -11,37 +12,37 @@ export function Navbar() {
     <div className="navbar">
       <nav className="navbar__body">
         <ul className="navbar__list">
-          <NavLink to="blog" className="navbar__item navbar__item_blog-link">
-            Блог
+          <NavLink to="blog" className="navbar__item">
+            {props.blog}
           </NavLink>
 
           {pathnameMainPage(location) ? (
-            <div className="navbar__item" onClick={() => window.location.href = "#contacts"}>
-              Контакты / Доставка
-            </div>
+            <li className="navbar__item" onClick={() => window.location.href = "#contacts"}>
+              {props.contacts}
+            </li>
           ) : (
             <NavLink to="contacts" className="navbar__item">
-              Контакты / Доставка
+              {props.contacts}
             </NavLink>
           )}
 
           {pathnameMainPage(location) ? (
-            <div className="navbar__item navbar__item_new-items" onClick={() => window.location.href = "#new-items"}>
-              Новинки
-            </div>
+            <li className="navbar__item" onClick={() => window.location.href = "#new-items"}>
+              {props.newItems}
+            </li>
           ) : (
-            <NavLink to="newItems/1" className="navbar__item navbar__item_new-items">
-              Новинки
+            <NavLink to="newItems/1" className="navbar__item">
+              {props.newItems}
             </NavLink>
           )}
 
           {pathnameMainPage(location) ? (
-            <div className="navbar__item" onClick={() => window.location.href = "#catalog"}>
-              Католог изделий
-            </div>
+            <li className="navbar__item" onClick={() => window.location.href = "#catalog"}>
+              {props.catalog}
+            </li>
           ) : (
             <NavLink to="catalog" className="navbar__item">
-              Католог изделий
+              {props.catalog}
             </NavLink>
           )}
         </ul>

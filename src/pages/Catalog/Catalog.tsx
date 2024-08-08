@@ -19,7 +19,7 @@ export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
   const [isSectionDecorOpen, setIsSectionDecorOpen] = useState(false)
   const [isSectionEsotericOpen, setIsSectionEsotericOpen] = useState(false)
-  const [ isSectionforgedProductsOpen, setIsSectionforgedProductsOpen ] = useState(false)
+  const [isSectionforgedProductsOpen, setIsSectionforgedProductsOpen] = useState(false)
 
   const handleClickOpenSection = (cardId: string) => {
     if (cardId === 'bijouterie') {

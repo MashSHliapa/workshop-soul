@@ -11,6 +11,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 50px 0;
+
+    @media screen and (max-width: 1199.98px) {
+      padding: 60px 100px 30px;
+    }
+
+    @media screen and (max-width: 991.98px) {
+      padding: 60px 60px 30px;
+      gap: 40px 0;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      padding: 50px 60px 20px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      padding: 30px 30px 15px;
+      gap: 15px 0;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__brand {
@@ -18,32 +38,83 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+
+    @media screen and (max-width: 991.98px) {
+      justify-content: start;
+      padding-top: 10px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      padding-top: 10px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      align-items: center;
+    }
   }
 
   &__logo {
     max-width: 154px;
+
+    @media screen and (max-width: 767.98px) {
+      max-width: 140px;
+    }
   }
 
   &__name {
     font-size: 14px;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 12px;
+    }
   }
 
   &__name span {
     font-size: 14.5px;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 12.5px;
+    }
   }
 
   &__navbar {
-    text-align: end;
+    @media screen and (max-width: 991.98px) {
+      font-size: 16px;
+    }
   }
 
-  &__navbar li:not(:last-child) {
-    margin-bottom: 5px;
+  &__navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    @media screen and (max-width: 575.98px) {
+      align-items: center;
+    }
+  }
+
+  &__navbar ul>*:not(:first-child) {
+    margin-top: 12px;
+  }
+
+  &__navbar ul>*:nth-child(3) {
+    text-transform: uppercase;
+    padding-top: 3px;
   }
 
   &__copyright {
     flex: 0 1 100%;
     font-size: 16px;
     text-align: center;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 8px;
+      margin-top: 15px;
+    }
   }
 
   &__background {
@@ -52,79 +123,5 @@
     left: 0;
     width: 100%;
     height: 100%;
-  }
-
-  @media screen and (max-width: 1199.98px) {
-    &__body {
-      padding: 60px 100px 30px;
-    }
-  }
-
-  @media screen and (max-width: 991.98px) {
-    &__body {
-      padding: 60px 60px 30px;
-      gap: 40px 0;
-    }
-
-    &__brand {
-      justify-content: start;
-      padding-top: 10px;
-    }
-
-    &__navbar {
-      font-size: 16px;
-    }
-
-    &__navbar li:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    &__copyright {
-      font-size: 12px;
-    }
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__body {
-      padding: 50px 60px 20px;
-    }
-
-    &__brand {
-      padding-top: 10px;
-    }
-
-    &__logo {
-      max-width: 140px;
-    }
-
-    &__name {
-      font-size: 12px;
-    }
-
-    &__name span {
-      font-size: 12.5px;
-    }
-  }
-
-  @media screen and (max-width: 575.98px) {
-    &__body {
-      padding: 30px 30px 15px;
-      gap: 15px 0;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__brand {
-      align-items: center;
-    }
-
-    &__navbar {
-      text-align: center;
-    }
-
-    &__copyright {
-      font-size: 8px;
-      margin-top: 15px;
-    }
   }
 }
