@@ -1,4 +1,7 @@
+import { useLocation } from 'react-router-dom'
 import { InstagramAndVK } from '../../components/InstagramAndVK/InstagramAndVK'
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
+import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import background from '../../components/images/contacts/background_contacts.png'
 import icon from '../../components/images/icon_eye_contacts.svg'
 import image_parachute from '../../components/images/contacts/contacts_image.png'
@@ -7,10 +10,24 @@ import viber from '../../components/images/contacts/viber.svg'
 import './Contacts.scss'
 
 export function Contacts() {
+  const location = useLocation()
+  pathnameMainPage(location)
+
+  const breadCrumbs = [
+    { name: 'Главная', path: '/' },
+    { name: 'Контакты', path: '/contacts' }
+  ]
+
   return (
     <div className="contacts" id="contacts">
       <div className="contacts__container _container">
+
         <div className="contacts__body">
+          {!pathnameMainPage(location) && (
+            <div className="contacts__breadCrumbs">
+              <BreadCrumbs crumbs={breadCrumbs} />
+            </div>
+          )}
           <div className="contacts__info">
             <div className="contacts__text-question">Вам что-то понравилось?</div>
             <div className="contacts__slogan">Закажи с доставкой любое изделие!</div>
