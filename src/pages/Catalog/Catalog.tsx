@@ -5,7 +5,10 @@ import { BijouterieItems } from '../../components/Sections/BijouterieItems'
 import { DecorItems } from '../../components/Sections/DecorItems'
 import { SectionEsotericCards } from '../../components/SectionEsotericCards/SectionEsotericCards'
 import { ForderProducts } from '../../components/Sections/forgedProducts'
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
+import { GoToTop } from '../../components/GoToTop/GoToTop'
 import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
+import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import background from '../../components/images/background_catalog.png'
 import bijouterie from '../../components/images/catalog/bijouterie.jpg'
 import decor from '../../components/images/catalog/decor.jpg'
@@ -54,10 +57,24 @@ export function Catalog() {
     catalogSectionsScroll(isSectionforgedProductsOpen, 'forgedProducts')
   }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen])
 
+  const breadCrumbs = [
+    { name: 'Главная', path: '/' },
+    { name: 'Каталог', path: '/catalog' }
+  ]
+
   return (
     <div className="catalog" id="catalog">
       <div className="catalog__container _container">
         <div className="catalog__body">
+          {!pathnameMainPage(location) ? (
+            <div className="catalog__breadCrumbs">
+              <BreadCrumbs crumbs={breadCrumbs} />
+            </div>
+          ) : (
+            <div className="catalog__goToTop">
+              <GoToTop />
+            </div>
+          )}
           <div className="catalog__row">
             <div className="catalog__column">
               <div className="catalog__title">КАТАЛОГ <span> изделий</span></div>

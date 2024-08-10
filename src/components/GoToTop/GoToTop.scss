@@ -1,0 +1,12 @@
+.goToTop {
+  display: inline-flex;
+  align-items: center;
+
+  @media screen and (max-width: 767.98px) {
+    font-size: 16px;
+  }
+
+  &__title {
+    margin-right: 10px;
+  }
+}

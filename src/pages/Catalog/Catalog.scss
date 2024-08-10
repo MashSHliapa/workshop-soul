@@ -5,6 +5,45 @@
   &__body {
     padding: 60px 0 142px;
     line-height: 1.5;
+
+    @media screen and (max-width: 767.98px) {
+      padding: 40px 0 65px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      padding: 40px 0 40px;
+    }
+  }
+
+  &__breadCrumbs,
+  &__goToTop {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__breadCrumbs {
+    margin: -20px 0 50px;
+
+    @media screen and (max-width: 767.98px) {
+      margin: 0px 0 20px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin: -25px 0 30px;
+    }
+  }
+
+  &__goToTop {
+    text-align: center;
+    margin: -20px 0 50px;
+
+    @media screen and (max-width: 767.98px) {
+      margin: 0px 0 20px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin: -25px 0 20px;
+    }
   }
 
   &__row {
@@ -13,11 +52,30 @@
     justify-content: center;
     align-items: end;
     margin-bottom: 115px;
+
+    @media screen and (max-width: 767.98px) {
+      flex-wrap: wrap;
+      padding: 0 30px;
+      margin-bottom: 65px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      padding: 0 15px;
+      margin-bottom: 40px;
+    }
   }
 
   &__column {
     flex-grow: 1;
     flex-shrink: 1;
+
+    @media screen and (max-width: 767.98px) {
+      width: 490px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      max-width: 370px;
+    }
   }
 
   &__title {
@@ -25,12 +83,36 @@
     text-transform: uppercase;
     line-height: 1.1;
     font-weight: 700;
+
+    @media screen and (max-width: 1199.98px) {
+      font-size: 100px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 90px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 50px;
+    }
   }
 
   &__title span {
     font-size: 67px;
     display: block;
     text-align: end;
+
+    @media screen and (max-width: 1199.98px) {
+      font-size: 55px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 55px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 32px;
+    }
   }
 
   &__section {
@@ -44,6 +126,7 @@
     0% {
       transform: translateX(100%);
     }
+
     100% {
       transform: translateX(0);
     }
@@ -53,6 +136,15 @@
     color: #909090;
     font-size: 20px;
     text-align: end;
+
+    @media screen and (max-width: 767.98px) {
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 16px;
+      margin-top: 5px;
+    }
   }
 
   &__separator {
@@ -60,10 +152,30 @@
     height: 3px;
     background-color: #18362B;
     margin: 3px 0 10px;
+
+    @media screen and (max-width: 1199.98px) {
+      margin: 3px 0 8px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      margin: 0px 0 0px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin: 0px 0 0px;
+    }
   }
 
   &__cards>*:not(:last-child) {
     margin-bottom: 40px;
+
+    @media screen and (max-width: 991.98px) {
+      margin-bottom: 70px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin-bottom: 40px;
+    }
   }
 
   &__background {
@@ -72,91 +184,5 @@
     left: 0;
     width: 100%;
     height: 100%;
-  }
-
-  @media screen and (max-width: 1199.98px) {
-    &__title {
-      font-size: 100px;
-    }
-
-    &__title span {
-      font-size: 55px;
-    }
-
-    &__separator {
-      margin: 3px 0 8px;
-    }
-  }
-
-  @media screen and (max-width: 991.98px) {
-    &__cards>*:not(:last-child) {
-      margin-bottom: 70px;
-    }
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__body {
-      padding: 40px 0 65px;
-    }
-
-    &__row {
-      flex-wrap: wrap;
-      padding: 0 30px;
-    }
-
-    &__column {
-      width: 490px;
-    }
-
-    &__title {
-      font-size: 90px;
-    }
-
-    &__title span {
-      font-size: 55px;
-    }
-
-    &__subtitle {
-      margin-top: 15px;
-    }
-
-    &__separator {
-      margin: 0px 0 0px;
-    }
-  }
-
-  @media screen and (max-width: 575.98px) {
-    &__body {
-      padding: 40px 0 40px;
-    }
-
-    &__row {
-      padding: 0 15px;
-    }
-
-    &__column {
-      max-width: 370px;
-    }
-
-    &__title {
-      font-size: 50px;
-    }
-
-    &__title span {
-      font-size: 32px;
-    }
-
-    &__subtitle {
-      font-size: 16px;
-      margin-top: 5px;
-    }
-
-    &__separator {
-      margin: 0px 0 0px;
-    }
-
-    &__cards>*:not(:last-child) {
-      margin-bottom: 40px;
-    }
   }
 }

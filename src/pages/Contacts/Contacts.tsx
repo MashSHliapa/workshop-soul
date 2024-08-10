@@ -1,6 +1,6 @@
-import { useLocation } from 'react-router-dom'
 import { InstagramAndVK } from '../../components/InstagramAndVK/InstagramAndVK'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
+import { GoToTop } from '../../components/GoToTop/GoToTop'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import background from '../../components/images/contacts/background_contacts.png'
 import icon from '../../components/images/icon_eye_contacts.svg'
@@ -10,9 +10,6 @@ import viber from '../../components/images/contacts/viber.svg'
 import './Contacts.scss'
 
 export function Contacts() {
-  const location = useLocation()
-  pathnameMainPage(location)
-
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
     { name: 'Контакты', path: '/contacts' }
@@ -21,11 +18,14 @@ export function Contacts() {
   return (
     <div className="contacts" id="contacts">
       <div className="contacts__container _container">
-
         <div className="contacts__body">
-          {!pathnameMainPage(location) && (
+          {!pathnameMainPage(location) ? (
             <div className="contacts__breadCrumbs">
               <BreadCrumbs crumbs={breadCrumbs} />
+            </div>
+          ) : (
+            <div className="contacts__goToTop">
+              <GoToTop />
             </div>
           )}
           <div className="contacts__info">

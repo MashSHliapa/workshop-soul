@@ -16,6 +16,15 @@
     }
   }
 
+  &__goToTop {
+    text-align: center;
+    margin: -50px 0 20px;
+
+    @media screen and (max-width: 575.98px) {
+      margin: -75px 0 20px;
+    }
+  }
+
   &__info {
     font-size: 24px;
     text-align: end;
