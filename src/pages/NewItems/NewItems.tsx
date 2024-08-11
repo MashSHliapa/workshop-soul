@@ -1,12 +1,14 @@
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { RootState } from '../../redux/store'
-import Slider from 'react-slick';
-import { sliderSettings } from './sliderSettings';
+import Slider from 'react-slick'
+import { sliderSettings } from './sliderSettings'
 import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
 import { NewItem } from '../../components/NewItem/NewItem'
-import { IPropsNewItems } from '../../types/interfaces';
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
+import { pathnameMainPage } from '../../helpers/pathnameMainPage'
+import { IPropsNewItems } from '../../types/interfaces'
 import './NewItems.scss'
 
 export function NewItems() {
@@ -25,30 +27,42 @@ export function NewItems() {
 
   const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== newItemId)
 
+  const breadCrumbs = [
+    { name: 'Главная', path: '/' },
+    { name: 'Новинки', path: '/new-items' }
+  ]
+
   return (
     <div className="new-items" id="new-items">
       <div className="new-items__container _container">
         <div className="new-items__body">
-          <NewItem />
-          <div className="new-items__info info">
-            <div className="info__body">
-              <div className="info__chapter">
-                <div className="info__text">Новинки</div>
-                <div className="info__separator"></div>
-              </div>
-              <div className="info__description">
-                <h3 className="info__title">{newItem?.item} <span>{newItem?.name}</span></h3>
-                <div className="info__subtitle">
-                  {newItem?.description}
+          {!pathnameMainPage(location) && (
+            <div className="new-items__breadCrumbs">
+              <BreadCrumbs crumbs={breadCrumbs} />
+            </div>
+          )}
+          <div className="new-items__box">
+            <NewItem />
+            <div className="new-items__info info">
+              <div className="info__body">
+                <div className="info__chapter">
+                  <div className="info__text">Новинки</div>
+                  <div className="info__separator"></div>
+                </div>
+                <div className="info__description">
+                  <h3 className="info__title">{newItem?.item} <span>{newItem?.name}</span></h3>
+                  <div className="info__subtitle">
+                    {newItem?.description}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="info__slider slider-newItems">
-              <div className="slider-newItems slider">
-                <Slider
-                  {...sliderSettings}>
-                  {itemsWithoutReceivedItem}
-                </Slider>
+              <div className="info__slider slider-newItems">
+                <div className="slider-newItems slider">
+                  <Slider
+                    {...sliderSettings}>
+                    {itemsWithoutReceivedItem}
+                  </Slider>
+                </div>
               </div>
             </div>
           </div>
