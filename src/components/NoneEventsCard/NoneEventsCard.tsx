@@ -13,7 +13,7 @@ export function NoneEventsCard() {
         </div>
         <p className="none-events-card__text">А что бы не скучать, переходите в каталог и закажите что-то для себя!</p>
         <p className="none-events-card__link">
-          <NavLink to="/catalog">перейти в каталог</NavLink>
+          <NavLink to="/catalog" target="_top">перейти в каталог</NavLink>
         </p>
       </div>
     </div>

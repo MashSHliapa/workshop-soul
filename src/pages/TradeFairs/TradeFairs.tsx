@@ -31,7 +31,7 @@ export function TradeFairs() {
           <ul className="cakes__list d-flex flex-wrap justify-content-center gap-5 m-3">
             {tradeFairsPage}
           </ul>
-          <NoneEventsCard />
+          {posts.length === 0 && <NoneEventsCard />}
         </div>
       </div>
     </div>

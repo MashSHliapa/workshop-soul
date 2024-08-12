@@ -7,45 +7,39 @@
     text-align: center;
     max-width: 755px;
     margin: 0 auto;
+
+    @media screen and (max-width: 991.98px) {
+      padding: 40px 10px 50px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      padding: 15px 0px 40px;
+    }
   }
 
   &__title {
     text-transform: uppercase;
     margin: 40px 0;
+
+    @media screen and (max-width: 991.98px) {
+      margin: 30px 0 40px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      margin: 30px 0 10px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin: 20px 0 20px;
+    }
   }
 
   &__subtitle {
     color: #2A2A2A;
     margin-bottom: 50px;
     font-weight: 500;
-  }
 
-  @media screen and (max-width: 991.98px) {
-    &__body {
-      padding: 40px 10px 50px;
-    }
-
-    &__title {
-      margin: 30px 0 40px;
-    }
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__title {
-      margin: 30px 0 10px;
-    }
-  }
-
-  @media screen and (max-width: 575.98px) {
-    &__body {
-      padding: 15px 0px 40px;
-    }
-
-    &__title {
-      margin: 20px 0 20px;
-    }
-
-    &__subtitle {
+    @media screen and (max-width: 575.98px) {
       font-size: 16px; // по проекту 18
     }
   }

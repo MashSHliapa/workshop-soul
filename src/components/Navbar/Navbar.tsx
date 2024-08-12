@@ -12,7 +12,7 @@ export function Navbar(props: IPropsNavbar) {
     <div className="navbar">
       <nav className="navbar__body">
         <ul className="navbar__list">
-          <NavLink to="blog" className="navbar__item">
+          <NavLink to="blog" target="_top" className="navbar__item">
             {props.blog}
           </NavLink>
 
@@ -21,7 +21,7 @@ export function Navbar(props: IPropsNavbar) {
               {props.contacts}
             </li>
           ) : (
-            <NavLink to="contacts" className="navbar__item">
+            <NavLink to="contacts" target="_top" className="navbar__item">
               {props.contacts}
             </NavLink>
           )}
@@ -31,7 +31,7 @@ export function Navbar(props: IPropsNavbar) {
               {props.newItems}
             </li>
           ) : (
-            <NavLink to="newItems/1" className="navbar__item">
+            <NavLink to="newItems/1" target="_top" className="navbar__item">
               {props.newItems}
             </NavLink>
           )}
@@ -41,7 +41,7 @@ export function Navbar(props: IPropsNavbar) {
               {props.catalog}
             </li>
           ) : (
-            <NavLink to="catalog" className="navbar__item">
+            <NavLink to="catalog" target="_top" className="navbar__item">
               {props.catalog}
             </NavLink>
           )}
