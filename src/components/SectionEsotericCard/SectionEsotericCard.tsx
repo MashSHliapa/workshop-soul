@@ -1,7 +1,7 @@
 import { IPropsSectionEsotericCard } from '../../types/interfaces'
 import './SectionEsotericCard.scss'
 
-export const SectionEsotericCard = (props: IPropsSectionEsotericCard) => {
+export const SectionEsotericCard = ({ handleClickOpenSection, ...props }: IPropsSectionEsotericCard) => {
   return (
     <div className="section-esoteric-card">
       <div className="section-esoteric-card__body">
@@ -15,7 +15,7 @@ export const SectionEsotericCard = (props: IPropsSectionEsotericCard) => {
             <div className="section-esoteric-card__text">{props.description}</div>
           </div>
         </div>
-        <button className="section-esoteric-card__button _button" onClick={() => window.location.href = "#"}>
+        <button className="section-esoteric-card__button _button" onClick={handleClickOpenSection}>
           Смотреть
         </button>
       </div>

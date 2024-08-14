@@ -42,6 +42,7 @@ export interface IPropsSectionEsotericCard {
   image: string
   item: string
   description: string
+  handleClickOpenSection: () => void
 }
 
 export interface IPropsNavbar {
