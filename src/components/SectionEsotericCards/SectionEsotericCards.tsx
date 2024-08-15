@@ -9,26 +9,46 @@ import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
+import { DreamCathers } from '../Sections/DreamCatchers'
+import { Talismans } from '../Sections/Talismans'
 
 export const SectionEsotericCards = () => {
   const [openSectionRunes, setOpenSectionRunes] = useState(false)
   const [openSectionAmulets, setOpenSectionAmulets] = useState(false)
+  const [openSectionDreamCatcher, setOpenSectionDreamCatcher] = useState(false)
+  const [openSectionTalismans, setOpenSectionTalismans] = useState(false)
 
   const handleClickOpenSection = (section: string) => {
     if (section === 'amulets') {
-      setOpenSectionAmulets(prevState => !prevState);
-      setOpenSectionRunes(false);
+      setOpenSectionAmulets(prevState => !prevState)
+      setOpenSectionRunes(false)
+      setOpenSectionDreamCatcher(false)
+      setOpenSectionTalismans(false)
     }
     if (section === 'runes') {
-      setOpenSectionRunes(prevState => !prevState);
-      setOpenSectionAmulets(false);
+      setOpenSectionRunes(prevState => !prevState)
+      setOpenSectionAmulets(false)
+      setOpenSectionDreamCatcher(false)
+      setOpenSectionTalismans(false)
+    }
+    if (section === 'dreamCatchers') {
+      setOpenSectionDreamCatcher(prevState => !prevState)
+      setOpenSectionRunes(false)
+      setOpenSectionAmulets(false)
+      setOpenSectionTalismans(false)
+    }
+    if (section === 'talismans') {
+      setOpenSectionTalismans(prevState => !prevState)
+      setOpenSectionRunes(false)
+      setOpenSectionAmulets(false)
+      setOpenSectionDreamCatcher(false)
     }
   }
 
   return (
     <div className="sectionEsotericCards">
       <div className="sectionEsotericCards__container">
-        {(!openSectionRunes && !openSectionAmulets) ? (
+        {(!openSectionRunes && !openSectionAmulets && !openSectionDreamCatcher && !openSectionTalismans) ? (
           <div className="sectionEsotericCards__body">
             <div className="sectionEsotericCards__title _title-catalog">
               <IconAndTitle>Эзотерика</IconAndTitle>
@@ -64,7 +84,7 @@ export const SectionEsotericCards = () => {
 
                   <div className="sectionEsotericCards__card">
                     <SectionEsotericCard
-                      handleClickOpenSection={() => handleClickOpenSection('dreamCatcher')}
+                      handleClickOpenSection={() => handleClickOpenSection('dreamCatchers')}
                       image={dreamCatcher}
                       item="Ловцы снов"
                       description="Ловец снов — это особый талисман для защиты от негатива и создания счастливых сновидений" />
@@ -75,7 +95,9 @@ export const SectionEsotericCards = () => {
           </div>
         ) : (
           (openSectionRunes && <RunesItems />) ||
-          (openSectionAmulets && <BijouterieItems />)
+          (openSectionAmulets && <BijouterieItems />) ||
+          (openSectionDreamCatcher && <DreamCathers />) ||
+          (openSectionTalismans && <Talismans />)
         )}
       </div>
     </div>
