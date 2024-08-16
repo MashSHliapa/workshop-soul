@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useRef } from 'react'
-import { IPropsNewItems } from '../../types/interfaces'
+import { IPropsItems } from '../../types/interfaces'
 import { newItemsScroll } from '../../helpers/newItemsScroll'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import './NewItemAdd.scss'
 
-export function NewItemAdd(props: { post: IPropsNewItems }) {
+export function NewItemAdd(props: { post: IPropsItems }) {
   const pageElement = useRef(null)
 
   const location = useLocation()

@@ -21,7 +21,7 @@ export interface IPropsTradeCard {
   image?: string
 }
 
-export interface IPropsNewItems {
+export interface IPropsItems {
   id: string
   image: string
   item: string

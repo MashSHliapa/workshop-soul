@@ -1,24 +1,32 @@
-// import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit'
+import { useDispatch, useSelector } from 'react-redux'
 import Slider from 'react-slick'
-import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
-// import { RootState } from '../../redux/store'
-import { ItemCard } from '../ItemCard/ItemCard'
 import { sliderSettings } from './sliderSettings'
+import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
+import { ItemCard } from '../ItemCard/ItemCard'
+import { RootState } from '../../redux/store'
+import { fetchDecor } from '../../redux/decorSlice'
+import { IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
-import { useEffect, useState } from 'react'
 
 export function DecorItems() {
-  // const { data: posts } = useSelector((state: RootState) => state.decor)
-
-  const [posts, setPosts] = useState<{ id: string; image: string; item: string; name: string; size: string; material: string }[]>([])
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.decor)
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, AnyAction>>()
 
   useEffect(() => {
-    fetch('http://localhost:8036/decor')
-      .then(res => res.json())
-      .then(data => setPosts(data))
-  }, [])
+    dispatch(fetchDecor())
+  }, [dispatch])
 
-  const decor = posts.map((item) => <ItemCard key={item.id} post={item} />)
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const decor = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
     <div className="section-items" id="decor">
