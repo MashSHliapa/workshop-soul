@@ -1,42 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit'
-import forged1 from '../components/images/newitems/picture5.jpg'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-const forgedProducts = createSlice({
+const fetchForgetProducts = createAsyncThunk('forgedProducts/setForgedProducts', async () => {
+  const res = await fetch('http://localhost:8036/forgedProducts')
+  const data = await res.json()
+  return data
+})
+
+export const forgedProducts = createSlice({
   name: 'forgedProducts',
   initialState: {
-    data: [
-      {
-        id: '1',
-        image: forged1,
-        item: 'Кованые изделия',
-        name: '“Красота”',
-        size: '5x25',
-        material: 'сталь ШХ 15; рукоять из дуба',
-      },
-      {
-        id: '2',
-        image: forged1,
-        item: 'Кованые изделия',
-        name: '“Красота”',
-        size: '5x25',
-        material: 'сталь ШХ 15; рукоять из дуба, сталь ШХ 15; рукоять из дуба',
-      },
-      {
-        id: '3',
-        image: forged1,
-        item: 'Кованые изделия',
-        name: '“Красота”',
-        size: '5x25',
-        material: 'сталь ШХ 15; рукоять из дуба, сталь ШХ 15; рукоять из дуба, сталь ШХ 15; рукоять из дуба',
-      },
-    ]
+    data: [],
+    loading: false,
+    error: null as null | string
   },
-  reducers: {
-    setForgedProducts(state, action) {
-      state.data = action.payload
-    }
+  reducers: {},
+  extraReducers: builder => {
+    builder
+      .addCase(fetchForgetProducts.pending, state => {
+        state.loading = true
+      })
+      .addCase(fetchForgetProducts.fulfilled, (state, action) => {
+        state.loading = false
+        state.data = action.payload
+      })
+      .addCase(fetchForgetProducts.rejected, state => {
+        state.loading = false
+        state.error = 'что-то не так'
+      })
   }
 })
 
-export const { setForgedProducts } = forgedProducts.actions
+export { fetchForgetProducts }
 export const forgedProductsReducer = forgedProducts.reducer

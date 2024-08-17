@@ -4,7 +4,7 @@ import { CatalogCardsOdd } from '../../components/CatalogCardsOdd/CatalogCardsOd
 import { BijouterieItems } from '../../components/Sections/BijouterieItems'
 import { DecorItems } from '../../components/Sections/DecorItems'
 import { SectionEsotericCards } from '../../components/SectionEsotericCards/SectionEsotericCards'
-import { ForderProducts } from '../../components/Sections/forgedProducts'
+import { ForderProducts } from '../../components/Sections/ForgedProducts'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { GoToTop } from '../../components/GoToTop/GoToTop'
 import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'

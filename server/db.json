@@ -96,5 +96,31 @@
       "material": "красная глина",
       "description": "Такой тотем научит нежности и обольстительности, пробудит внутреннюю и внешнюю красоту, станет проводником к женскому началу. Он поможет сделать характер более мягким, реакции вдумчивее, речь мелодичнее."
     }
+  ],
+  "forgedProducts": [
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/gJRqFY9/forgedknife-medieval.jpg",
+      "item": "Нож",
+      "name": "Средневековый",
+      "size": "25 x 250",
+      "material": "сталь ШХ 15, рукоять из дуба"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/WG0XVqR/forgedknife-viking.jpg",
+      "item": "Нож",
+      "name": "Викинг",
+      "size": "25 x 250",
+      "material": "сталь ШХ 15, рукоять из дуба"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/yhbQXcq/forgetfork-medieval.jpg",
+      "item": "Вилочка",
+      "name": "Средневековая",
+      "size": "15 x 250",
+      "material": "сталь ШХ 15"
+    }
   ]
 }
