@@ -51,3 +51,7 @@ export interface IPropsNavbar {
   newItems: string
   catalog: string
 }
+
+export interface IPropsFuncReturnBack {
+  handleClickReturnBack: () => void
+}

@@ -5,12 +5,12 @@ import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { BijouterieItems } from '../Sections/BijouterieItems'
 import { RunesItems } from '../Sections/RunesItems'
+import { DreamCathers } from '../Sections/DreamCatchers'
+import { Talismans } from '../Sections/Talismans'
 import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
-import { DreamCathers } from '../Sections/DreamCatchers'
-import { Talismans } from '../Sections/Talismans'
 
 export const SectionEsotericCards = () => {
   const [openSectionRunes, setOpenSectionRunes] = useState(false)
@@ -94,7 +94,7 @@ export const SectionEsotericCards = () => {
             </div>
           </div>
         ) : (
-          (openSectionRunes && <RunesItems />) ||
+          (openSectionRunes && <RunesItems handleClickReturnBack={() => handleClickOpenSection('runes')} />) ||
           (openSectionAmulets && <BijouterieItems />) ||
           (openSectionDreamCatcher && <DreamCathers />) ||
           (openSectionTalismans && <Talismans />)

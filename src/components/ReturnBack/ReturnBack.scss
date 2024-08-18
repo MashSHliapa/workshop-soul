@@ -1,0 +1,25 @@
+.return-back {
+  color: #909090;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    color: black;
+  }
+
+  &:hover .return-back__vector {
+    background: rgb(34, 30, 30);
+  }
+
+  &__text{
+    font-size: 12px;
+  }
+
+  &__vector{
+    width: 59px;
+    height: 15px;
+    background: url('../images/esoterics/esoteric_vector_left.svg') no-repeat;
+    mask: url('../images/esoterics/esoteric_vector_left.svg') no-repeat;
+  }
+}

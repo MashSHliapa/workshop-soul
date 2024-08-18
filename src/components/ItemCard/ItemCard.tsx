@@ -13,7 +13,7 @@ export const ItemCard = (props: { post: IPropsItems }) => {
           <div className="item-card__separator _separator"></div>
           <div className="item-card__text-size">Размер: {props.post.size} мм</div>
           <div className="item-card__text-material">Материал: {props.post.material}</div>
-          <div className="item-card__description">{props.post.description}</div>
+          {/* <div className="item-card__description">{props.post.description}</div> */}
         </div>
       </div>
     </div>
