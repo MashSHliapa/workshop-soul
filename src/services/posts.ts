@@ -1,5 +1,5 @@
 import { client } from '../utils/client'
-import { decorEndpoint, forgetProductsEndpoint } from '../api'
+import { decorEndpoint, forgetProductsEndpoint, runesEndpoint } from '../api'
 
 export const requestDecor = async () => {
   const { data } = await client.get(decorEndpoint)
@@ -8,5 +8,10 @@ export const requestDecor = async () => {
 
 export const requestForgedProducts = async () => {
   const { data } = await client.get(forgetProductsEndpoint)
+  return data
+}
+
+export const requestRunes = async () => {
+  const { data } = await client.get(runesEndpoint)
   return data
 }

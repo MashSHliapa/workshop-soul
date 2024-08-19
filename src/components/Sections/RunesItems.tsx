@@ -1,22 +1,33 @@
-import { useEffect, useState } from "react"
-import Slider from "react-slick"
-import { sliderSettings } from "./sliderSettings"
-import { IconAndTitle } from "../IconAndTitle/IconAndTitle"
-import { ItemCard } from "../ItemCard/ItemCard"
-import { ReturnBack } from "../ReturnBack/ReturnBack"
-import { IPropsFuncReturnBack } from "../../types/interfaces"
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Action, ThunkDispatch } from '@reduxjs/toolkit'
+import Slider from 'react-slick'
+import { sliderSettings } from './sliderSettings'
+import { ItemCard } from '../ItemCard/ItemCard'
+import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
+import { RootState } from '../../redux/store'
+import { fetchRunes } from '../../redux/runesSlice'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
+import './SectionItems.scss'
 
 export const RunesItems = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
-
-  const [posts, setPosts] = useState<{ id: string; image: string; item: string; name: string; size: string; material: string }[]>([])
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.runes)
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
   useEffect(() => {
-    fetch('http://localhost:8036/runes')
-      .then(res => res.json())
-      .then(data => setPosts(data))
-  }, [])
+    dispatch(fetchRunes())
+  }, [dispatch])
 
-  const runes = posts.map((item) => <ItemCard key={item.id} post={item} />)
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const runes = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
     <div className="section-items">

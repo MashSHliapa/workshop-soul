@@ -4,6 +4,7 @@ import { newItemsAddReducer } from './newItemsAddSlice'
 import { bijouterieReducer} from './bijouterieSlice'
 import { decorReducer } from './decorSlice'
 import { forgedProductsReducer } from './forgedProductsSlice'
+import { runesReducer } from './runesSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     bijouterie: bijouterieReducer,
     decor: decorReducer,
     forgedProducts: forgedProductsReducer,
+    runes: runesReducer,
   },
 })
 
