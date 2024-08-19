@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { requestDecor } from '../services/posts'
 
 const fetchDecor = createAsyncThunk('decor/setDecorLogo', async () => {
-  const res = await fetch('http://localhost:8036/decor')
-  const data = await res.json()
-  return data
+  return await requestDecor()
 })
 
 export const decorSlice = createSlice({

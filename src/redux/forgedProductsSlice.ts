@@ -1,9 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { requestForgedProducts } from '../services/posts'
 
 const fetchForgetProducts = createAsyncThunk('forgedProducts/setForgedProducts', async () => {
-  const res = await fetch('http://localhost:8036/forgedProducts')
-  const data = await res.json()
-  return data
+  return await requestForgedProducts()
 })
 
 export const forgedProducts = createSlice({
