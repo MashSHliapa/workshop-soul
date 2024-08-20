@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { tradeFairsReducer } from './tradeFairsSlice'
 import { newItemsAddReducer } from './newItemsAddSlice'
-import { bijouterieReducer} from './bijouterieSlice'
+import { bijouterieReducer } from './bijouterieSlice'
 import { decorReducer } from './decorSlice'
 import { forgedProductsReducer } from './forgedProductsSlice'
 import { runesReducer } from './runesSlice'
+import { dreamCatchersReducer } from './dreamCatchersSlice'
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     decor: decorReducer,
     forgedProducts: forgedProductsReducer,
     runes: runesReducer,
+    dreamCatchers: dreamCatchersReducer,
   },
 })
 
