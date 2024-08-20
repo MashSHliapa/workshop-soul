@@ -1,53 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit'
-import bijouterie1 from '../components/images/newitems/picture6.jpg'
-import bijouterie2 from '../components/images/newitems/picture7.jpg'
-import bijouterie3 from '../components/images/newitems/picture8.jpg'
-import bijouterie4 from '../components/images/newitems/picture9.jpg'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { requestBijouterie } from '../services/posts'
 
-export const bijouterieSlice = createSlice({
+export const fetchBijouterie = createAsyncThunk('bijouterie/setBijouterie', async () => {
+  return await requestBijouterie()
+})
+
+const bijouterieSlice = createSlice({
   name: 'bijouterie',
   initialState: {
-    data: [
-      {
-        id: '1',
-        image: bijouterie1,
-        item: 'Браслет',
-        name: '“Красота”',
-        size: '18x30',
-        material: 'Камень и дерево хвойных пород камень и дерево хвойных пород',
-      },
-      {
-        id: '2',
-        image: bijouterie2,
-        item: 'Серьги',
-        name: '“Ты - лучшая”',
-        size: '10x25',
-        material: 'Камень и дерево хвойных пород камень и дерево хвойных пород и еще какой-то текст',
-      },
-      {
-        id: '3',
-        image: bijouterie3,
-        item: 'Подвеска',
-        name: '“Василек”',
-        size: '40x45',
-        material: 'Камень и дерево хвойных пород камень и дерево хвойных пород и еще какой-то текст описания',
-      },
-      {
-        id: '4',
-        image: bijouterie4,
-        item: 'Ожерелье',
-        name: '“Вдохновение”',
-        size: '40x45',
-        material: 'Камень и дерево хвойных пород',
-      },
-    ]
+    data: [],
+    loading: false,
+    error: null as null | string
   },
-  reducers: {
-    setBijouterie(state, action) {
+  reducers: {},
+  extraReducers: builder => {
+    builder
+    .addCase(fetchBijouterie.pending, state => {
+      state.loading = true
+    })
+    .addCase(fetchBijouterie.fulfilled, (state, action) => {
+      state.loading = false
       state.data = action.payload
-    }
+    })
+    .addCase(fetchBijouterie.rejected, state => {
+      state.loading = false
+      state.error = 'что-то не так'
+    })
   }
 })
 
-export const { setBijouterie } = bijouterieSlice.actions
 export const bijouterieReducer = bijouterieSlice.reducer

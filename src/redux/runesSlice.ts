@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { requestRunes } from '../services/posts'
 
-const fetchRunes = createAsyncThunk('runes/setRunes', async () => {
+export const fetchRunes = createAsyncThunk('runes/setRunes', async () => {
   return await requestRunes()
 })
 
-export const runes = createSlice({
+const runes = createSlice({
   name: 'runes',
   initialState: {
     data: [],
@@ -29,5 +29,4 @@ export const runes = createSlice({
   }
 })
 
-export { fetchRunes }
 export const runesReducer = runes.reducer

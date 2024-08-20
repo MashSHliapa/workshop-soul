@@ -1,5 +1,5 @@
 import { client } from '../utils/client'
-import { decorEndpoint, dreamCatchersEndpoint, forgetProductsEndpoint, runesEndpoint } from '../api'
+import { bijouterieEndpoint, decorEndpoint, dreamCatchersEndpoint, forgetProductsEndpoint, runesEndpoint } from '../api'
 
 export const requestDecor = async () => {
   const { data } = await client.get(decorEndpoint)
@@ -18,5 +18,10 @@ export const requestRunes = async () => {
 
 export const requestDreamCathers = async () => {
   const { data } = await client.get(dreamCatchersEndpoint)
+  return data
+}
+
+export const requestBijouterie = async () => {
+  const { data } = await client.get(bijouterieEndpoint)
   return data
 }

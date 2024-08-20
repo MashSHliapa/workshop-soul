@@ -1,15 +1,32 @@
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
+import { sliderSettings } from './sliderSettings'
+import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../../components/IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
-import { ItemCard } from '../ItemCard/ItemCard'
-import { sliderSettings } from './sliderSettings'
+import { fetchBijouterie } from '../../redux/bijouterieSlice'
+import { IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
 
 export function BijouterieItems() {
-  const { data: posts } = useSelector((state: RootState) => state.bijouterie)
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.bijouterie)
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
-  const bijouterie = posts.map((item) => <ItemCard key={item.id} post={item} />)
+  useEffect(() => {
+    dispatch(fetchBijouterie())
+  }, [dispatch])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const bijouterie = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
     <div className="section-items" id="bijouterie">

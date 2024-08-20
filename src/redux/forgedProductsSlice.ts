@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { requestForgedProducts } from '../services/posts'
 
-const fetchForgetProducts = createAsyncThunk('forgedProducts/setForgedProducts', async () => {
+export const fetchForgetProducts = createAsyncThunk('forgedProducts/setForgedProducts', async () => {
   return await requestForgedProducts()
 })
 
-export const forgedProducts = createSlice({
+const forgedProducts = createSlice({
   name: 'forgedProducts',
   initialState: {
     data: [],
@@ -29,5 +29,4 @@ export const forgedProducts = createSlice({
   }
 })
 
-export { fetchForgetProducts }
 export const forgedProductsReducer = forgedProducts.reducer

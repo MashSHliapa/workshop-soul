@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { requestDecor } from '../services/posts'
 
-const fetchDecor = createAsyncThunk('decor/setDecorLogo', async () => {
+export const fetchDecor = createAsyncThunk('decor/setDecorLogo', async () => {
   return await requestDecor()
 })
 
-export const decorSlice = createSlice({
+const decorSlice = createSlice({
   name: 'decor',
   initialState: {
     loading: false,
@@ -29,5 +29,4 @@ export const decorSlice = createSlice({
   }
 })
 
-export { fetchDecor }
 export const decorReducer = decorSlice.reducer
