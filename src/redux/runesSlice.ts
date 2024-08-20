@@ -15,17 +15,17 @@ const runes = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-    .addCase(fetchRunes.pending, state => {
-      state.loading = true
-    })
-    .addCase(fetchRunes.fulfilled, (state, action) => {
-      state.loading = false
-      state.data = action.payload
-    })
-    .addCase(fetchRunes.rejected, state => {
-      state.loading = false
-      state.error = 'что-то не так'
-    })
+      .addCase(fetchRunes.pending, state => {
+        state.loading = true
+      })
+      .addCase(fetchRunes.fulfilled, (state, action) => {
+        state.loading = false
+        state.data = action.payload
+      })
+      .addCase(fetchRunes.rejected, state => {
+        state.loading = false
+        state.error = 'что-то не так'
+      })
   }
 })
 

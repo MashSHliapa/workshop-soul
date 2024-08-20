@@ -1,19 +1,31 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
-import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { ItemCard } from '../ItemCard/ItemCard'
+import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
+import { RootState } from '../../redux/store'
+import { fetchTalismans } from '../../redux/talismansSlice'
+import { IPropsItems } from '../../types/interfaces'
 
 export const Talismans = () => {
-  const [posts, setPosts] = useState<{ id: string; image: string; item: string; name: string; size: string; material: string }[]>([])
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
-  useEffect (() => {
-    fetch('http://localhost:8036/talismans')
-    .then(res => res.json())
-    .then(data => setPosts(data))
-  })
+  useEffect(() => {
+    dispatch(fetchTalismans())
+  }, [dispatch])
 
-  const talismans = posts.map((item) => <ItemCard key={item.id} post={item} />)
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const talismans = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
     <div className="section-items">

@@ -15,17 +15,17 @@ const bijouterieSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-    .addCase(fetchBijouterie.pending, state => {
-      state.loading = true
-    })
-    .addCase(fetchBijouterie.fulfilled, (state, action) => {
-      state.loading = false
-      state.data = action.payload
-    })
-    .addCase(fetchBijouterie.rejected, state => {
-      state.loading = false
-      state.error = 'что-то не так'
-    })
+      .addCase(fetchBijouterie.pending, state => {
+        state.loading = true
+      })
+      .addCase(fetchBijouterie.fulfilled, (state, action) => {
+        state.loading = false
+        state.data = action.payload
+      })
+      .addCase(fetchBijouterie.rejected, state => {
+        state.loading = false
+        state.error = 'что-то не так'
+      })
   }
 })
 
