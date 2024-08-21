@@ -1,4 +1,4 @@
-import imageTop from '../images/green_vector_up.png'
+import imageTop from '../images/go_top.svg'
 import './GoToTop.scss'
 
 export function GoToTop() {
