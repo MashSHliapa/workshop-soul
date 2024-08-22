@@ -96,8 +96,8 @@ export const SectionEsotericCards = () => {
         ) : (
           (openSectionRunes && <RunesItems handleClickReturnBack={() => handleClickOpenSection('runes')} />) ||
           (openSectionAmulets && <BijouterieItems />) ||
-          (openSectionDreamCatcher && <DreamCathers />) ||
-          (openSectionTalismans && <Talismans />)
+          (openSectionDreamCatcher && <DreamCathers handleClickReturnBack={() => handleClickOpenSection('dreamCatchers')} />) ||
+          (openSectionTalismans && <Talismans handleClickReturnBack={() => handleClickOpenSection('talismans')} />)
         )}
       </div>
     </div>
