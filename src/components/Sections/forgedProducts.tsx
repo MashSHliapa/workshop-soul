@@ -30,7 +30,7 @@ export function ForderProducts() {
 
   return (
     <div className="section-items" id="decor">
-      <div className="section-items__container _container">
+      <div className="section-items__container">
         <div className="section-items__body">
           <div className="section-items__title _title-catalog">
             <IconAndTitle>Кованые изделия</IconAndTitle>

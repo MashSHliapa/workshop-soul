@@ -191,11 +191,6 @@ body {
 }
 
 //для слайдеров в Каталоге
-.slider-items .slick-track {
-  position: relative;
-  z-index: 1;
-}
-
 .slider-items .slick-arrow {
   top: -10%;
 
@@ -204,12 +199,15 @@ body {
   }
 
   @media screen and (max-width: 575.98px) {
-    top: -7.5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 15px;
+    height: 15px;
   }
 }
 
 .slider-items .slick-arrow.slick-prev {
-  background: url('../images/arrow_rigth.svg') 0 0 / 100% no-repeat;
+  background: url('../images/arrow_left.svg') 0 0 / 100% no-repeat;
   left: 87%;
 
   @media screen and (max-width: 767.98px) {
@@ -217,15 +215,21 @@ body {
   }
 
   @media screen and (max-width: 575.98px) {
-    left: 72%;
+    background: url('../images/serif_left.svg') center no-repeat;
+    left: calc(10% - 30px);
   }
 }
 
 .slider-items .slick-arrow.slick-next {
-  background: url('../images/arrow_left.svg') 0 0 / 100% no-repeat;
+  background: url('../images/arrow_right.svg') 0 0 / 100% no-repeat;
   right: 5%;
 
   @media screen and (max-width: 991.98px) {
     right: 3%;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    background: url('../images/serif_right.svg') center no-repeat;
+    right: calc(10% - 30px);
   }
 }

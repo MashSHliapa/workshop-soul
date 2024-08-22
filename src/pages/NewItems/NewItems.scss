@@ -144,7 +144,7 @@
 }
 
 .slider-newItems .slick-arrow.slick-prev {
-  background: url('../../components/images/arrow_rigth.svg') 0 0 / 100% no-repeat;
+  background: url('../../components/images/arrow_left.svg') 0 0 / 100% no-repeat;
   left: 350px;
 
   @media screen and (max-width: 991.98px) {
@@ -158,5 +158,5 @@
 
 .slider-newItems .slick-arrow.slick-next {
   right: 0;
-  background: url('../../components/images/arrow_left.svg') 0 0 / 100% no-repeat;
+  background: url('../../components/images/arrow_right.svg') 0 0 / 100% no-repeat;
 }

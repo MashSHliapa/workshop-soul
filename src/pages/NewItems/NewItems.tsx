@@ -8,11 +8,11 @@ import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
 import { NewItem } from '../../components/NewItem/NewItem'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
-import { IPropsNewItems } from '../../types/interfaces'
+import { IPropsItems } from '../../types/interfaces'
 import './NewItems.scss'
 
 export function NewItems() {
-  const [newItem, setNewItem] = useState<IPropsNewItems>()
+  const [newItem, setNewItem] = useState<IPropsItems>()
   const { newItemId } = useParams<{ newItemId: string }>()
 
   const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
