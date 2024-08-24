@@ -30,18 +30,16 @@ export function DecorItems() {
 
   return (
     <div className="section-items" id="decor">
-      <div className="section-items__container">
-        <div className="section-items__body">
-          <div className="section-items__title _title-catalog">
-            <IconAndTitle>Декор</IconAndTitle>
-          </div>
-          <div className="section-items__slider slider-items">
-            <div className="slider-items slider">
-              <Slider
-                {...sliderSettings}>
-                {decor}
-              </Slider>
-            </div>
+      <div className="section-items__body">
+        <div className="section-items__title _title-catalog">
+          <IconAndTitle>Декор</IconAndTitle>
+        </div>
+        <div className="section-items__slider slider-items">
+          <div className="slider-items slider">
+            <Slider
+              {...sliderSettings}>
+              {decor}
+            </Slider>
           </div>
         </div>
       </div>

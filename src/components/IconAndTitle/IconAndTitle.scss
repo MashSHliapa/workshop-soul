@@ -2,21 +2,17 @@
   display: flex;
   align-items: center;
   gap: 13px;
-  // max-height: 50px;
 
   &__icon {
-    margin-top: 5px;
+    background: url('../images/icon_eye.svg') center no-repeat;
+    mask: url('../images/icon_eye.svg') center no-repeat;
+    width: 31px;
+    height: 22px;
+    background-size: contain;
   }
 
   &__title {
     text-transform: uppercase;
     font-weight: 500;
-  }
-
-  &__icon {
-    background: url('../images/icon_eye.svg') no-repeat;
-    mask: url('../images/icon_eye.svg') no-repeat;
-    width: 40px;
-    height: 31px;
   }
 }

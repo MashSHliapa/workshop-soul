@@ -6,6 +6,8 @@
     background-color: #E9E9E9;
     min-width: 540px;
     max-width: 540px;
+    min-height: 350px;
+    max-height: 350px;
     border-radius: 20px;
     padding: 23px 20px 23px 20px;
     display: flex;
@@ -36,11 +38,6 @@
       min-height: 475px;
       max-height: 475px;
       padding: 20px 30px 20px 30px;
-    }
-
-    @media screen and (max-width: 575.98px) {
-      min-height: 455px;
-      max-height: 455px;
     }
   }
 

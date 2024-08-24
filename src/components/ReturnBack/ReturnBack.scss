@@ -4,6 +4,10 @@
   align-items: center;
   gap: 10px;
 
+  @media screen and (max-width: 575.98px) {
+    gap: 7px;
+  }
+
   &:hover {
     color: black;
   }
@@ -21,5 +25,11 @@
     height: 15px;
     background: url('../images/esoterics/esoteric_vector_left.svg') no-repeat;
     mask: url('../images/esoterics/esoteric_vector_left.svg') no-repeat;
+
+    @media screen and (max-width: 575.98px) {
+      width: 35px;
+      background-size: 100% 100%;
+      mask-size: 100% 100%;
+    }
   }
 }

@@ -6,25 +6,17 @@
     align-items: center;
     justify-content: start;
     gap: 30px;
+    margin-bottom: 10px;
 
     @media screen and (max-width: 575.98px) {
-      flex-direction: column;
-      gap: 5px;
+      justify-content: space-between;
+      gap: 10px;
     }
   }
 
   &__return-back {
-    margin-bottom: 6px;
-
     @media screen and (max-width: 575.98px) {
-      margin-bottom: 25px;
-    }
-  }
-
-  &__title .icon-title__icon {
-    @media screen and (max-width: 575.98px) {
-      margin-right: -15px;
-      margin-top: 8px;
+      margin-bottom: 0px;
     }
   }
 }

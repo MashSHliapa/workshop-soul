@@ -30,23 +30,21 @@ export const DreamCathers = ({ handleClickReturnBack }: IPropsFuncReturnBack) =>
 
   return (
     <div className="section-items">
-      <div className="section-items__container">
-        <div className="section-items__body">
-          <div className="section-items__header-box">
-            <div className="section-items__title _title-catalog">
-              <IconAndTitle>Ловцы снов</IconAndTitle>
-            </div>
-            <div className="section-items__return-back">
-              <ReturnBack handleClickReturnBack={handleClickReturnBack} />
-            </div>
+      <div className="section-items__body">
+        <div className="section-items__header-box">
+          <div className="section-items__title _title-with-back">
+            <IconAndTitle>Ловцы снов</IconAndTitle>
           </div>
-          <div className="section-items__slider slider-items">
-            <div className="slider-items slider">
-              <Slider
-                {...sliderSettings}>
-                {dreamCatchers}
-              </Slider>
-            </div>
+          <div className="section-items__return-back">
+            <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+          </div>
+        </div>
+        <div className="section-items__slider slider-items">
+          <div className="slider-items slider">
+            <Slider
+              {...sliderSettings}>
+              {dreamCatchers}
+            </Slider>
           </div>
         </div>
       </div>

@@ -30,18 +30,16 @@ export function ForderProducts() {
 
   return (
     <div className="section-items" id="decor">
-      <div className="section-items__container">
-        <div className="section-items__body">
-          <div className="section-items__title _title-catalog">
-            <IconAndTitle>Кованые изделия</IconAndTitle>
-          </div>
-          <div className="section-items__slider slider-items">
-            <div className="slider-items slider">
-              <Slider
-                {...sliderSettings}>
-                {forderProducts}
-              </Slider>
-            </div>
+      <div className="section-items__body">
+        <div className="section-items__title _title-catalog">
+          <IconAndTitle>Кованые изделия</IconAndTitle>
+        </div>
+        <div className="section-items__slider slider-items">
+          <div className="slider-items slider">
+            <Slider
+              {...sliderSettings}>
+              {forderProducts}
+            </Slider>
           </div>
         </div>
       </div>
