@@ -4,5 +4,6 @@ const runesEndpoint: string = '/runes'
 const dreamCatchersEndpoint: string = '/dreamCatchers'
 const bijouterieEndpoint: string = '/bijouterie'
 const talismansEndpoint: string = '/talismans'
+const musicEndpoint: string = '/music'
 
-export { decorEndpoint, forgetProductsEndpoint, runesEndpoint, dreamCatchersEndpoint, bijouterieEndpoint, talismansEndpoint }
+export { decorEndpoint, forgetProductsEndpoint, runesEndpoint, dreamCatchersEndpoint, bijouterieEndpoint, talismansEndpoint, musicEndpoint }

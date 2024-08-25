@@ -160,5 +160,31 @@
       "size": "35",
       "material": "береза, льняное масло"
     }
+  ],
+  "music": [
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/wCdHsRL/whistle-frog.jpg",
+      "item": "Свистулька",
+      "name": "Лягушонок",
+      "size": "30 x 40",
+      "material": "красная глина, акрил"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/CMypCsY/xylophone-spring.jpg",
+      "item": "Ксилофон",
+      "name": "Весенний",
+      "size": "130",
+      "material": "красная глина, глазурь"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/ypx6LVm/whistle-wolf.jpg",
+      "item": "Свистулька",
+      "name": "Волчок",
+      "size": "40 x 50",
+      "material": "красная глина, акрил"
+    }
   ]
 }

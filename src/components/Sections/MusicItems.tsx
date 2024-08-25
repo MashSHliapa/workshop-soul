@@ -6,16 +6,15 @@ import { sliderSettings } from './sliderSettings'
 import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
-import { fetchForgetProducts } from '../../redux/forgedProductsSlice'
+import { fetchMusic } from '../../redux/musicSlice'
 import { IPropsItems } from '../../types/interfaces'
-import './SectionItems.scss'
 
-export function ForderProducts() {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.forgedProducts)
+export const MusicItems = () => {
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.music)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
   useEffect(() => {
-    dispatch(fetchForgetProducts())
+    dispatch(fetchMusic())
   }, [dispatch])
 
   if (loading) {
@@ -26,19 +25,19 @@ export function ForderProducts() {
     return <div className="text-danger">{error}</div>
   }
 
-  const forderProducts = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
+  const music = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
-    <div className="section-items" id="forgedProducts">
+    <div className="section-items" id="music">
       <div className="section-items__body">
         <div className="section-items__title _title-catalog">
-          <IconAndTitle>Кованые изделия</IconAndTitle>
+          <IconAndTitle>Музыка</IconAndTitle>
         </div>
         <div className="section-items__slider slider-items">
           <div className="slider-items slider">
             <Slider
               {...sliderSettings}>
-              {forderProducts}
+              {music}
             </Slider>
           </div>
         </div>

@@ -7,6 +7,7 @@ import { forgedProductsReducer } from './forgedProductsSlice'
 import { runesReducer } from './runesSlice'
 import { dreamCatchersReducer } from './dreamCatchersSlice'
 import { talismansReducer } from './talismansSlice'
+import { musicReducer } from './musicSlice'
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     runes: runesReducer,
     dreamCatchers: dreamCatchersReducer,
     talismans: talismansReducer,
+    music: musicReducer,
   },
 })
 

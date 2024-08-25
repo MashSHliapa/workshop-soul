@@ -17,36 +17,50 @@ import lighting from '../../components/images/catalog/light.jpg'
 import music from '../../components/images/catalog/music.jpg'
 import forgedProducts from '../../components/images/catalog/forged_products.jpg'
 import './Catalog.scss'
+import { MusicItems } from '../../components/Sections/MusicItems'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
   const [isSectionDecorOpen, setIsSectionDecorOpen] = useState(false)
   const [isSectionEsotericOpen, setIsSectionEsotericOpen] = useState(false)
-  const [isSectionforgedProductsOpen, setIsSectionforgedProductsOpen] = useState(false)
+  const [isSectionMusicOpen, setIsSectionMusicOpen] = useState(false)
+  const [isSectionforgedProductsOpen, setIsSectionForgedProductsOpen] = useState(false)
 
   const handleClickOpenSection = (cardId: string) => {
     if (cardId === 'bijouterie') {
       setIsSectionBijouterieOpen(prevState => !prevState);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
-      setIsSectionforgedProductsOpen(false);
-    } if (cardId === 'decor') {
+      setIsSectionForgedProductsOpen(false);
+      setIsSectionMusicOpen(false);
+    }
+    if (cardId === 'decor') {
       setIsSectionDecorOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionEsotericOpen(false);
-      setIsSectionforgedProductsOpen(false);
+      setIsSectionForgedProductsOpen(false);
+      setIsSectionMusicOpen(false);
     }
     if (cardId === 'esoteric') {
       setIsSectionEsotericOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
-      setIsSectionforgedProductsOpen(false);
+      setIsSectionForgedProductsOpen(false);
+      setIsSectionMusicOpen(false);
     }
-    if (cardId === 'forgedProducts') {
-      setIsSectionforgedProductsOpen(prevState => !prevState);
+    if (cardId === 'music') {
+      setIsSectionMusicOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
+      setIsSectionForgedProductsOpen(false);
+    }
+    if (cardId === 'forgedProducts') {
+      setIsSectionForgedProductsOpen(prevState => !prevState);
+      setIsSectionBijouterieOpen(false);
+      setIsSectionDecorOpen(false);
+      setIsSectionEsotericOpen(false);
+      setIsSectionMusicOpen(false);
     }
   }
 
@@ -55,7 +69,8 @@ export function Catalog() {
     catalogSectionsScroll(isSectionDecorOpen, 'decor')
     catalogSectionsScroll(isSectionEsotericOpen, 'esoteric')
     catalogSectionsScroll(isSectionforgedProductsOpen, 'forgedProducts')
-  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen])
+    catalogSectionsScroll(isSectionMusicOpen, 'music')
+  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen, isSectionMusicOpen])
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
@@ -106,7 +121,12 @@ export function Catalog() {
             <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
             Насладитесь мягким светом неповторимых ночников 'Soul'" />
 
-            <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" />
+            <div className="catalog__card">
+              {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" /> :
+                <div className="catalog__section">
+                  <MusicItems />
+                </div>}
+            </div>
 
             {!isSectionforgedProductsOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('forgedProducts')} name="Кованные изделия" image={forgedProducts} description="Работа мастера кузнечного дела - Артема Кирашёва. Придумайте собственные изделия с использованием кованого металла! У нас Вы найдете много вариантов предметов домашнего обихода" /> :
               <div className="catalog__section">
