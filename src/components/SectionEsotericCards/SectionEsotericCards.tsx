@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
@@ -11,6 +11,8 @@ import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
+import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
+import { AmuletsItems } from '../Sections/AmuletsItems'
 
 export const SectionEsotericCards = () => {
   const [openSectionRunes, setOpenSectionRunes] = useState(false)
@@ -44,6 +46,13 @@ export const SectionEsotericCards = () => {
       setOpenSectionDreamCatcher(false)
     }
   }
+
+  useEffect(() => {
+    catalogSectionsScroll(openSectionAmulets, 'amulets')
+    catalogSectionsScroll(openSectionRunes, 'runes')
+    catalogSectionsScroll(openSectionDreamCatcher, 'dreamCatchers')
+    catalogSectionsScroll(openSectionTalismans, 'talismans')
+  }, [openSectionAmulets, openSectionRunes, openSectionDreamCatcher, openSectionTalismans])
 
   return (
     <div className="sectionEsotericCards">
@@ -95,7 +104,7 @@ export const SectionEsotericCards = () => {
           </div>
         ) : (
           (openSectionRunes && <RunesItems handleClickReturnBack={() => handleClickOpenSection('runes')} />) ||
-          (openSectionAmulets && <BijouterieItems />) ||
+          (openSectionAmulets && <AmuletsItems handleClickReturnBack={() => handleClickOpenSection('amulets')} />) ||
           (openSectionDreamCatcher && <DreamCathers handleClickReturnBack={() => handleClickOpenSection('dreamCatchers')} />) ||
           (openSectionTalismans && <Talismans handleClickReturnBack={() => handleClickOpenSection('talismans')} />)
         )}

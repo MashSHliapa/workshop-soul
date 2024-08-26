@@ -1,5 +1,5 @@
 import { client } from '../utils/client'
-import { bijouterieEndpoint, decorEndpoint, dreamCatchersEndpoint, forgetProductsEndpoint, musicEndpoint, runesEndpoint, talismansEndpoint } from '../api'
+import { amuletsEndpoint, bijouterieEndpoint, decorEndpoint, dreamCatchersEndpoint, forgetProductsEndpoint, musicEndpoint, runesEndpoint, talismansEndpoint } from '../api'
 
 export const requestDecor = async () => {
   const { data } = await client.get(decorEndpoint)
@@ -33,5 +33,10 @@ export const requestTalismans = async () => {
 
 export const requestMusic = async () => {
   const { data } = await client.get(musicEndpoint)
+  return data
+}
+
+export const requestAmulets = async () => {
+  const { data } = await client.get(amuletsEndpoint)
   return data
 }

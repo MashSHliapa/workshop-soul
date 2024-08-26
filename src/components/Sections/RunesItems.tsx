@@ -30,7 +30,7 @@ export const RunesItems = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   const runes = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
-    <div className="section-items">
+    <div className="section-items" id="runes">
       <div className="section-items__body">
         <div className="section-items__header-box">
           <div className="section-items__title _title-with-back">

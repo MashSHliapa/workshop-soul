@@ -186,5 +186,25 @@
       "size": "40 x 50",
       "material": "красная глина, акрил"
     }
+  ],
+  "amulets": [
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/C20JHw7/amulet-makosh.jpg",
+      "item": "Оберег",
+      "name": "Макошь",
+      "size": "60",
+      "material": "красная глина, глазурь",
+      "description": "Для достатка в доме и женского счастья"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/KhbmmrM/amulet-chur.jpg",
+      "item": "Оберег",
+      "name": "Чур",
+      "size": "60",
+      "material": "красная глина, глазурь",
+      "description": "Вешается над входной дверью, от злых людей и негатива"
+    }
   ]
 }

@@ -8,6 +8,7 @@ import { runesReducer } from './runesSlice'
 import { dreamCatchersReducer } from './dreamCatchersSlice'
 import { talismansReducer } from './talismansSlice'
 import { musicReducer } from './musicSlice'
+import { amuletsReducer } from './amuletsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     dreamCatchers: dreamCatchersReducer,
     talismans: talismansReducer,
     music: musicReducer,
+    amulets: amuletsReducer,
   },
 })
 

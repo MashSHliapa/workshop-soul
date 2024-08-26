@@ -29,7 +29,7 @@ export const DreamCathers = ({ handleClickReturnBack }: IPropsFuncReturnBack) =>
   const dreamCatchers = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
-    <div className="section-items">
+    <div className="section-items" id="dreamCatchers">
       <div className="section-items__body">
         <div className="section-items__header-box">
           <div className="section-items__title _title-with-back">

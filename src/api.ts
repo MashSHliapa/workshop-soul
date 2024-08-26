@@ -1,9 +1,8 @@
-const decorEndpoint: string = '/decor'
-const forgetProductsEndpoint: string = '/forgedProducts'
-const runesEndpoint: string = '/runes'
-const dreamCatchersEndpoint: string = '/dreamCatchers'
-const bijouterieEndpoint: string = '/bijouterie'
-const talismansEndpoint: string = '/talismans'
-const musicEndpoint: string = '/music'
-
-export { decorEndpoint, forgetProductsEndpoint, runesEndpoint, dreamCatchersEndpoint, bijouterieEndpoint, talismansEndpoint, musicEndpoint }
+export const decorEndpoint: string = '/decor'
+export const forgetProductsEndpoint: string = '/forgedProducts'
+export const runesEndpoint: string = '/runes'
+export const dreamCatchersEndpoint: string = '/dreamCatchers'
+export const bijouterieEndpoint: string = '/bijouterie'
+export const talismansEndpoint: string = '/talismans'
+export const musicEndpoint: string = '/music'
+export const amuletsEndpoint: string = '/amulets'

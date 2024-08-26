@@ -6,16 +6,16 @@ import { sliderSettings } from './sliderSettings'
 import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
-import { fetchTalismans } from '../../redux/talismansSlice'
+import { fetchAmulets } from '../../redux/amuletsSlice'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 
-export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
+export const AmuletsItems = ({handleClickReturnBack} : IPropsFuncReturnBack) => {
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.amulets)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
   useEffect(() => {
-    dispatch(fetchTalismans())
+    dispatch(fetchAmulets())
   }, [dispatch])
 
   if (loading) {
@@ -26,14 +26,14 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
     return <div className="text-danger">{error}</div>
   }
 
-  const talismans = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
+  const amulets = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
-    <div className="section-items" id="talismans">
+    <div className="section-items" id="amulets">
       <div className="section-items__body">
         <div className="section-items__header-box">
           <div className="section-items__title _title-with-back">
-            <IconAndTitle>Талисманы</IconAndTitle>
+            <IconAndTitle>Обереги</IconAndTitle>
           </div>
           <div className="section-items__return-back">
             <ReturnBack handleClickReturnBack={handleClickReturnBack} />
@@ -43,7 +43,7 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
           <div className="slider-items slider">
             <Slider
               {...sliderSettings}>
-              {talismans}
+              {amulets}
             </Slider>
           </div>
         </div>
