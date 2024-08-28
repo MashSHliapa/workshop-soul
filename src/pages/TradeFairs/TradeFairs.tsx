@@ -1,15 +1,32 @@
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import { TradeFairsCard } from '../../components/TradeFairsCard/TradeFairsCard'
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
-import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
+import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
 import { RootState } from '../../redux/store'
+import { fetchTradeFairs } from '../../redux/tradeFairsSlice'
+import { IPropsTradeCard } from '../../types/interfaces'
 import './TradeFairs.scss'
 
 export function TradeFairs() {
-  const { data: posts } = useSelector((state: RootState) => state.tradeFairs)
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.tradeFairs)
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
-  const tradeFairsPage = posts.map((item) => <TradeFairsCard key={item.id} post={item} />)
+  useEffect(() => {
+    dispatch(fetchTradeFairs())
+  }, [dispatch])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const tradeFairsPage = posts.map((item: IPropsTradeCard) => <TradeFairsCard key={item.id} post={item} />)
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
