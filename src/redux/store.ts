@@ -9,10 +9,12 @@ import { dreamCatchersReducer } from './dreamCatchersSlice'
 import { talismansReducer } from './talismansSlice'
 import { musicReducer } from './musicSlice'
 import { amuletsReducer } from './amuletsSlice'
+import { festivalsReducer } from './festivalsSlice'
 
 export const store = configureStore({
   reducer: {
     tradeFairs: tradeFairsReducer,
+    festivals: festivalsReducer,
     newItemsAdd: newItemsAddReducer,
     bijouterie: bijouterieReducer,
     decor: decorReducer,

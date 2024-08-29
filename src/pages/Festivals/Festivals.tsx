@@ -6,16 +6,15 @@ import { TitleBlog } from '../../components/TitleBlog/TitleBlog'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard'
 import { RootState } from '../../redux/store'
-import { fetchTradeFairs } from '../../redux/tradeFairsSlice'
+import { fetchFestivals } from '../../redux/festivalsSlice'
 import { IPropsEventCard } from '../../types/interfaces'
-import './Events.scss'
 
-export function TradeFairs() {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.tradeFairs)
+export function Festivals() {
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.festivals)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
   useEffect(() => {
-    dispatch(fetchTradeFairs())
+    dispatch(fetchFestivals())
   }, [dispatch])
 
   if (loading) {
@@ -26,12 +25,12 @@ export function TradeFairs() {
     return <div className="text-danger">{error}</div>
   }
 
-  const tradeFairsPage = posts.map((item: IPropsEventCard) => <EventCard key={item.id} post={item} />)
+  const festivalsPage = posts.map((item: IPropsEventCard) => <EventCard key={item.id} post={item} />)
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
     { name: 'Блог', path: '/blog' },
-    { name: 'Ярмарки', path: '/tradeFairs' }
+    { name: 'Фестивали', path: '/festivals' }
   ]
 
   return (
@@ -42,11 +41,11 @@ export function TradeFairs() {
             <BreadCrumbs crumbs={breadCrumbs} />
           </div>
           <div className="events__title">
-            <TitleBlog>Ярмарки</TitleBlog>
+            <TitleBlog>Фестивали</TitleBlog>
           </div>
-          <div className="events__subtitle">Ярмарки имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения. Но его германские корни очевидны – jahr-markt – ежегодный рынок, регулярные торжества широкого значения.</div>
+          <div className="events__subtitle">Фестивали имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения.</div>
           <ul className="cakes__list d-flex flex-wrap justify-content-center gap-5 m-3">
-            {tradeFairsPage}
+            {festivalsPage}
           </ul>
           {posts.length === 0 && <NoneEventsCard />}
         </div>
@@ -54,4 +53,3 @@ export function TradeFairs() {
     </div>
   )
 }
-

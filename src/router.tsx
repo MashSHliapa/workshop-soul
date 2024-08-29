@@ -6,6 +6,7 @@ import { Main } from "./components/Main/Main";
 import { Contacts } from "./pages/Contacts/Contacts";
 import { NewItems } from "./pages/NewItems/NewItems";
 import { Catalog } from "./pages/Catalog/Catalog";
+import { Festivals } from "./pages/Festivals/Festivals";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: 'blog/tradeFairs',
         element: <TradeFairs />,
+      },
+      {
+        path: 'blog/festivals',
+        element: <Festivals />,
       },
       {
         path: 'newItems/:newItemId',

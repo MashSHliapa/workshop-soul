@@ -1,10 +1,10 @@
-.fairs-card {
+.event-card {
   background-color: #ededed;
   border: 1px solid #4E4E4E;
   border-radius: 10px;
 }
 
-.fairs-card {
+.event-card {
   :hover {
     background-color: #faf9f9;
     border-radius: 10px;
@@ -43,7 +43,7 @@
   }
 }
 
-.info-fairs>div:not(:last-child) {
+.info-event>div:not(:last-child) {
   margin-bottom: 24px;
 
   @media screen and (max-width: 767.98px) {
@@ -51,7 +51,7 @@
   }
 }
 
-.info-fairs {
+.info-event {
   font-weight: 700;
   letter-spacing: -1.7px;
   position: relative;
@@ -127,11 +127,11 @@
   }
 }
 
-.description-fairs>*div:not(:last-child) {
+.description-event>*div:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.description-fairs {
+.description-event {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

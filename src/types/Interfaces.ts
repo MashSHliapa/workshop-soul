@@ -1,4 +1,4 @@
-export interface IPropsTradeCard {
+export interface IPropsEventCard {
   id: number
   title: string
   subtitle: string

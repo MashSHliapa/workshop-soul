@@ -46,6 +46,19 @@ export function Blog() {
                 <NavLink to="/blog/tradeFairs" target="_top">Читать далее</NavLink>
               </button>
             </div>
+
+            <div className="blog__card-blog card-blog blog__card-events card-events">
+              <div className="card-blog__info card-events__info">
+                <div className="card-blog__icon-and-title card-events__icon-and-title">
+                  <IconAndTitle>Фестивали<span>ДАТЫ И МЕСТА проведения</span></IconAndTitle>
+                </div>
+                <h5 className="card-blog__subtitle">Фестивали имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения.</h5>
+                <div className="card-blog__date card-events__date">Опубликовано 5 мая, 2024</div>
+              </div>
+              <button className="card-blog__button _button">
+                <NavLink to="/blog/festivals" target="_top">Читать далее</NavLink>
+              </button>
+            </div>
           </div>
         </div>
       </div>

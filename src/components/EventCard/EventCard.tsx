@@ -1,21 +1,21 @@
-import { IPropsTradeCard } from '../../types/interfaces'
-import './TradeFairsCard.scss'
+import { IPropsEventCard } from '../../types/interfaces'
+import './EventCard.scss'
 
-export function TradeFairsCard(props: {post: IPropsTradeCard}) {
+export function EventCard(props: {post: IPropsEventCard}) {
 
   return (
-    <div className="fairs-card">
-      <div className="fairs-card__body">
-        <div className="fairs-card__info-fairs info-fairs">
-          <div className="info-fairs__image _image">
+    <div className="event-card">
+      <div className="event-card__body">
+        <div className="event-card__info-event info-event">
+          <div className="info-event__image _image">
             <img src={props.post.image} alt="img" />
           </div>
-          <div className="info-fairs__name">
-            <div className="info-fairs__title">{props.post.title}</div>
-            <div className="info-fairs__subtitle">{props.post.subtitle}</div>
+          <div className="info-event__name">
+            <div className="info-event__title">{props.post.title}</div>
+            <div className="info-event__subtitle">{props.post.subtitle}</div>
           </div>
 
-          <div className="info-fairs__date date">
+          <div className="info-event__date date">
             <div className="date__deadlines">
               <span className='date__deadlines-pretext'>{props.post["date-pretext-from"]}</span>
               <span className='date__number'> {props.post["number-from"]}</span>{props.post["month-from"]}
@@ -28,16 +28,16 @@ export function TradeFairsCard(props: {post: IPropsTradeCard}) {
           <div className="date__year">{props.post.year}</div>
         </div>
 
-        <div className="fairs-card__description-fairs description-fairs">
-          <div className="description-fairs__info">
-            <div className="description-fairs__title">{props.post["title-description"]}<br />
+        <div className="event-card__description-event description-event">
+          <div className="description-event__info">
+            <div className="description-event__title">{props.post["title-description"]}<br />
               {props.post["subtitle-description"]}
             </div>
-            <div className="description-fairs__text"><p>{props.post.text1}</p><p>{props.post.text2}</p>
+            <div className="description-event__text"><p>{props.post.text1}</p><p>{props.post.text2}</p>
             </div>
           </div>
 
-          <div className="description-fairs__clarifications">
+          <div className="description-event__clarifications">
             {props.post['date-description']}<br />
             <b>{props.post['time-description']}</b><br />
             {props.post['adress-description']}<br />

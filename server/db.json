@@ -252,5 +252,29 @@
       "age": "16+",
       "image": "https://i.ibb.co/G53RW1N/trade-fairs.jpg"
     }
+  ],
+  "festivals": [
+    {
+      "id": 1,
+      "title": "Праздник Осени",
+      "subtitle": "ГДК, район Лядище, город Борисов",
+      "date-pretext-from": "",
+      "number-from": "18",
+      "month-from": "сентября",
+      "date-pretext-to": "",
+      "number-to": "",
+      "month-to": "",
+      "year": "2024",
+      "title-description": "Праздник Осени",
+      "subtitle-description": "18 сентября в ГДК, район Лядище, город Борисов.",
+      "text1": "Осенняя ярмарка, где Вы найдете для себя не толко спелые фрукты и овощи, но и изделения мастеров",
+      "text2": "Тематические серьги, украшения, браслеты, шумы дождя и осенние картины",
+      "date-description": "18 сентября 2024 года",
+      "time-description": "начало в 12:00",
+      "adress-description": "ГДК, район Лядище, город Борисов",
+      "condition": "Вход свободный",
+      "age": "6+",
+      "image": "https://i.ibb.co/6WZmXRz/festivals.jpg"
+    }
   ]
 }
