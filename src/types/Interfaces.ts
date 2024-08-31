@@ -22,7 +22,7 @@ export interface IPropsEventCard {
 }
 
 export interface IPropsItems {
-  id: string
+  id: number
   image: string
   item: string
   name: string

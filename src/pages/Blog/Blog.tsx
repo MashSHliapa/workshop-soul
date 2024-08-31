@@ -40,7 +40,6 @@ export function Blog() {
                   <IconAndTitle>ЯРМАРКИ <span>ДАТЫ И МЕСТА проведения</span></IconAndTitle>
                 </div>
                 <h5 className="card-blog__subtitle">Ярмарки имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения. Но его германские корни очевидны – jahr-markt – ежегодный рынок, регулярные торжища широкого значения.</h5>
-                <div className="card-blog__date card-events__date">Опубликовано 5 мая, 2024</div>
               </div>
               <button className="card-blog__button _button">
                 <NavLink to="/blog/tradeFairs" target="_top">Читать далее</NavLink>
@@ -53,7 +52,6 @@ export function Blog() {
                   <IconAndTitle>Фестивали<span>ДАТЫ И МЕСТА проведения</span></IconAndTitle>
                 </div>
                 <h5 className="card-blog__subtitle">Фестивали имеют давние традиции, восходящие еще к средневековью. «Где двое, там рынок, трое – базар, а семеро – ярмарка». Это изречение, дошедшее до нас из глубины истории, может даже навести на мысль, что само слово «ярмарка» русского происхождения.</h5>
-                <div className="card-blog__date card-events__date">Опубликовано 5 мая, 2024</div>
               </div>
               <button className="card-blog__button _button">
                 <NavLink to="/blog/festivals" target="_top">Читать далее</NavLink>

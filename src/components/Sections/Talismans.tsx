@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
-import { ItemCard } from '../ItemCard/ItemCard'
+import { ItemEsotericCard } from '../ItemEsotericCard/ItemEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchTalismans } from '../../redux/talismansSlice'
@@ -13,6 +13,7 @@ import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
+  const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[])
 
   useEffect(() => {
     dispatch(fetchTalismans())
@@ -26,7 +27,31 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
     return <div className="text-danger">{error}</div>
   }
 
-  const talismans = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
+  const handleClickToggleDescription = (id: number) => {
+    setIsOpenDescription((prev) => {
+      // Проверяем, открыта ли карточка уже
+      if (prev[id]) {
+        // Если да, то закрываем ее
+        return { ...prev, [id]: false };
+      } else {
+        // Если нет, то закрываем все остальные карточки и открываем эту
+        const newPrev = { ...prev };
+        Object.keys(prev).forEach((key) => {
+          if (key !== String(id)) {
+            delete newPrev[Number(key)];
+          }
+        });
+        newPrev[id] = true;
+        return newPrev;
+      }
+    });
+  };
+
+  const talismans = posts.map((item: IPropsItems) => <ItemEsotericCard
+    key={item.id}
+    post={item}
+    handleClickToggleDescription={handleClickToggleDescription}
+    isOpenDescription={isOpenDescription[item.id]} />)
 
   return (
     <div className="section-items" id="talismans">
