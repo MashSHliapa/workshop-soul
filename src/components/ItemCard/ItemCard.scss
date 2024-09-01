@@ -1,34 +1,30 @@
 .item-card {
   min-width: 540px;
   max-width: 540px;
-  min-height: 350px;
-  // max-height: 350px;
+  min-height: 320px;
   background-color: #F4F4F4;
   border-radius: 20px;
-  padding: 60px 50px 60px 50px;
+  padding: 50px 50px 60px 50px;
   margin: 0 auto;
 
   @media screen and (max-width: 1199.98px) {
     min-width: 440px;
     max-width: 440px;
-    min-height: 330px;
-    max-height: 330px;
+    min-height: 0px;
     padding: 40px 30px 40px 30px;
   }
 
   @media screen and (max-width: 991.98px) {
     min-width: 240px;
     max-width: 300px;
-    min-height: 520px;
-    max-height: 520px;
+    min-height: 440px;
     padding: 30px 10px 20px 10px;
   }
 
   @media screen and (max-width: 767.98px) {
     min-width: 230px;
     max-width: 230px;
-    min-height: 475px;
-    max-height: 475px;
+    min-height: 420px;
   }
 
   &__body {
@@ -78,6 +74,14 @@
 
     @media screen and (max-width: 1199.98px) {
       max-width: 180px;
+    }
+
+    @media screen and (max-width: 991.98px) {
+      min-width: 220px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      min-width: 0px;
     }
   }
 
@@ -145,5 +149,17 @@
   &__text-description {
     font-size: 16px;
     margin-top: 30px;
+
+    @media screen and (max-width: 991.98px) {
+      margin-top: 10px;
+      font-size: 15px;
+      padding: 0px 20px 0px 30px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      margin-top: 5px;
+      font-size: 14px;
+      padding: 0px 10px 0px 15px;
+    }
   }
 }
