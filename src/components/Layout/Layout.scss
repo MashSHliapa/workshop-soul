@@ -196,14 +196,10 @@ body {
 
 //для слайдеров в Каталоге
 .slider-items .slick-arrow {
-  top: -10%;
-
-  @media screen and (max-width: 991.98px) {
-    top: -7%;
-  }
+  top: -30px;
 
   @media screen and (max-width: 575.98px) {
-    top: 50%;
+    top: 200px;
     transform: translate(0, -50%);
     width: 15px;
     height: 15px;

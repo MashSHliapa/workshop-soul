@@ -13,7 +13,22 @@ import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
-  const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[])
+  const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[]);
+
+  useEffect(() => {
+    const handleClickCloseDescription = (event: MouseEvent | React.MouseEvent) => {
+      if (!(event.target as HTMLElement).closest('.item-card') && !(event.target as HTMLElement).closest('.slick-arrow')) {
+        setIsOpenDescription({} as boolean[]);
+      } else if ((event.target as HTMLElement).classList.contains('slick-arrow')) {
+        setTimeout(() => {
+          setIsOpenDescription({} as boolean[]);
+        }, 200);
+      }
+    }
+    document.addEventListener('click', handleClickCloseDescription)
+    return () => document.removeEventListener('click', handleClickCloseDescription)
+  }, [])
+
 
   useEffect(() => {
     dispatch(fetchTalismans())
@@ -32,20 +47,20 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
       // Проверяем, открыта ли карточка уже
       if (prev[id]) {
         // Если да, то закрываем ее
-        return { ...prev, [id]: false };
+        return { ...prev, [id]: false }
       } else {
         // Если нет, то закрываем все остальные карточки и открываем эту
-        const newPrev = { ...prev };
+        const newPrev = { ...prev }
         Object.keys(prev).forEach((key) => {
           if (key !== String(id)) {
-            delete newPrev[Number(key)];
+            delete newPrev[Number(key)]
           }
-        });
+        })
         newPrev[id] = true;
         return newPrev;
       }
-    });
-  };
+    })
+  }
 
   const talismans = posts.map((item: IPropsItems) => <ItemEsotericCard
     key={item.id}
