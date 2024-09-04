@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
+import { toggleDescription } from '../../helpers/toggleDescription'
+import { closeDescription } from '../../helpers/closeDescription'
 import { ItemEsotericCard } from '../ItemEsotericCard/ItemEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
@@ -13,22 +15,20 @@ import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
-  const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[]);
+  const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[])
+
+  const handleClickToggleDescription = (id: number) => {
+    setIsOpenDescription((prev) => toggleDescription(prev, id)
+    )
+  }
 
   useEffect(() => {
     const handleClickCloseDescription = (event: MouseEvent | React.MouseEvent) => {
-      if (!(event.target as HTMLElement).closest('.item-card') && !(event.target as HTMLElement).closest('.slick-arrow')) {
-        setIsOpenDescription({} as boolean[]);
-      } else if ((event.target as HTMLElement).classList.contains('slick-arrow')) {
-        setTimeout(() => {
-          setIsOpenDescription({} as boolean[]);
-        }, 200);
-      }
+      closeDescription(event, setIsOpenDescription)
     }
     document.addEventListener('click', handleClickCloseDescription)
     return () => document.removeEventListener('click', handleClickCloseDescription)
   }, [])
-
 
   useEffect(() => {
     dispatch(fetchTalismans())
@@ -40,26 +40,6 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
 
   if (error) {
     return <div className="text-danger">{error}</div>
-  }
-
-  const handleClickToggleDescription = (id: number) => {
-    setIsOpenDescription((prev) => {
-      // Проверяем, открыта ли карточка уже
-      if (prev[id]) {
-        // Если да, то закрываем ее
-        return { ...prev, [id]: false }
-      } else {
-        // Если нет, то закрываем все остальные карточки и открываем эту
-        const newPrev = { ...prev }
-        Object.keys(prev).forEach((key) => {
-          if (key !== String(id)) {
-            delete newPrev[Number(key)]
-          }
-        })
-        newPrev[id] = true;
-        return newPrev;
-      }
-    })
   }
 
   const talismans = posts.map((item: IPropsItems) => <ItemEsotericCard
