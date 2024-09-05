@@ -19,6 +19,7 @@ export function Footer() {
           </div>
           <div className="footer__navbar">
             <Navbar blog="Блог" contacts="Контакты / Доставка" newItems="Новинки" catalog="Каталог изделий" />
+            <a href="#top" className="footer__goToTop">Наверх</a>
           </div>
           <p className="footer__copyright">Все права защищены 2024</p>
         </div>

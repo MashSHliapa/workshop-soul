@@ -78,6 +78,10 @@
   }
 
   &__navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
     @media screen and (max-width: 991.98px) {
       font-size: 16px;
     }
@@ -100,6 +104,14 @@
   &__navbar ul>*:nth-child(3) {
     text-transform: uppercase;
     padding-top: 3px;
+  }
+
+  &__goToTop {
+    align-self: flex-end;
+
+    @media screen and (max-width: 575.98px) {
+      align-self: center;
+    }
   }
 
   &__copyright {
