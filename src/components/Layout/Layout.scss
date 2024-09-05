@@ -16,6 +16,9 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
 }
 
 ul,
@@ -30,6 +33,7 @@ img {
   vertical-align: top;
   max-width: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 h1,

@@ -116,13 +116,12 @@
   }
 
   &__section {
-    animation: slideIn 1s forwards;
+    animation: slideIn 0.5s forwards;
     position: relative;
     z-index: 2;
   }
 
   @keyframes slideIn {
-
     0% {
       transform: translateX(100%);
     }

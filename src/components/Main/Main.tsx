@@ -19,9 +19,9 @@ export function Main() {
                 Каталог
               </button>
             </div>
-            <div className="main__down">
+            <a href="#new-items" className="main__down">
               <img src={dowm} alt="down" />
-            </div>
+            </a>
           </div>
         </div>
         <div className="main__background _ibg">

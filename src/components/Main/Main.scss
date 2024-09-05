@@ -35,7 +35,22 @@
   }
 
   &__down {
-    text-align: center;
+    display: inline-block;
+    animation: down 0.7s linear infinite;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @keyframes down {
+    0% {
+      top: 0;
+    }
+
+    100% {
+      top: 11px;
+    }
   }
 
   &__background {

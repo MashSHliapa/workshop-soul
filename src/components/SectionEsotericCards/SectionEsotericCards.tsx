@@ -54,7 +54,7 @@ export const SectionEsotericCards = () => {
   }, [openSectionAmulets, openSectionRunes, openSectionDreamCatcher, openSectionTalismans])
 
   return (
-    <div className="sectionEsotericCards">
+    <div className="sectionEsotericCards pt-5" id="esoteric">
       <div className="sectionEsotericCards__container">
         {(!openSectionRunes && !openSectionAmulets && !openSectionDreamCatcher && !openSectionTalismans) ? (
           <div className="sectionEsotericCards__body">
