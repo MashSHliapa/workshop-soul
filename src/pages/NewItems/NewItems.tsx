@@ -1,31 +1,43 @@
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { RootState } from '../../redux/store'
+import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
+import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
 import { NewItem } from '../../components/NewItem/NewItem'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
-import { pathnameMainPage } from '../../helpers/pathnameMainPage'
+import { RootState } from '../../redux/store'
+import { fetchNewItemsAdd } from '../../redux/newItemsAddSlice'
 import { IPropsItems } from '../../types/interfaces'
 import './NewItems.scss'
 
 export function NewItems() {
-  const [newItem, setNewItem] = useState<IPropsItems>()
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.newItemsAdd) as {
+    data: IPropsItems[],
+    loading: boolean,
+    error: string | null
+  }
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
   const { newItemId } = useParams<{ newItemId: string }>()
 
-  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
-  const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
-
   useEffect(() => {
-    const currentItem = posts.find((item) => item.id === newItemId)
-    if (currentItem) {
-      setNewItem(currentItem)
-    }
-  }, [newItemId, posts])
+    dispatch(fetchNewItemsAdd())
+  }, [dispatch])
 
-  const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== newItemId)
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>
+  }
+
+  const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
+  const numberItemInArr: number = Number(newItemId ?? 0) - 1;
+
+  const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== posts[numberItemInArr].id)
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
@@ -50,9 +62,9 @@ export function NewItems() {
                   <div className="info__separator"></div>
                 </div>
                 <div className="info__description">
-                  <h3 className="info__title">{newItem?.item} <span>{newItem?.name}</span></h3>
+                  <h3 className="info__title">{posts[numberItemInArr]?.item} <span> {posts[numberItemInArr]?.name}</span></h3>
                   <div className="info__subtitle">
-                    {newItem?.description}
+                    {posts[numberItemInArr]?.description}
                   </div>
                 </div>
               </div>
