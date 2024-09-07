@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { RootState } from '../../redux/store'
+import { IPropsItems } from '../../types/interfaces'
 import label from '../../components/images/newitems/new_label.png'
 import './NewItem.scss'
 
 export function NewItem() {
-  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
+  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd) as { data: IPropsItems[] }
   const { newItemId } = useParams<string>()
-  const selectedNewItem = posts.find((item) => item.id == newItemId)
+  const selectedNewItem = posts.find((item) => item.id == Number(newItemId))
 
   return (
     <div className="new-item">

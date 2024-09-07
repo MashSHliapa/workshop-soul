@@ -207,6 +207,24 @@
       "description": "Вешается над входной дверью, от злых людей и негатива"
     }
   ],
+  "lighting": [
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/MPBBvhd/lighting-mushrooms1.jpg",
+      "item": "Освещение",
+      "name": "Осенние грибы",
+      "size": "500",
+      "material": "дерево, стабилизированный мох"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/MVYMRLK/lighting-mushrooms2.jpg",
+      "item": "Освещение",
+      "name": "Осенние грибы",
+      "size": "100 x 100",
+      "material": "дерево, стекло, стабилизированный мох"
+    }
+  ],
   "newItemsAdd": [
     {
       "id": 1,

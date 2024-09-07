@@ -18,6 +18,7 @@ import music from '../../components/images/catalog/music.jpg'
 import forgedProducts from '../../components/images/catalog/forged_products.jpg'
 import './Catalog.scss'
 import { MusicItems } from '../../components/Sections/MusicItems'
+import { LightingItems } from '../../components/Sections/LightingItems'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -25,14 +26,18 @@ export function Catalog() {
   const [isSectionEsotericOpen, setIsSectionEsotericOpen] = useState(false)
   const [isSectionMusicOpen, setIsSectionMusicOpen] = useState(false)
   const [isSectionforgedProductsOpen, setIsSectionForgedProductsOpen] = useState(false)
+  const [isSectionLightingOpen, setIsSectionLightingOpen] = useState(false)
 
   const handleClickOpenSection = (cardId: string) => {
+    console.log('open')
     if (cardId === 'bijouterie') {
+
       setIsSectionBijouterieOpen(prevState => !prevState);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
+      setIsSectionLightingOpen(false);
     }
     if (cardId === 'decor') {
       setIsSectionDecorOpen(prevState => !prevState);
@@ -40,6 +45,7 @@ export function Catalog() {
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
+      setIsSectionLightingOpen(false);
     }
     if (cardId === 'esoteric') {
       setIsSectionEsotericOpen(prevState => !prevState);
@@ -47,6 +53,7 @@ export function Catalog() {
       setIsSectionDecorOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
+      setIsSectionLightingOpen(false);
     }
     if (cardId === 'music') {
       setIsSectionMusicOpen(prevState => !prevState);
@@ -54,12 +61,22 @@ export function Catalog() {
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
+      setIsSectionLightingOpen(false);
     }
     if (cardId === 'forgedProducts') {
       setIsSectionForgedProductsOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
+      setIsSectionMusicOpen(false);
+      setIsSectionLightingOpen(false);
+    }
+    if (cardId === 'lighting') {
+      setIsSectionLightingOpen(prevState => !prevState);
+      setIsSectionBijouterieOpen(false);
+      setIsSectionDecorOpen(false);
+      setIsSectionEsotericOpen(false);
+      setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
     }
   }
@@ -70,7 +87,8 @@ export function Catalog() {
     catalogSectionsScroll(isSectionEsotericOpen, 'esoteric')
     catalogSectionsScroll(isSectionforgedProductsOpen, 'forgedProducts')
     catalogSectionsScroll(isSectionMusicOpen, 'music')
-  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen, isSectionMusicOpen])
+    catalogSectionsScroll(isSectionLightingOpen, 'lighting')
+  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen, isSectionMusicOpen, isSectionLightingOpen])
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
@@ -118,8 +136,12 @@ export function Catalog() {
               </div>}
             </div>
 
-            <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной.
-            Насладитесь мягким светом неповторимых ночников 'Soul'" />
+            <div className="catalog__card">
+              {!isSectionLightingOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной. Насладитесь мягким светом неповторимых ночников 'Soul'" /> :
+                <div className="catalog__section">
+                  <LightingItems />
+                </div>}
+            </div>
 
             <div className="catalog__card">
               {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" /> :
@@ -141,3 +163,4 @@ export function Catalog() {
     </div>
   )
 }
+
