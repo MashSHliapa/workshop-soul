@@ -29,9 +29,7 @@ export function Catalog() {
   const [isSectionLightingOpen, setIsSectionLightingOpen] = useState(false)
 
   const handleClickOpenSection = (cardId: string) => {
-    console.log('open')
     if (cardId === 'bijouterie') {
-
       setIsSectionBijouterieOpen(prevState => !prevState);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);

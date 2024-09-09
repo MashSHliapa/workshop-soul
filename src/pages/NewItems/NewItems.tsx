@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+// import { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Action, ThunkDispatch } from '@reduxjs/toolkit'
+// import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
@@ -9,30 +9,33 @@ import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
 import { NewItem } from '../../components/NewItem/NewItem'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { RootState } from '../../redux/store'
-import { fetchNewItemsAdd } from '../../redux/newItemsAddSlice'
-import { IPropsItems } from '../../types/interfaces'
+// import { fetchNewItemsAdd } from '../../redux/newItemsAddSlice'
+// import { IPropsItems } from '../../types/interfaces'
 import './NewItems.scss'
+import { useSelector } from 'react-redux'
 
 export function NewItems() {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.newItemsAdd) as {
-    data: IPropsItems[],
-    loading: boolean,
-    error: string | null
-  }
-  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
+  // const { data: posts, loading, error } = useSelector((state: RootState) => state.newItemsAdd) as {
+  //   data: IPropsItems[],
+  //   loading: boolean,
+  //   error: string | null
+  // }
+
+  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
+  // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
   const { newItemId } = useParams<{ newItemId: string }>()
 
-  useEffect(() => {
-    dispatch(fetchNewItemsAdd())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchNewItemsAdd())
+  // }, [dispatch])
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
 
-  if (error) {
-    return <div className="text-danger">{error}</div>
-  }
+  // if (error) {
+  //   return <div className="text-danger">{error}</div>
+  // }
 
   const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
   const numberItemInArr: number = Number(newItemId ?? 0) - 1;

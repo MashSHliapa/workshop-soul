@@ -1,30 +1,31 @@
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Action, ThunkDispatch } from '@reduxjs/toolkit'
+// import { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
-import { fetchDreamCatchers } from '../../redux/dreamCatchersSlice'
+// import { fetchDreamCatchers } from '../../redux/dreamCatchersSlice'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
+import { useSelector } from 'react-redux'
 
 export const DreamCathers = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.dreamCatchers)
-  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
+  const { data: posts } = useSelector((state: RootState) => state.dreamCatchers)
+  // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
-  useEffect(() => {
-    dispatch(fetchDreamCatchers())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchDreamCatchers())
+  // }, [dispatch])
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
 
-  if (error) {
-    return <div className="text-danger">{error}</div>
-  }
+  // if (error) {
+  //   return <div className="text-danger">{error}</div>
+  // }
 
   const dreamCatchers = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 

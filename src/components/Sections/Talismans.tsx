@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Action, ThunkDispatch } from '@reduxjs/toolkit'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { toggleDescription } from '../../helpers/toggleDescription'
@@ -8,13 +8,14 @@ import { closeDescription } from '../../helpers/closeDescription'
 import { ItemEsotericCard } from '../ItemEsotericCard/ItemEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
-import { fetchTalismans } from '../../redux/talismansSlice'
+// import { fetchTalismans } from '../../redux/talismansSlice'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
+import { useSelector } from 'react-redux'
 
 export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
-  const { data: posts, loading, error } = useSelector((state: RootState) => state.talismans)
-  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
+  const { data: posts } = useSelector((state: RootState) => state.talismans)
+  // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
   const [isOpenDescription, setIsOpenDescription] = useState({} as boolean[])
 
   const handleClickToggleDescription = (id: number) => {
@@ -30,17 +31,17 @@ export const Talismans = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
     return () => document.removeEventListener('click', handleClickCloseDescription)
   }, [])
 
-  useEffect(() => {
-    dispatch(fetchTalismans())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchTalismans())
+  // }, [dispatch])
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
 
-  if (error) {
-    return <div className="text-danger">{error}</div>
-  }
+  // if (error) {
+  //   return <div className="text-danger">{error}</div>
+  // }
 
   const talismans = posts.map((item: IPropsItems) => <ItemEsotericCard
     key={item.id}
