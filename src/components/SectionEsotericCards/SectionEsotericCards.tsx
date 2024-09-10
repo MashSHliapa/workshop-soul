@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
+import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
 import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
+import { AmuletsItems } from '../Sections/AmuletsItems'
 import { RunesItems } from '../Sections/RunesItems'
 import { DreamCathers } from '../Sections/DreamCatchers'
 import { Talismans } from '../Sections/Talismans'
@@ -10,53 +12,29 @@ import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
-import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
-import { AmuletsItems } from '../Sections/AmuletsItems'
 
 export const SectionEsotericCards = () => {
-  const [openSectionRunes, setOpenSectionRunes] = useState(false)
-  const [openSectionAmulets, setOpenSectionAmulets] = useState(false)
-  const [openSectionDreamCatcher, setOpenSectionDreamCatcher] = useState(false)
-  const [openSectionTalismans, setOpenSectionTalismans] = useState(false)
+  const [openSection, setOpenSection] = useState<null | string>(null)
 
   const handleClickOpenSection = (section: string) => {
-    if (section === 'amulets') {
-      setOpenSectionAmulets(prevState => !prevState)
-      setOpenSectionRunes(false)
-      setOpenSectionDreamCatcher(false)
-      setOpenSectionTalismans(false)
-    }
-    if (section === 'runes') {
-      setOpenSectionRunes(prevState => !prevState)
-      setOpenSectionAmulets(false)
-      setOpenSectionDreamCatcher(false)
-      setOpenSectionTalismans(false)
-    }
-    if (section === 'dreamCatchers') {
-      setOpenSectionDreamCatcher(prevState => !prevState)
-      setOpenSectionRunes(false)
-      setOpenSectionAmulets(false)
-      setOpenSectionTalismans(false)
-    }
-    if (section === 'talismans') {
-      setOpenSectionTalismans(prevState => !prevState)
-      setOpenSectionRunes(false)
-      setOpenSectionAmulets(false)
-      setOpenSectionDreamCatcher(false)
-    }
+    setOpenSection(section)
+  }
+
+  const handleCloseSection = () => {
+    setOpenSection(null)
   }
 
   useEffect(() => {
-    catalogSectionsScroll(openSectionAmulets, 'amulets')
-    catalogSectionsScroll(openSectionRunes, 'runes')
-    catalogSectionsScroll(openSectionDreamCatcher, 'dreamCatchers')
-    catalogSectionsScroll(openSectionTalismans, 'talismans')
-  }, [openSectionAmulets, openSectionRunes, openSectionDreamCatcher, openSectionTalismans])
+    const sections = ['runes', 'amulets', 'dreamCatchers', 'talismans']
+    if (sections.includes(openSection as string)) {
+      catalogSectionsScroll(openSection as null, openSection as string)
+    }
+  }, [openSection])
 
   return (
     <div className="sectionEsotericCards pt-5" id="esoteric">
       <div className="sectionEsotericCards__container">
-        {(!openSectionRunes && !openSectionAmulets && !openSectionDreamCatcher && !openSectionTalismans) ? (
+        {openSection === null ? (
           <div className="sectionEsotericCards__body">
             <div className="sectionEsotericCards__title _title-catalog">
               <IconAndTitle>Эзотерика</IconAndTitle>
@@ -102,10 +80,20 @@ export const SectionEsotericCards = () => {
             </div>
           </div>
         ) : (
-          (openSectionRunes && <RunesItems handleClickReturnBack={() => handleClickOpenSection('runes')} />) ||
-          (openSectionAmulets && <AmuletsItems handleClickReturnBack={() => handleClickOpenSection('amulets')} />) ||
-          (openSectionDreamCatcher && <DreamCathers handleClickReturnBack={() => handleClickOpenSection('dreamCatchers')} />) ||
-          (openSectionTalismans && <Talismans handleClickReturnBack={() => handleClickOpenSection('talismans')} />)
+          <div>
+            {openSection === 'runes' && (
+              <RunesItems handleClickReturnBack={handleCloseSection} />
+            )}
+            {openSection === 'amulets' && (
+              <AmuletsItems handleClickReturnBack={handleCloseSection} />
+            )}
+            {openSection === 'dreamCatchers' && (
+              <DreamCathers handleClickReturnBack={handleCloseSection} />
+            )}
+            {openSection === 'talismans' && (
+              <Talismans handleClickReturnBack={handleCloseSection} />
+            )}
+          </div>
         )}
       </div>
     </div>

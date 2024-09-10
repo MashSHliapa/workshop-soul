@@ -1,4 +1,4 @@
-export function catalogSectionsScroll(stateOfSection: boolean, section: string) {
+export function catalogSectionsScroll(stateOfSection: null, section: string) {
   if (stateOfSection) {
     const element = document.getElementById(section);
     if (element) {
