@@ -1,10 +1,10 @@
 import { IPropsItems } from '../../types/interfaces'
-import extans from '../images/esoterics/vector_expland.svg'
-import rollUp from '../images/esoterics/vector_rollup.svg'
+import vectorExpland from '../images/esoterics/vector_expland.svg'
+import vectorRollUp from '../images/esoterics/vector_rollup.svg'
 
 export const ItemEsotericCard: React.FC<{ post: IPropsItems; handleClickToggleDescription: (id: number) => void; isOpenDescription: boolean }> = (props) => {
 
-  const buttonImage = props.isOpenDescription ? rollUp : extans;
+  const buttonVector = props.isOpenDescription ? vectorRollUp : vectorExpland;
 
   return (
     <div className="item-esoteric-card" key={props.post.id}>
@@ -21,14 +21,14 @@ export const ItemEsotericCard: React.FC<{ post: IPropsItems; handleClickToggleDe
             <button className="item-card__button _button-description" onClick={() => props.handleClickToggleDescription(props.post.id)}>
               <div className="item-card__button-text">Узнать описание</div>
               <div className="item-card__button-image">
-                <img src={buttonImage} alt="vector" />
+                <img src={buttonVector} alt="vector" />
               </div>
             </button>
           </div>
         </div>
         {props.isOpenDescription && (
-            <div className="item-card__text-description">{props.post.description}</div>
-          )}
+          <div className="item-card__text-description">{props.post.description}</div>
+        )}
       </div>
     </div>
   )

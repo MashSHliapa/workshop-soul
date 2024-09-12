@@ -19,6 +19,9 @@ import forgedProducts from '../../components/images/catalog/forged_products.jpg'
 import './Catalog.scss'
 import { MusicItems } from '../../components/Sections/MusicItems'
 import { LightingItems } from '../../components/Sections/LightingItems'
+import vectorExpland from '../../components/images/esoterics/vector_expland.svg'
+import vectorRollUp from '../../components/images/esoterics/vector_rollup.svg'
+import { NavbarCategories } from '../../components/NavbarCategories/NavbarCategories'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -28,54 +31,68 @@ export function Catalog() {
   const [isSectionforgedProductsOpen, setIsSectionForgedProductsOpen] = useState(false)
   const [isSectionLightingOpen, setIsSectionLightingOpen] = useState(false)
 
-  const handleClickOpenSection = (cardId: string) => {
-    if (cardId === 'bijouterie') {
+  const [openCategories, setOpenCategories] = useState<null | string | boolean>(null)
+
+  const buttonVector = openCategories ? vectorRollUp : vectorExpland
+
+  const handleClickOpenCategories = () => {
+    setOpenCategories(prevState => !prevState)
+  }
+
+  const handleClickOpenSection = (section: string) => {
+    if (section === 'bijouterie') {
       setIsSectionBijouterieOpen(prevState => !prevState);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
       setIsSectionLightingOpen(false);
+      setOpenCategories(null);
     }
-    if (cardId === 'decor') {
+    if (section === 'decor') {
       setIsSectionDecorOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
       setIsSectionLightingOpen(false);
+      setOpenCategories(null);
     }
-    if (cardId === 'esoteric') {
+    if (section === 'esoteric') {
       setIsSectionEsotericOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
       setIsSectionLightingOpen(false);
+      setOpenCategories(null);
     }
-    if (cardId === 'music') {
+    if (section === 'music') {
       setIsSectionMusicOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionLightingOpen(false);
+      setOpenCategories(null);
     }
-    if (cardId === 'forgedProducts') {
+    if (section === 'forgedProducts') {
       setIsSectionForgedProductsOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionMusicOpen(false);
       setIsSectionLightingOpen(false);
+      setOpenCategories(null);
     }
-    if (cardId === 'lighting') {
+    if (section === 'lighting') {
       setIsSectionLightingOpen(prevState => !prevState);
       setIsSectionBijouterieOpen(false);
       setIsSectionDecorOpen(false);
       setIsSectionEsotericOpen(false);
       setIsSectionForgedProductsOpen(false);
       setIsSectionMusicOpen(false);
+      setOpenCategories(null);
     }
   }
 
@@ -115,6 +132,17 @@ export function Catalog() {
               <div className="catalog__separator"></div>
             </div>
           </div>
+          <div className="catalog__categories categories" onClick={handleClickOpenCategories}>
+            <div className={`categories ${openCategories ? 'categories__body categories__body_open' : 'categories__body'}`}>
+              <div className="categories__text">Категории товаров</div>
+              <div className="categories__vector">
+                <img src={buttonVector} alt="vector" />
+              </div>
+            </div>
+          </div>
+          {openCategories && (
+            <NavbarCategories handleClickOpenSection={(section) => handleClickOpenSection(section)} />
+          )}
           <div className="catalog__cards">
             <div className="catalog__card">
               {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Бижутерия" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">

@@ -1,0 +1,37 @@
+.navbar-categories {
+  background-color: #D8C562;
+  position: relative;
+  z-index: 10;
+  padding: 40px 60px 52px 60px;
+  cursor: pointer;
+
+  &__list>*:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    font-size: 28px;
+  }
+
+  &__list-esoteric {
+    padding: 20px 0 0 40px;
+  }
+
+  &__list-esoteric>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__link-esoteric {
+    font-size: 21px;
+  }
+}
+
+.navbar-categories__link .icon-title__icon {
+  width: 28px;
+  height: 20px;
+}
+
+.navbar-categories__link-esoteric .icon-title__icon {
+  width: 22px;
+  height: 16px;
+}
