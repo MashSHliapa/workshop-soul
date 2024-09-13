@@ -1,4 +1,3 @@
-import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import './NavbarCategories.scss'
 
 export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSection: (section: string) => void }) {
@@ -7,54 +6,54 @@ export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSe
       <ul className="navbar-categories__list">
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('bijouterie')}>
-            <IconAndTitle>БИЖУТЕРИЯ</IconAndTitle>
+            БИЖУТЕРИЯ
           </div>
         </li>
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('esoteric')}>
-            <IconAndTitle>Эзотерика</IconAndTitle>
+            Эзотерика
           </div>
           <ul className="navbar-categories__list-esoteric" >
             <li className="navbar-categories__item-esoteric">
               <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('amulets')}>
-                <IconAndTitle>ОБЕРЕГИ</IconAndTitle>
+                ОБЕРЕГИ
               </div>
             </li>
             <li className="navbar-categories__item-esoteric">
               <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('runes')}>
-                <IconAndTitle>РУНЫ</IconAndTitle>
+                РУНЫ
               </div>
             </li>
             <li className="navbar-categories__item-esoteric">
               <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('talisman')}>
-                <IconAndTitle>ТАЛИСМАНЫ</IconAndTitle>
+                ТАЛИСМАНЫ
               </div>
             </li>
             <li className="navbar-categories__item-esoteric">
               <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('')}>
-                <IconAndTitle>ЛОВЦЫ СНОВ</IconAndTitle>
+                ЛОВЦЫ СНОВ
               </div>
             </li>
           </ul>
         </li>
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('decor')}>
-            <IconAndTitle>Декор</IconAndTitle>
+            Декор
           </div>
         </li>
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('lighting')}>
-            <IconAndTitle>ОСВЕЩЕНИЕ</IconAndTitle>
+            ОСВЕЩЕНИЕ
           </div>
         </li>
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('music')}>
-            <IconAndTitle>МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ</IconAndTitle>
+            МУЗЫКАЛЬНЫЕ ИНСТРУМЕНТЫ
           </div>
         </li>
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('forgedProducts')}>
-            <IconAndTitle>КОВАННЫЕ ИЗДЕЛИЯ</IconAndTitle>
+            КОВАННЫЕ ИЗДЕЛИЯ
           </div>
         </li>
       </ul>

@@ -1,37 +1,116 @@
 .navbar-categories {
-  background-color: #D8C562;
   position: relative;
-  z-index: 10;
-  padding: 40px 60px 52px 60px;
-  cursor: pointer;
+  z-index: 2;
+  padding: 10px 60px 52px 60px;
+  background-color: #D8C562;
 
-  &__list>*:not(:last-child) {
-    margin-bottom: 30px;
+  @media screen and (max-width: 991.98px) {
+    padding: 5px 60px 40px 50px;
   }
 
-  &__link {
+  @media screen and (max-width: 575.98px) {
+    padding: 5px 10px 20px 40px;
+  }
+
+  &__list>*:not(:last-child) {
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 991.98px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__item {
     font-size: 28px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 24px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 22px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 16px;
+    }
+  }
+
+  &__link::before,
+  &__link-esoteric::before {
+    content: "";
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-color: #18362B;
+  }
+
+  &__link::before {
+    width: 10px;
+    height: 10px;
+
+    @media screen and (max-width: 991.98px) {
+      width: 8px;
+      height: 8px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      width: 6px;
+      height: 6px;
+      margin-right: 8px;
+    }
+  }
+
+  &__link,
+  &__link-esoteric {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
   }
 
   &__list-esoteric {
-    padding: 20px 0 0 40px;
+    padding: 0px 0 5px 40px;
+
+    @media screen and (max-width: 767.98px) {
+      padding: 0px 0 5px 30px;
+    }
   }
 
   &__list-esoteric>*:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 
   &__link-esoteric {
     font-size: 21px;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 14px;
+    }
   }
-}
 
-.navbar-categories__link .icon-title__icon {
-  width: 28px;
-  height: 20px;
-}
+  &__link-esoteric::before {
+    width: 7px;
+    height: 7px;
 
-.navbar-categories__link-esoteric .icon-title__icon {
-  width: 22px;
-  height: 16px;
+    @media screen and (max-width: 991.98px) {
+      width: 6px;
+      height: 6px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      width: 4px;
+      height: 4px;
+      margin-right: 6px;
+    }
+  }
 }
