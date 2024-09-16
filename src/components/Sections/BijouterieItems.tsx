@@ -30,7 +30,7 @@ export function BijouterieItems() {
   const bijouterie = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
 
   return (
-    <div className="section-items" id="bijouterie">
+    <div className="section-items section-items_first" id="bijouterie">
       <div className="section-items__body">
         <div className="section-items__title _title-catalog">
           <IconAndTitle>Бижутерия</IconAndTitle>

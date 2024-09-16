@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
@@ -8,6 +8,7 @@ import { AmuletsItems } from '../Sections/AmuletsItems'
 import { RunesItems } from '../Sections/RunesItems'
 import { DreamCathers } from '../Sections/DreamCatchers'
 import { Talismans } from '../Sections/Talismans'
+import { SliderContext } from '../Context/SliderContext'
 import amulets from '../images/esoterics/amulet.jpg'
 import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
@@ -15,6 +16,9 @@ import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
 
 export const SectionEsotericCards = () => {
   const [openSection, setOpenSection] = useState<null | string>(null)
+
+  const { activeIndex } = useContext(SliderContext)
+  const sliderRef = useRef(null)
 
   const handleClickOpenSection = (section: string) => {
     setOpenSection(section)
@@ -42,7 +46,9 @@ export const SectionEsotericCards = () => {
             <div className="sectionEsotericCards__slider slider-items">
               <div className="slider-items slider">
                 <Slider
+                  ref={sliderRef}
                   {...sliderSettings}
+                  initialSlide={activeIndex}
                 >
                   <div className="sectionEsotericCards__card">
                     <SectionEsotericCard

@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
+import { pathnameMainPage } from '../../helpers/pathnameMainPage'
 import { CatalogCardsEven } from '../../components/CatalogCardsEven/CatalogCardsEven'
 import { CatalogCardsOdd } from '../../components/CatalogCardsOdd/CatalogCardsOdd'
 import { BijouterieItems } from '../../components/Sections/BijouterieItems'
 import { DecorItems } from '../../components/Sections/DecorItems'
 import { SectionEsotericCards } from '../../components/SectionEsotericCards/SectionEsotericCards'
+import { MusicItems } from '../../components/Sections/MusicItems'
+import { LightingItems } from '../../components/Sections/LightingItems'
 import { ForderProducts } from '../../components/Sections/ForgedProducts'
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
 import { GoToTop } from '../../components/GoToTop/GoToTop'
-import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
-import { pathnameMainPage } from '../../helpers/pathnameMainPage'
+import { NavbarCategories } from '../../components/NavbarCategories/NavbarCategories'
+import { SliderContext } from '../../components/Context/SliderContext'
 import background from '../../components/images/background_catalog.png'
 import bijouterie from '../../components/images/catalog/bijouterie.jpg'
 import decor from '../../components/images/catalog/decor.jpg'
@@ -16,12 +20,9 @@ import esoteric from '../../components/images/catalog/esoterics.jpg'
 import lighting from '../../components/images/catalog/light.jpg'
 import music from '../../components/images/catalog/music.jpg'
 import forgedProducts from '../../components/images/catalog/forged_products.jpg'
-import './Catalog.scss'
-import { MusicItems } from '../../components/Sections/MusicItems'
-import { LightingItems } from '../../components/Sections/LightingItems'
 import vectorExpland from '../../components/images/esoterics/vector_expland.svg'
 import vectorRollUp from '../../components/images/esoterics/vector_rollup.svg'
-import { NavbarCategories } from '../../components/NavbarCategories/NavbarCategories'
+import './Catalog.scss'
 
 export function Catalog() {
   const [isSectionBijouterieOpen, setIsSectionBijouterieOpen] = useState(false)
@@ -35,64 +36,88 @@ export function Catalog() {
 
   const buttonVector = openCategories ? vectorRollUp : vectorExpland
 
+  const { setActiveIndex } = useContext(SliderContext)
+
   const handleClickOpenCategories = () => {
     setOpenCategories(prevState => !prevState)
+    if (!openCategories) {
+      setIsSectionBijouterieOpen(false)
+      setIsSectionDecorOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionMusicOpen(false)
+      setIsSectionLightingOpen(false)
+      setIsSectionForgedProductsOpen(false)
+    }
   }
+
+  useEffect(() => {
+    const handleClickCloseCategories = (event: MouseEvent | React.MouseEvent<HTMLElement>) => {
+      if (!(event.target as HTMLElement).closest('.categories__body')) {
+        setOpenCategories(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickCloseCategories)
+    return () => {
+      document.removeEventListener('click', handleClickCloseCategories)
+    }
+  }, [])
 
   const handleClickOpenSection = (section: string) => {
     if (section === 'bijouterie') {
-      setIsSectionBijouterieOpen(prevState => !prevState);
-      setIsSectionDecorOpen(false);
-      setIsSectionEsotericOpen(false);
-      setIsSectionForgedProductsOpen(false);
-      setIsSectionMusicOpen(false);
-      setIsSectionLightingOpen(false);
-      setOpenCategories(null);
+      setIsSectionBijouterieOpen(prevState => !prevState)
+      setIsSectionDecorOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionForgedProductsOpen(false)
+      setIsSectionMusicOpen(false)
+      setIsSectionLightingOpen(false)
+      setOpenCategories(null)
     }
     if (section === 'decor') {
-      setIsSectionDecorOpen(prevState => !prevState);
-      setIsSectionBijouterieOpen(false);
-      setIsSectionEsotericOpen(false);
-      setIsSectionForgedProductsOpen(false);
-      setIsSectionMusicOpen(false);
-      setIsSectionLightingOpen(false);
-      setOpenCategories(null);
+      setIsSectionDecorOpen(prevState => !prevState)
+      setIsSectionBijouterieOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionForgedProductsOpen(false)
+      setIsSectionMusicOpen(false)
+      setIsSectionLightingOpen(false)
+      setOpenCategories(null)
     }
     if (section === 'esoteric') {
-      setIsSectionEsotericOpen(prevState => !prevState);
-      setIsSectionBijouterieOpen(false);
-      setIsSectionDecorOpen(false);
-      setIsSectionForgedProductsOpen(false);
-      setIsSectionMusicOpen(false);
-      setIsSectionLightingOpen(false);
-      setOpenCategories(null);
+      setIsSectionEsotericOpen(prevState => !prevState)
+      setIsSectionBijouterieOpen(false)
+      setIsSectionDecorOpen(false)
+      setIsSectionForgedProductsOpen(false)
+      setIsSectionMusicOpen(false)
+      setIsSectionLightingOpen(false)
+      setOpenCategories(null)
+      setActiveIndex(0)
     }
     if (section === 'music') {
-      setIsSectionMusicOpen(prevState => !prevState);
-      setIsSectionBijouterieOpen(false);
-      setIsSectionDecorOpen(false);
-      setIsSectionEsotericOpen(false);
-      setIsSectionForgedProductsOpen(false);
-      setIsSectionLightingOpen(false);
-      setOpenCategories(null);
+      setIsSectionMusicOpen(prevState => !prevState)
+      setIsSectionBijouterieOpen(false)
+      setIsSectionDecorOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionForgedProductsOpen(false)
+      setIsSectionLightingOpen(false)
+      setOpenCategories(null)
     }
     if (section === 'forgedProducts') {
-      setIsSectionForgedProductsOpen(prevState => !prevState);
-      setIsSectionBijouterieOpen(false);
-      setIsSectionDecorOpen(false);
-      setIsSectionEsotericOpen(false);
-      setIsSectionMusicOpen(false);
-      setIsSectionLightingOpen(false);
-      setOpenCategories(null);
+      setIsSectionForgedProductsOpen(prevState => !prevState)
+      setIsSectionBijouterieOpen(false)
+      setIsSectionDecorOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionMusicOpen(false)
+      setIsSectionLightingOpen(false)
+      setOpenCategories(null)
     }
     if (section === 'lighting') {
-      setIsSectionLightingOpen(prevState => !prevState);
-      setIsSectionBijouterieOpen(false);
-      setIsSectionDecorOpen(false);
-      setIsSectionEsotericOpen(false);
-      setIsSectionForgedProductsOpen(false);
-      setIsSectionMusicOpen(false);
-      setOpenCategories(null);
+      setIsSectionLightingOpen(prevState => !prevState)
+      setIsSectionBijouterieOpen(false)
+      setIsSectionDecorOpen(false)
+      setIsSectionEsotericOpen(false)
+      setIsSectionForgedProductsOpen(false)
+      setIsSectionMusicOpen(false)
+      setOpenCategories(null)
     }
   }
 
@@ -139,10 +164,12 @@ export function Catalog() {
                 <img src={buttonVector} alt="vector" />
               </div>
             </div>
+            {openCategories && (
+              <div className="categories__navbar-categories">
+                <NavbarCategories handleClickOpenSection={(section) => handleClickOpenSection(section)} />
+              </div>
+            )}
           </div>
-          {openCategories && (
-            <NavbarCategories handleClickOpenSection={(section) => handleClickOpenSection(section)} />
-          )}
           <div className="catalog__cards">
             <div className="catalog__card">
               {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Бижутерия" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">

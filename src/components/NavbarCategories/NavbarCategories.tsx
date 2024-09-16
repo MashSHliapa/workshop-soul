@@ -1,6 +1,15 @@
+import { useContext } from 'react'
+import { SliderContext } from '../Context/SliderContext'
 import './NavbarCategories.scss'
 
 export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSection: (section: string) => void }) {
+  const { setActiveIndex } = useContext(SliderContext)
+
+  function handleClickOpenSectionEsoteric(section: string, index: number) {
+    handleClickOpenSection(section)
+    setActiveIndex(index)
+  }
+
   return (
     <div className="navbar-categories">
       <ul className="navbar-categories__list">
@@ -13,27 +22,14 @@ export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSe
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('esoteric')}>
             Эзотерика
           </div>
-          <ul className="navbar-categories__list-esoteric" >
-            <li className="navbar-categories__item-esoteric">
-              <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('amulets')}>
-                ОБЕРЕГИ
-              </div>
-            </li>
-            <li className="navbar-categories__item-esoteric">
-              <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('runes')}>
-                РУНЫ
-              </div>
-            </li>
-            <li className="navbar-categories__item-esoteric">
-              <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('talisman')}>
-                ТАЛИСМАНЫ
-              </div>
-            </li>
-            <li className="navbar-categories__item-esoteric">
-              <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSection('')}>
-                ЛОВЦЫ СНОВ
-              </div>
-            </li>
+          <ul className="navbar-categories__list-esoteric">
+            {['ОБЕРЕГИ', 'РУНЫ', 'ТАЛИСМАНЫ', 'ЛОВЦЫ СНОВ'].map((item, index) => (
+              <li className="navbar-categories__item-esoteric" key={index}>
+                <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSectionEsoteric('esoteric', index)}>
+                  {item}
+                </div>
+              </li>
+            ))}
           </ul>
         </li>
         <li className="navbar-categories__item">
