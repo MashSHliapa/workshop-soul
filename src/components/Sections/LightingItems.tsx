@@ -7,9 +7,10 @@ import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchLighting } from '../../redux/lightingSlice'
-import { IPropsItems } from '../../types/interfaces'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 
-export function LightingItems() {
+export function LightingItems({ handleClickReturnBack }: IPropsFuncReturnBack) {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.lighting)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
@@ -30,8 +31,13 @@ export function LightingItems() {
   return (
     <div className="section-items" id="lighting">
       <div className="section-items__body">
-        <div className="section-items__title _title-catalog">
-          <IconAndTitle>Освещение</IconAndTitle>
+        <div className="section-items__header-box">
+          <div className="section-items__title _title-with-back">
+            <IconAndTitle>Освещение</IconAndTitle>
+          </div>
+          <div className="section-items__return-back">
+            <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+          </div>
         </div>
         <div className="section-items__slider slider-items">
           <div className="slider-items slider">

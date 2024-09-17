@@ -7,9 +7,10 @@ import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchMusic } from '../../redux/musicSlice'
-import { IPropsItems } from '../../types/interfaces'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 
-export const MusicItems = () => {
+export const MusicItems = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.music)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
@@ -30,8 +31,13 @@ export const MusicItems = () => {
   return (
     <div className="section-items" id="music">
       <div className="section-items__body">
-        <div className="section-items__title _title-catalog">
-          <IconAndTitle>Музыка</IconAndTitle>
+        <div className="section-items__header-box">
+          <div className="section-items__title _title-with-back">
+            <IconAndTitle>Музыка</IconAndTitle>
+          </div>
+          <div className="section-items__return-back">
+            <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+          </div>
         </div>
         <div className="section-items__slider slider-items">
           <div className="slider-items slider">

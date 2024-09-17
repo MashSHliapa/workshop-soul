@@ -4,6 +4,7 @@ import { sliderSettings } from './sliderSettings'
 import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
 import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
 import { AmuletsItems } from '../Sections/AmuletsItems'
 import { RunesItems } from '../Sections/RunesItems'
 import { DreamCathers } from '../Sections/DreamCatchers'
@@ -14,7 +15,7 @@ import runes from '../images/esoterics/runes.jpg'
 import talismans from '../images/esoterics/talisman.jpg'
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg'
 
-export const SectionEsotericCards = () => {
+export const SectionEsotericCards = ({ handleClickReturnBack }: { handleClickReturnBack: () => void }) => {
   const [openSection, setOpenSection] = useState<null | string>(null)
 
   const { activeIndex } = useContext(SliderContext)
@@ -40,8 +41,13 @@ export const SectionEsotericCards = () => {
       <div className="sectionEsotericCards__container">
         {openSection === null ? (
           <div className="sectionEsotericCards__body">
-            <div className="sectionEsotericCards__title _title-catalog">
-              <IconAndTitle>Эзотерика</IconAndTitle>
+            <div className="section-items__header-box">
+              <div className="sectionEsotericCards__title _title-with-back">
+                <IconAndTitle>Эзотерика</IconAndTitle>
+              </div>
+              <div className="section-items__return-back">
+                <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+              </div>
             </div>
             <div className="sectionEsotericCards__slider slider-items">
               <div className="slider-items slider">

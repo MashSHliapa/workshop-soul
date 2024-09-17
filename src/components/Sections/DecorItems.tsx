@@ -7,11 +7,12 @@ import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 // import { fetchDecor } from '../../redux/decorSlice'
-import { IPropsItems } from '../../types/interfaces'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
 import { useSelector } from 'react-redux'
 
-export function DecorItems() {
+export function DecorItems({ handleClickReturnBack }: IPropsFuncReturnBack) {
   const { data: posts } = useSelector((state: RootState) => state.decor)
   // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
@@ -32,16 +33,21 @@ export function DecorItems() {
   return (
     <div className="section-items" id="decor">
       <div className="section-items__body">
-        <div className="section-items__title _title-catalog">
-          <IconAndTitle>Декор</IconAndTitle>
-        </div>
-        <div className="section-items__slider slider-items">
-          <div className="slider-items slider">
-            <Slider
-              {...sliderSettings}>
-              {decor}
-            </Slider>
+        <div className="section-items__header-box">
+          <div className="section-items__title _title-with-back">
+            <IconAndTitle>Декор</IconAndTitle>
           </div>
+          <div className="section-items__return-back">
+            <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+          </div>
+        </div>
+      </div>
+      <div className="section-items__slider slider-items">
+        <div className="slider-items slider">
+          <Slider
+            {...sliderSettings}>
+            {decor}
+          </Slider>
         </div>
       </div>
     </div>

@@ -120,17 +120,12 @@ body {
   }
 }
 
-._title-catalog,
 ._title-with-back {
   font-size: 24px;
 
   @media screen and (max-width: 575.98px) {
     font-size: 19px;
   }
-}
-
-._title-catalog {
-  margin-bottom: 10px;
 }
 
 ._button {

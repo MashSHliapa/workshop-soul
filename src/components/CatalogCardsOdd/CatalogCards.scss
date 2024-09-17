@@ -67,7 +67,7 @@
   flex-direction: column;
 
   &__icon-and-title {
-    font-size: 24px;
+    font-size: 35px;
   }
 
   &__subtitle {
@@ -75,7 +75,6 @@
   }
 
   &__direction {
-    color: #909090;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -85,8 +84,12 @@
 
     &:hover {
       cursor: pointer;
-      color: black;
+      color: #622626;
     }
+  }
+
+  &__direction:hover &__vector {
+    background: #622626;
   }
 
   &__text {
@@ -96,8 +99,8 @@
   &__vector {
     height: 17px;
     width: 100px;
-    background: url('../images/catalog/catalog_vector_right.svg') no-repeat;
-    mask: url('../images/catalog/catalog_vector_right.svg') no-repeat;
+    background: url('../images/catalog/vector_right.svg') no-repeat;
+    mask: url('../images/catalog/vector_right.svg') no-repeat;
   }
 
   @media screen and (max-width: 991.98px) {
@@ -133,8 +136,4 @@
       margin: 0 10px;
     }
   }
-}
-
-.info-catalog__direction:hover .info-catalog__vector {
-  background: rgb(34, 30, 30);
 }

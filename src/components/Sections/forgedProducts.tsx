@@ -7,10 +7,11 @@ import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchForgetProducts } from '../../redux/forgedProductsSlice'
-import { IPropsItems } from '../../types/interfaces'
+import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
 
-export function ForderProducts() {
+export function ForderProducts({ handleClickReturnBack }: IPropsFuncReturnBack) {
   const { data: posts, loading, error } = useSelector((state: RootState) => state.forgedProducts)
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
 
@@ -31,8 +32,13 @@ export function ForderProducts() {
   return (
     <div className="section-items" id="forgedProducts">
       <div className="section-items__body">
-        <div className="section-items__title _title-catalog">
-          <IconAndTitle>Кованые изделия</IconAndTitle>
+        <div className="section-items__header-box">
+          <div className="section-items__title _title-with-back">
+            <IconAndTitle>Кованые изделия</IconAndTitle>
+          </div>
+          <div className="section-items__return-back">
+            <ReturnBack handleClickReturnBack={handleClickReturnBack} />
+          </div>
         </div>
         <div className="section-items__slider slider-items">
           <div className="slider-items slider">
