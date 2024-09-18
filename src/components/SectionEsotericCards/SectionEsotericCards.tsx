@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
 import { catalogSectionsScroll } from '../../helpers/catalogSectionsScroll'
+import { closeCatalogSections } from '../../helpers/closeCatalogSections'
 import { SectionEsotericCard } from '../SectionEsotericCard/SectionEsotericCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
@@ -35,6 +36,20 @@ export const SectionEsotericCards = ({ handleClickReturnBack }: { handleClickRet
       catalogSectionsScroll(openSection as null, openSection as string)
     }
   }, [openSection])
+
+  useEffect(() => {
+    const handleClickCloseCategories = (event: MouseEvent | React.MouseEvent<HTMLElement>) => {
+      const target = event.target as HTMLElement
+      if (target.closest('.section-esoteric-card__button') || target.closest('.section-items__return-back')) {
+        return
+      }
+      closeCatalogSections(event, handleClickReturnBack)
+    }
+    document.addEventListener('click', handleClickCloseCategories)
+    return () => {
+      document.removeEventListener('click', handleClickCloseCategories)
+    }
+  }, [handleClickReturnBack])
 
   return (
     <div className="sectionEsotericCards pt-5" id="esoteric">

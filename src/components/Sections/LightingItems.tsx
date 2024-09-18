@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Action, ThunkDispatch } from '@reduxjs/toolkit'
 import Slider from 'react-slick'
 import { sliderSettings } from './sliderSettings'
+import { closeCatalogSections } from '../../helpers/closeCatalogSections'
 import { ItemCard } from '../ItemCard/ItemCard'
 import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
@@ -17,6 +18,16 @@ export function LightingItems({ handleClickReturnBack }: IPropsFuncReturnBack) {
   useEffect(() => {
     dispatch(fetchLighting())
   }, [dispatch])
+
+  useEffect(() => {
+    const handleClickOutsideCatalog = (event: MouseEvent | React.MouseEvent) => {
+      closeCatalogSections(event, handleClickReturnBack)
+    }
+    document.addEventListener('click', handleClickOutsideCatalog)
+    return () => {
+      document.removeEventListener('click', handleClickOutsideCatalog)
+    }
+  }, [handleClickReturnBack])
 
   if (loading) {
     return <div>Loading...</div>

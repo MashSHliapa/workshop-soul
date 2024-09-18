@@ -11,6 +11,8 @@ import { ReturnBack } from '../ReturnBack/ReturnBack'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
 import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { closeCatalogSections } from '../../helpers/closeCatalogSections'
 
 export function BijouterieItems({ handleClickReturnBack }: IPropsFuncReturnBack) {
   const { data: posts } = useSelector((state: RootState) => state.bijouterie)
@@ -29,6 +31,16 @@ export function BijouterieItems({ handleClickReturnBack }: IPropsFuncReturnBack)
   // }
 
   const bijouterie = posts.map((item: IPropsItems) => <ItemCard key={item.id} post={item} />)
+
+  useEffect(() => {
+    const handleClickOutsideCatalog = (event: MouseEvent | React.MouseEvent) => {
+      closeCatalogSections(event, handleClickReturnBack)
+    }
+    document.addEventListener('click', handleClickOutsideCatalog)
+    return () => {
+      document.removeEventListener('click', handleClickOutsideCatalog)
+    }
+  }, [handleClickReturnBack])
 
   return (
     <div className="section-items section-items_first" id="bijouterie">

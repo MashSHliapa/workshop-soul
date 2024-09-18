@@ -121,15 +121,15 @@
     z-index: 2;
   }
 
-  @keyframes slideIn {
-    0% {
-      transform: translateX(100%);
-    }
+  // @keyframes slideIn {
+  //   0% {
+  //     transform: translateX(100%);
+  //   }
 
-    100% {
-      transform: translateX(0);
-    }
-  }
+  //   100% {
+  //     transform: translateX(0);
+  //   }
+  // }
 
   &__subtitle {
     color: #909090;
