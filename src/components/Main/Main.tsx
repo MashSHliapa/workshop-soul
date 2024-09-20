@@ -1,7 +1,7 @@
 import { Catalog } from '../../pages/Catalog/Catalog'
 import { Contacts } from '../../pages/Contacts/Contacts'
 import { NewItems } from '../../pages/NewItems/NewItems'
-import { Tagline } from '../Tagline'
+import { Tagline } from '../Tagline/Tagline'
 import dowm from '../images/main_down.png'
 import background from '../../components/images/background_main.png'
 import './Main.scss'

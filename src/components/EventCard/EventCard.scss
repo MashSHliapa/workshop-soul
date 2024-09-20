@@ -17,27 +17,23 @@
     color: #1E1E1E;
     text-align: start;
     padding: 35px 35px 35px 40px;
-  }
 
-  &__info-fairs {
-    min-width: 280px;
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__body {
+    @media screen and (max-width: 767.98px) {
       flex-direction: column;
       gap: 10px;
       padding: 35px 25px 15px 25px;
     }
-  }
 
-  @media screen and (max-width: 575.98px) {
-    &__body {
+    @media screen and (max-width: 575.98px) {
       gap: 0px;
       padding: 20px 15px 15px 15px;
     }
+  }
 
-    &__info-fairs {
+  &__info-fairs {
+    min-width: 280px;
+
+    @media screen and (max-width: 575.98px) {
       min-width: 250px;
     }
   }
@@ -56,10 +52,23 @@
   letter-spacing: -1.7px;
   position: relative;
 
+  @media screen and (max-width: 767.98px) {
+    text-align: center;
+  }
+
   &__image {
     position: relative;
     height: 220px;
     width: 220px;
+
+    @media screen and (max-width: 767.98px) {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      height: 200px;
+      width: 200px;
+    }
   }
 
   &__image img {
@@ -68,28 +77,15 @@
 
   &__title {
     font-size: 24px;
-  }
 
-  @media screen and (max-width: 767.98px) {
-    text-align: center;
-
-    &__image {
-      margin: 0 auto;
-    }
-
-    &__title {
+    @media screen and (max-width: 767.98px) {
       margin-bottom: 10px;
     }
-
-    &__subtitle {
-      font-size: 18px;
-    }
   }
 
-  @media screen and (max-width: 575.98px) {
-    &__image {
-      height: 200px;
-      width: 200px;
+  &__subtitle {
+    @media screen and (max-width: 767.98px) {
+      font-size: 18px;
     }
   }
 }
@@ -101,6 +97,14 @@
   &__number {
     font-size: 50px;
     margin: 0 7px 0 0px;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 42px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 38px;
+    }
   }
 
   &__year {
@@ -108,20 +112,8 @@
     line-height: 1.8;
     position: absolute;
     bottom: 0;
-  }
 
-  @media screen and (max-width: 991.98px) {
-    &__number {
-      font-size: 42px;
-    }
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__number {
-      font-size: 38px;
-    }
-
-    &__year {
+    @media screen and (max-width: 767.98px) {
       display: none;
     }
   }

@@ -66,12 +66,25 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-width: 991.98px) {
+    padding: 0px 5px;
+    order: 1;
+  }
+
   &__icon-and-title {
     font-size: 35px;
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 20px;
+    }
   }
 
   &__subtitle {
     color: #4E4E4E;
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 14px;
+    }
   }
 
   &__direction {
@@ -86,6 +99,13 @@
       cursor: pointer;
       color: #622626;
     }
+
+    @media screen and (max-width: 575.98px) {
+      align-items: end;
+      gap: 5px;
+      flex-direction: column;
+      padding-right: 10px;
+    }
   }
 
   &__direction:hover &__vector {
@@ -94,6 +114,10 @@
 
   &__text {
     font-size: 14px;
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 12px;
+    }
   }
 
   &__vector {
@@ -101,39 +125,5 @@
     width: 100px;
     background: url('../images/catalog/vector_right.svg') no-repeat;
     mask: url('../images/catalog/vector_right.svg') no-repeat;
-  }
-
-  @media screen and (max-width: 991.98px) {
-    padding: 0px 5px;
-    order: 1;
-
-    &__text {
-      font-size: 14px;
-    }
-  }
-
-  @media screen and (max-width: 575.98px) {
-    &__icon-and-title {
-      font-size: 20px;
-    }
-
-    &__subtitle {
-      font-size: 14px;
-    }
-
-    &__direction {
-      align-items: end;
-      gap: 5px;
-      flex-direction: column;
-      padding-right: 10px;
-    }
-
-    &__text {
-      font-size: 12px;
-    }
-
-    &__image {
-      margin: 0 10px;
-    }
   }
 }

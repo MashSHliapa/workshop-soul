@@ -7,12 +7,32 @@
     position: relative;
     z-index: 2;
     line-height: 136%;
+
+    @media screen and (max-width: 991.98px) {
+      padding: 85px 0 15px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      padding: 70px 0 20px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      padding: 50px 0 20px;
+    }
   }
 
   &__title {
     text-transform: uppercase;
     font-size: 70px;
     font-weight: 700;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 50px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 30px;
+    }
   }
 
   &__title span {
@@ -20,18 +40,58 @@
     font-size: 36px;
     display: block;
     padding-top: 10px;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 23px;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 18px;
+      padding-top: 5px;
+    }
   }
 
   &__info {
     margin: 45px 0;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 991.98px) {
+      margin: 65px 0 35px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      margin: 50px 0 40px;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      margin: 30px 0 0px;
+    }
   }
 
   &__text {
     font-size: 20px;
     max-width: 730px;
     padding: 0 20px 0 0;
+
+    @media screen and (max-width: 991.98px) {
+      font-size: 16px;
+      max-width: 638px;
+    }
+
+    @media screen and (max-width: 767.98px) {
+      padding: 0 40px 40px 0;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 14px;
+      padding: 0 40px 40px 0;
+    }
   }
 
   &__down {
@@ -41,6 +101,10 @@
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+
+    @media screen and (max-width: 991.98px) {
+      display: none;
+    }
   }
 
   @keyframes down {
@@ -59,76 +123,5 @@
     left: 0;
     width: 100%;
     height: 100%;
-  }
-
-  @media screen and (max-width: 991.98px) {
-    &__body {
-      padding: 85px 0 15px;
-    }
-
-    &__title span {
-      font-size: 28px;
-    }
-
-    &__info {
-      margin: 65px 0 35px;
-    }
-
-    &__text {
-      font-size: 16px;
-      max-width: 638px;
-    }
-
-    &__down {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 767.98px) {
-    &__body {
-      padding: 70px 0 20px;
-    }
-
-    &__title {
-      font-size: 50px;
-    }
-
-    &__title span {
-      font-size: 23px;
-    }
-
-    &__info {
-      margin: 50px 0 40px;
-      flex-wrap: wrap;
-    }
-
-    &__text {
-      padding: 0 40px 40px 0;
-    }
-  }
-
-  @media screen and (max-width: 575.98px) {
-
-    &__body {
-      padding: 50px 0 20px;
-    }
-
-    &__title {
-      font-size: 30px;
-    }
-
-    &__title span {
-      font-size: 18px;
-      padding-top: 5px;
-    }
-
-    &__info {
-      margin: 30px 0 0px;
-    }
-
-    &__text {
-      font-size: 14px;
-      padding: 0 40px 40px 0;
-    }
   }
 }
