@@ -53,13 +53,14 @@ export function DecorItems({ handleClickReturnBack }: IPropsFuncReturnBack) {
             <ReturnBack handleClickReturnBack={handleClickReturnBack} />
           </div>
         </div>
-      </div>
-      <div className="section-items__slider slider-items">
-        <div className="slider-items slider">
-          <Slider
-            {...sliderSettings}>
-            {decor}
-          </Slider>
+
+        <div className="section-items__slider slider-items">
+          <div className="slider-items slider">
+            <Slider
+              {...sliderSettings}>
+              {decor}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

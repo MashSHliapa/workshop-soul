@@ -29,7 +29,7 @@ export function Catalog() {
   const [isSectionDecorOpen, setIsSectionDecorOpen] = useState(false)
   const [isSectionEsotericOpen, setIsSectionEsotericOpen] = useState(false)
   const [isSectionMusicOpen, setIsSectionMusicOpen] = useState(false)
-  const [isSectionforgedProductsOpen, setIsSectionForgedProductsOpen] = useState(false)
+  const [isSectionForgedProductsOpen, setIsSectionForgedProductsOpen] = useState(false)
   const [isSectionLightingOpen, setIsSectionLightingOpen] = useState(false)
 
   const [openCategories, setOpenCategories] = useState<null | string | boolean>(null)
@@ -125,10 +125,10 @@ export function Catalog() {
     catalogSectionsScroll(isSectionBijouterieOpen, 'bijouterie')
     catalogSectionsScroll(isSectionDecorOpen, 'decor')
     catalogSectionsScroll(isSectionEsotericOpen, 'esoteric')
-    catalogSectionsScroll(isSectionforgedProductsOpen, 'forgedProducts')
+    catalogSectionsScroll(isSectionForgedProductsOpen, 'forgedProducts')
     catalogSectionsScroll(isSectionMusicOpen, 'music')
     catalogSectionsScroll(isSectionLightingOpen, 'lighting')
-  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionforgedProductsOpen, isSectionMusicOpen, isSectionLightingOpen])
+  }, [isSectionBijouterieOpen, isSectionDecorOpen, isSectionEsotericOpen, isSectionForgedProductsOpen, isSectionMusicOpen, isSectionLightingOpen])
 
   const handleCloseSection = () => {
     setIsSectionBijouterieOpen(false)
@@ -181,7 +181,7 @@ export function Catalog() {
           </div>
           <div className="catalog__cards">
             <div className="catalog__card">
-              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Бижутерия" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
+              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Украшения" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
                 <BijouterieItems handleClickReturnBack={handleCloseSection} />
               </div>}
             </div>
@@ -212,7 +212,7 @@ export function Catalog() {
                 </div>}
             </div>
 
-            {!isSectionforgedProductsOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('forgedProducts')} name="Кованные изделия" image={forgedProducts} description="Работа мастера кузнечного дела - Артема Кирашёва. Придумайте собственные изделия с использованием кованого металла! У нас Вы найдете много вариантов предметов домашнего обихода" /> :
+            {!isSectionForgedProductsOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('forgedProducts')} name="Кованные изделия" image={forgedProducts} description="Работа мастера кузнечного дела - Артема Кирашёва. Придумайте собственные изделия с использованием кованого металла! У нас Вы найдете много вариантов предметов домашнего обихода" /> :
               <div className="catalog__section">
                 <ForderProducts handleClickReturnBack={handleCloseSection} />
               </div>}

@@ -15,7 +15,7 @@ export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSe
       <ul className="navbar-categories__list">
         <li className="navbar-categories__item">
           <div className="navbar-categories__link" onClick={() => handleClickOpenSection('bijouterie')}>
-            БИЖУТЕРИЯ
+            Украшения
           </div>
         </li>
         <li className="navbar-categories__item">

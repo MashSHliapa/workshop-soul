@@ -47,7 +47,7 @@ export function BijouterieItems({ handleClickReturnBack }: IPropsFuncReturnBack)
       <div className="section-items__body">
         <div className="section-items__header-box">
           <div className="section-items__title _title-with-back">
-            <IconAndTitle>Бижутерия</IconAndTitle>
+            <IconAndTitle>Украшения</IconAndTitle>
           </div>
           <div className="section-items__return-back">
             <ReturnBack handleClickReturnBack={handleClickReturnBack} />

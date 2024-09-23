@@ -9,6 +9,7 @@ import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchForgetProducts } from '../../redux/forgedProductsSlice'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { Loading } from '../Loading/Loading'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 import './SectionItems.scss'
 
@@ -31,7 +32,11 @@ export function ForderProducts({ handleClickReturnBack }: IPropsFuncReturnBack) 
   }, [handleClickReturnBack])
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div style={{ height: '500px' }}>
+        <Loading />
+      </div>
+    );
   }
 
   if (error) {

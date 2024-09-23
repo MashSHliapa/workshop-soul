@@ -9,6 +9,7 @@ import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { RootState } from '../../redux/store'
 import { fetchMusic } from '../../redux/musicSlice'
 import { ReturnBack } from '../ReturnBack/ReturnBack'
+import { Loading } from '../Loading/Loading'
 import { IPropsFuncReturnBack, IPropsItems } from '../../types/interfaces'
 
 export const MusicItems = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
@@ -30,7 +31,7 @@ export const MusicItems = ({ handleClickReturnBack }: IPropsFuncReturnBack) => {
   }, [handleClickReturnBack])
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div><Loading /></div>
   }
 
   if (error) {

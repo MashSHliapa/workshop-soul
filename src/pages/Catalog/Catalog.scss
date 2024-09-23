@@ -121,16 +121,6 @@
     z-index: 2;
   }
 
-  // @keyframes slideIn {
-  //   0% {
-  //     transform: translateX(100%);
-  //   }
-
-  //   100% {
-  //     transform: translateX(0);
-  //   }
-  // }
-
   &__subtitle {
     color: #909090;
     font-size: 20px;
@@ -201,6 +191,10 @@
     background-color: #D8C562;
     gap: 12px;
     cursor: pointer;
+
+    @media screen and (max-width: 575.98px) {
+      padding: 10px 20px;
+    }
   }
 
   &__navbar-categories {
@@ -219,10 +213,22 @@
     text-transform: uppercase;
     font-size: 28px;
     font-weight: 500;
+
+    @media screen and (max-width: 575.98px) {
+      font-size: 18px;
+    }
   }
 
   &__vector img {
     width: 33px;
     height: 33px;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    &__vector img {
+      margin-top: 2px;
+      width: 22px;
+      height: 22px;
+    }
   }
 }

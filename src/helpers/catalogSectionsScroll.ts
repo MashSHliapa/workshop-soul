@@ -4,7 +4,7 @@ export function catalogSectionsScroll(stateOfSection: boolean | null, section: s
     if (element) {
       setTimeout(() => {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 300)
+      }, 0)
     }
   }
 }
