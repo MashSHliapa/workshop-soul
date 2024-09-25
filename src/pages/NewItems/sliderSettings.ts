@@ -13,7 +13,7 @@ export const sliderSettings = {
       breakpoint: 575.98,
       settings: {
         slidesToShow: 2,
-      },
-    },
-  ],
-};
+      }
+    }
+  ]
+}

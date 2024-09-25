@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Navbar } from '../Navbar/Navbar';
+import { Navbar } from '../Navbar/Navbar'
 import './BurgerMenu.scss'
 
 export function BurgerMenu() {
@@ -28,7 +28,7 @@ export function BurgerMenu() {
 
     document.addEventListener('click', handleClickCloseNavbar)
     return () => document.removeEventListener('click', handleClickCloseNavbar)
-  }, [])
+  }, [isOpenNavbar])
 
   return (
     <nav className="burger-menu">

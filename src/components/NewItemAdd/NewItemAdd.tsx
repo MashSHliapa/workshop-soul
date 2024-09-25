@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useRef } from 'react'
-import { IPropsItems } from '../../types/interfaces'
 import { newItemsScroll } from '../../helpers/newItemsScroll'
 import { pathnameMainPage } from '../../helpers/pathnameMainPage'
+import { IPropsItems } from '../../types/interfaces'
 import './NewItemAdd.scss'
 
 export function NewItemAdd(props: { post: IPropsItems }) {

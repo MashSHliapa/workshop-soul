@@ -1,5 +1,5 @@
+import { IconAndTitle } from '../IconAndTitle/IconAndTitle'
 import { IPropsCatalogCards } from '../../types/interfaces'
-import { IconAndTitle} from '../IconAndTitle/IconAndTitle'
 
 export function CatalogCardsEven({ handleClickOpenSection, ...props }: IPropsCatalogCards) {
   return (
@@ -14,7 +14,7 @@ export function CatalogCardsEven({ handleClickOpenSection, ...props }: IPropsCat
           <div className="info-catalog__icon-and-title">
             <IconAndTitle>{props.name}</IconAndTitle>
           </div>
-          <div className="info-catalog__subtitle">{props.description}</div>
+          <h5 className="info-catalog__subtitle">{props.description}</h5>
           <div className="info-catalog__direction" onClick={handleClickOpenSection}>
             <div className="info-catalog__text">СМОТРЕТЬ ИЗДЕЛИЯ</div>
             <div className="info-catalog__vector"></div>

@@ -159,10 +159,10 @@ export function Catalog() {
           )}
           <div className="catalog__row">
             <div className="catalog__column">
-              <div className="catalog__title">КАТАЛОГ <span> изделий</span></div>
+              <h2 className="catalog__title">КАТАЛОГ <span> изделий</span></h2>
             </div>
             <div className="catalog__column">
-              <div className="catalog__subtitle">Анастасии Кирашёвой</div>
+              <h5 className="catalog__subtitle">Анастасии Кирашёвой</h5>
               <div className="catalog__separator"></div>
             </div>
           </div>
@@ -181,7 +181,7 @@ export function Catalog() {
           </div>
           <div className="catalog__cards">
             <div className="catalog__card">
-              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Украшения" image={bijouterie} description="В каждом завершенном образе можно увидеть 'изюминку'- украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
+              {!isSectionBijouterieOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('bijouterie')} name="Украшения" image={bijouterie} description="В каждом завершенном образе можно увидеть «изюминку» - украшение, подчёркивающее характер. Это необходимая часть гардероба стильного человека. Здесь Вы найдёте уникальную бижутерию для любого образа." /> : <div className="catalog__section">
                 <BijouterieItems handleClickReturnBack={handleCloseSection} />
               </div>}
             </div>
@@ -199,14 +199,14 @@ export function Catalog() {
             </div>
 
             <div className="catalog__card">
-              {!isSectionLightingOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной. Насладитесь мягким светом неповторимых ночников 'Soul'" /> :
+              {!isSectionLightingOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной. Насладитесь мягким светом неповторимых ночников «Soul»" /> :
                 <div className="catalog__section">
                   <LightingItems handleClickReturnBack={handleCloseSection} />
                 </div>}
             </div>
 
             <div className="catalog__card">
-              {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКА" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с 'шумами дождя' от мастерской 'Soul'" /> :
+              {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКА" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с «шумами дождя» от мастерской «Soul»" /> :
                 <div className="catalog__section">
                   <MusicItems handleClickReturnBack={handleCloseSection} />
                 </div>}
@@ -219,7 +219,7 @@ export function Catalog() {
           </div>
         </div>
       </div>
-      <div className="catalog__background _ibg">
+      <div className="catalog__background background _ibg">
         <img src={background} alt="background" />
       </div>
     </div>

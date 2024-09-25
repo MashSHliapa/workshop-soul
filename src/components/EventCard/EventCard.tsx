@@ -1,8 +1,7 @@
 import { IPropsEventCard } from '../../types/interfaces'
 import './EventCard.scss'
 
-export function EventCard(props: {post: IPropsEventCard}) {
-
+export function EventCard(props: { post: IPropsEventCard }) {
   return (
     <div className="event-card">
       <div className="event-card__body">

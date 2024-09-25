@@ -40,9 +40,9 @@
   &__link::before,
   &__link-esoteric::before {
     content: "";
-    border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
+    border-radius: 50%;
     margin-right: 10px;
     background-color: #18362B;
   }
@@ -65,9 +65,9 @@
 
   &__link,
   &__link-esoteric {
-    cursor: pointer;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
   }
 
   &__list-esoteric {

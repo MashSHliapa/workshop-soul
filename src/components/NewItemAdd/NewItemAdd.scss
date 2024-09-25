@@ -19,8 +19,8 @@
   }
 
   &__data {
-    font-size: 6px;
     margin-top: 7px;
+    font-size: 6px;
     line-height: 136%;
   }
 
@@ -33,6 +33,7 @@
   }
 
   &__title span {
+    display: block;
     font-size: 10px;
     padding-top: 3px;
     font-weight: 500;
@@ -57,8 +58,4 @@
   @media screen and (max-width: 575.98px) {
     max-width: 125px;
   }
-}
-
-.new-item-add span {
-  display: block;
 }

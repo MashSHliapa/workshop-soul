@@ -2,10 +2,10 @@
   position: relative;
 
   &__body {
-    padding: 85px 0 10px;
-    color: #F6F6F6;
     position: relative;
     z-index: 2;
+    padding: 85px 0 10px;
+    color: #F6F6F6;
     line-height: 136%;
 
     @media screen and (max-width: 991.98px) {
@@ -23,7 +23,7 @@
 
   &__title {
     text-transform: uppercase;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 700;
 
     @media screen and (max-width: 767.98px) {
@@ -36,9 +36,9 @@
   }
 
   &__title span {
-    font-weight: 400;
-    font-size: 36px;
     display: block;
+    font-weight: 400;
+    font-size: 30px;
     padding-top: 10px;
 
     @media screen and (max-width: 991.98px) {
@@ -56,9 +56,9 @@
   }
 
   &__info {
-    margin: 45px 0;
     display: flex;
     justify-content: space-between;
+    margin: 35px 0;
 
     @media screen and (max-width: 991.98px) {
       margin: 65px 0 35px;
@@ -76,6 +76,7 @@
 
   &__text {
     font-size: 20px;
+    line-height: 1.24;
     max-width: 730px;
     padding: 0 20px 0 0;
 
@@ -95,12 +96,12 @@
   }
 
   &__down {
-    display: inline-block;
-    animation: down 0.7s linear infinite;
     position: relative;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    display: inline-block;
+    animation: down 0.7s linear infinite;
 
     @media screen and (max-width: 991.98px) {
       display: none;
@@ -115,13 +116,5 @@
     100% {
       top: 11px;
     }
-  }
-
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 }

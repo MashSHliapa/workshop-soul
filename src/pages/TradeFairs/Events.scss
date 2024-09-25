@@ -36,11 +36,12 @@
 
   &__subtitle {
     color: #2A2A2A;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     font-weight: 500;
+    line-height: 1.5;
 
     @media screen and (max-width: 575.98px) {
-      font-size: 16px; // по проекту 18
+      font-size: 14px;
     }
   }
 }

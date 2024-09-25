@@ -24,7 +24,7 @@ export function Footer() {
           <p className="footer__copyright">Все права защищены 2024</p>
         </div>
       </div>
-      <div className="footer__background _ibg">
+      <div className="footer__background background _ibg">
         <img src={background} alt="background" />
       </div>
     </div>

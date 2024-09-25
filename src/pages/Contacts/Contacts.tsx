@@ -32,7 +32,7 @@ export function Contacts() {
             <div className="contacts__text-question">Вам что-то понравилось?</div>
             <div className="contacts__slogan">Закажи с доставкой любое изделие!</div>
             <div className="contacts__description">
-              <div className="contacts__title"><span>КАК</span> КУПИТЬ</div>
+              <h3 className="contacts__title"><span>КАК</span> КУПИТЬ</h3>
               <div className="contacts__subtitle">Авторские изделия <span>ручной работы</span></div>
             </div>
           </div>
@@ -45,21 +45,21 @@ export function Contacts() {
               <div className="contacts__image-decor">
                 <img src={image_parachute} alt="image_parachute" />
               </div>
-              <div className="contacts__service">ЗАКАЗ</div>
-              <div className="contacts__text">На данном сайте Вы можете ознакомиться с моими <span>изделиями</span>. Выбрав понравившееся, отправьте его мне, удобным для Вас способом: <br />
+              <h4 className="contacts__service">ЗАКАЗ</h4>
+              <h5 className="contacts__text">На данном сайте Вы можете ознакомиться с моими <span>изделиями</span>. Выбрав понравившееся, отправьте его мне удобным для Вас способом: <br />
                 <span> Viber, Telegram, Instagram, VK. </span>
-                После чего я вышлю сообщение в котором будет указана <span>стоимость изделия, способы оплаты и доставки</span>.</div>
+                После чего я вышлю сообщение, в котором будет указана <span>стоимость изделия, способы оплаты и доставки</span>.</h5>
             </div>
 
             <div className="contacts__column">
               <div className="contacts__icon">
                 <img src={icon} alt="icon" />
               </div>
-              <div className="contacts__service">ДОСТАВКА</div>
-              <div className="contacts__text">Доставка осуществляется
-                при помощи курьерской службы <span> СДЭК </span>, после внесения <span> 100% предоплаты </span> за изделие.
+              <h4 className="contacts__service">ДОСТАВКА</h4>
+              <h5 className="contacts__text">Доставка осуществляется
+                при помощи курьерской службы <span> СДЭК </span> после внесения <span> 100% предоплаты </span> за изделие.
                 <p>* Почтовые услуги оплачивает получатель посылки в момент самого получения.</p>
-                Стоимость доставки просчитывается службой СДЭК исходя из габаритов посылки   -   <span>от 4,13 BYN </span></div>
+                Стоимость доставки просчитывается службой СДЭК, исходя из габаритов посылки - <span>от 4,13 BYN </span></h5>
             </div>
 
             <div className="contacts__column">
@@ -83,7 +83,7 @@ export function Contacts() {
           </div>
         </div>
       </div>
-      <div className="contacts__background _ibg">
+      <div className="contacts__background background _ibg">
         <img src={background} alt="background" />
       </div>
     </div >
