@@ -1,8 +1,8 @@
-import { Logo } from '../Logo/Logo'
-import { Name } from '../Name/Name'
-import { Navbar } from '../Navbar/Navbar'
-import background from '../../components/images/background_footer.png'
-import './Footer.scss'
+import { Logo } from '../Logo/Logo';
+import { Name } from '../Name/Name';
+import { Navbar } from '../Navbar/Navbar';
+import background from '../../components/images/background_footer.png';
+import './Footer.scss';
 
 export function Footer() {
   return (
@@ -19,7 +19,9 @@ export function Footer() {
           </div>
           <div className="footer__navbar">
             <Navbar blog="Блог" contacts="Контакты / Доставка" newItems="Новинки" catalog="Каталог изделий" />
-            <a href="#top" className="footer__goToTop">Наверх</a>
+            <a href="#top" className="footer__goToTop">
+              Наверх
+            </a>
           </div>
           <p className="footer__copyright">Все права защищены 2024</p>
         </div>
@@ -28,5 +30,5 @@ export function Footer() {
         <img src={background} alt="background" />
       </div>
     </div>
-  )
+  );
 }

@@ -1,9 +1,50 @@
+@import '../Layout/Layout.scss';
+
 .navbar {
   &__body {
     margin: 0 auto;
   }
 
-  &__item {
-    cursor: pointer;
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.item-blog {
+  position: relative;
+  z-index: 50;
+  cursor: pointer;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    gap: 5px;
+  }
+
+  &__vector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 18px;
+    filter: brightness(0) invert(1);
+
+    @include breakpoint(sm) {
+      max-width: 16px;
+    }
+  }
+
+  &__blog-menu {
+    position: absolute;
+    top: 34px;
+    right: 0;
+    z-index: 10;
+
+    @include breakpoint(xs) {
+      right: -100%;
+    }
   }
 }

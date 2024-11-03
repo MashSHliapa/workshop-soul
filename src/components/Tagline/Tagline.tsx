@@ -1,5 +1,5 @@
-import image from '../images/tagline_image.png'
-import './Tagline.scss'
+import image from '../images/tagline_image.png';
+import './Tagline.scss';
 
 export function Tagline() {
   return (
@@ -8,9 +8,11 @@ export function Tagline() {
         <div className="tagline__body">
           <div className="tagline__row">
             <div className="tagline__info">
-              <div className="tagline__title">Когда ищешь красоту</div>
+              <div className="tagline__title">Когда ищешь красоту -</div>
               <div className="tagline__subtitle">найдешь её в природе!</div>
-              <div className="tagline__text">Надо только <br /> присмотреться!</div>
+              <div className="tagline__text">
+                ...надо только <br /> присмотреться!
+              </div>
             </div>
             <div className="tagline__image">
               <img src={image} alt="image" />
@@ -19,5 +21,5 @@ export function Tagline() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,23 +1,52 @@
-import { NavLink, useLocation } from 'react-router-dom'
-import { pathnameMainPage } from '../../helpers/pathnameMainPage'
-import { IPropsNavbar } from '../../types/interfaces'
-import './Navbar.scss'
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { IPropsNavbar } from '../../types/interfaces';
+import { BlogMenu } from '../BlogMenu/BlogMenu';
+import { pathnameMainPage } from '../../helpers/pathnameMainPage';
+import vectorExpland from '../images/esoterics/vector_expland.svg';
+import vectorRollUp from '../images/esoterics/vector_rollup.svg';
+import './Navbar.scss';
 
 export function Navbar(props: IPropsNavbar) {
+  const location = useLocation();
+  pathnameMainPage(location);
 
-  const location = useLocation()
-  pathnameMainPage(location)
+  const [openMenu, setOpenMenu] = useState(false);
+  const buttonVector = openMenu ? vectorRollUp : vectorExpland;
+
+  const handleClickOpenMenu = () => {
+    setOpenMenu((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    const handleClickOutsideMenu = (event: MouseEvent | React.MouseEvent) => {
+      if (!(event.target as HTMLFormElement).closest('.item-blog')) {
+        setOpenMenu(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutsideMenu);
+    return () => document.removeEventListener('click', handleClickOutsideMenu);
+  }, []);
 
   return (
     <div className="navbar">
       <nav className="navbar__body">
         <ul className="navbar__list">
-          <NavLink to="blog" target="_top" className="navbar__item">
-            {props.blog}
-          </NavLink>
-
+          <li className="navbar__item item-blog" onClick={handleClickOpenMenu}>
+            <div className="item-blog__button">
+              <div className="item-blog__text">Блог</div>
+              <div className="item-blog__vector">
+                <img src={buttonVector} alt="vector" />
+              </div>
+            </div>
+            {openMenu && (
+              <div className="item-blog__blog-menu">
+                <BlogMenu />
+              </div>
+            )}
+          </li>
           {pathnameMainPage(location) ? (
-            <li className="navbar__item" onClick={() => window.location.href = "#contacts"}>
+            <li className="navbar__item" onClick={() => (window.location.href = '#contacts')}>
               {props.contacts}
             </li>
           ) : (
@@ -25,9 +54,8 @@ export function Navbar(props: IPropsNavbar) {
               {props.contacts}
             </NavLink>
           )}
-
           {pathnameMainPage(location) ? (
-            <li className="navbar__item" onClick={() => window.location.href = "#new-items"}>
+            <li className="navbar__item" onClick={() => (window.location.href = '#new-items')}>
               {props.newItems}
             </li>
           ) : (
@@ -35,9 +63,8 @@ export function Navbar(props: IPropsNavbar) {
               {props.newItems}
             </NavLink>
           )}
-
           {pathnameMainPage(location) ? (
-            <li className="navbar__item" onClick={() => window.location.href = "#catalog"}>
+            <li className="navbar__item" onClick={() => (window.location.href = '#catalog')}>
               {props.catalog}
             </li>
           ) : (
@@ -48,5 +75,5 @@ export function Navbar(props: IPropsNavbar) {
         </ul>
       </nav>
     </div>
-  )
+  );
 }

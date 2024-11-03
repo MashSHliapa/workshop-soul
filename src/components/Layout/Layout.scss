@@ -53,7 +53,27 @@ body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #18362B;
+  color: #18362b;
+}
+
+@mixin breakpoint($size) {
+  @if $size ==lg {
+    @media screen and (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $size ==md {
+    @media screen and (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $size ==sm {
+    @media screen and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $size ==xs {
+    @media screen and (max-width: 575.98px) {
+      @content;
+    }
+  }
 }
 
 ._container {
@@ -114,7 +134,7 @@ body {
   text-transform: uppercase;
   font-size: 25px;
   font-weight: 700;
-  color: #4E4E4E;
+  color: #4e4e4e;
 
   @media screen and (max-width: 1199.98px) {
     font-size: 20px;
@@ -135,13 +155,13 @@ body {
 
 ._button {
   align-self: self-end;
-  color: #18362B;
+  color: #18362b;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 15px 70px;
   text-align: center;
-  background: #D8C562;
+  background: #d8c562;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.2s;

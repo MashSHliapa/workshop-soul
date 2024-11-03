@@ -1,0 +1,28 @@
+@import '../Layout/Layout.scss';
+
+.blog-menu {
+  background: #d8c562;
+  color: #18362b;
+  width: 190px;
+  padding: 25px 20px;
+  cursor: default;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+
+    @include breakpoint(sm) {
+      align-items: center;
+    }
+  }
+
+  &__item {
+    line-height: 1.1;
+  }
+
+  &__item:hover {
+    color: #fdf9f9;
+  }
+}
