@@ -1,3 +1,5 @@
+@import '../Layout/Layout.scss';
+
 .new-item-add {
   min-width: 120px;
   max-width: 128px;
@@ -33,6 +35,7 @@
   }
 
   &__title span {
+    text-transform: uppercase;
     display: block;
     font-size: 10px;
     padding-top: 3px;
@@ -49,13 +52,13 @@
     transition: all 0.2s ease;
   }
 
-  @media screen and (max-width: 991.98px) {
+  @include breakpoint(md) {
     min-width: 110px;
     max-width: 120px;
     padding: 20px 15px 10px 15px;
   }
 
-  @media screen and (max-width: 575.98px) {
+  @include breakpoint(xs) {
     max-width: 125px;
   }
 }

@@ -1,22 +1,25 @@
-import { Link, useLocation } from 'react-router-dom'
-import { useRef } from 'react'
-import { newItemsScroll } from '../../helpers/newItemsScroll'
-import { pathnameMainPage } from '../../helpers/pathnameMainPage'
-import { IPropsItems } from '../../types/interfaces'
-import './NewItemAdd.scss'
+import { Link, useLocation } from 'react-router-dom';
+import { useRef } from 'react';
+import { newItemsScroll } from '../../helpers/newItemsScroll';
+import { pathnameMainPage } from '../../helpers/pathnameMainPage';
+import { IPropsItems } from '../../types/interfaces';
+import './NewItemAdd.scss';
 
 export function NewItemAdd(props: { post: IPropsItems }) {
-  const pageElement = useRef(null)
+  const pageElement = useRef(null);
 
-  const location = useLocation()
-  pathnameMainPage(location)
+  const location = useLocation();
+  pathnameMainPage(location);
 
   function handleClickPageWithScroll() {
-    newItemsScroll(pageElement)
+    newItemsScroll(pageElement);
   }
 
   return (
-    <Link to={pathnameMainPage(location) ? `/selected/${props.post.id}` : `/newItems/${props.post.id}`} ref={pageElement}>
+    <Link
+      to={pathnameMainPage(location) ? `/selected/${props.post.id}` : `/newItems/${props.post.id}`}
+      ref={pageElement}
+    >
       <div className="new-item-add" onClick={handleClickPageWithScroll}>
         <div className="new-item-add__body">
           <div className="new-item-add__image _image">
@@ -31,5 +34,5 @@ export function NewItemAdd(props: { post: IPropsItems }) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

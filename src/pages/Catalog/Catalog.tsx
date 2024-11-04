@@ -186,33 +186,33 @@ export function Catalog() {
               </div>}
             </div>
 
-            {!isSectionEsotericOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoteric')} name="Эзотерика" image={esoteric} description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь наших предков поможет в сложных ситуациях и даст ответы на сложные вопросы через атрибуты и руны представленные в разделе." /> :
+            {!isSectionEsotericOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('esoteric')} name="Эзотерика" image={esoteric} description="С древних времён и до наших дней, шаманы всего мира передают тайную силы природы через различные символы. Крепкая связь с нашими предками поможет в сложных ситуациях и даст ответы на вопросы через атрибуты и руны, представленные в разделе." /> :
               <div className="catalog__section">
                 <SectionEsotericCards handleClickReturnBack={handleCloseSection} />
               </div>}
 
             <div className="catalog__card">
-              {!isSectionDecorOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('decor')} name="Декор" image={decor} description="Дом - это то место, куда хочется возвращаться каждый день, место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой." /> : <div
+              {!isSectionDecorOpen ? <CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('decor')} name="Декор" image={decor} description="Дом - это то место, куда хочется возвращаться каждый день. Место, где отдыхаешь душой и телом. А домашний уют создают вещи, которые нас окружают. Создай свой уют в гармонии с природой!" /> : <div
                 className="catalog__section">
                 <DecorItems handleClickReturnBack={handleCloseSection} />
               </div>}
             </div>
 
             <div className="catalog__card">
-              {!isSectionLightingOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной. Насладитесь мягким светом неповторимых ночников «Soul»" /> :
+              {!isSectionLightingOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('lighting')} name="Освещение" image={lighting} description="Свет наполняет людей спокойствием и теплом. Он нас завораживает, даёт ощущение праздника и наполняет сердце тайной. Насладитесь мягким светом неповторимых ночников «Soul»!" /> :
                 <div className="catalog__section">
                   <LightingItems handleClickReturnBack={handleCloseSection} />
                 </div>}
             </div>
 
             <div className="catalog__card">
-              {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКА" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажать на паузу! И послушай настоящие звуки природы. И ощутить релакс вместе с «шумами дождя» от мастерской «Soul»" /> :
+              {!isSectionMusicOpen ? < CatalogCardsOdd handleClickOpenSection={() => handleClickOpenSection('music')} name="МУЗЫКА" image={music} description="В бушующем потоке жизни мы слышим бесконечный шум города. Остановись, нажми на паузу и послушай настоящие звуки природы! И ощути релакс вместе с «шумами дождя» от мастерской «Soul»!" /> :
                 <div className="catalog__section">
                   <MusicItems handleClickReturnBack={handleCloseSection} />
                 </div>}
             </div>
 
-            {!isSectionForgedProductsOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('forgedProducts')} name="Кованные изделия" image={forgedProducts} description="Работа мастера кузнечного дела - Артема Кирашёва. Придумайте собственные изделия с использованием кованого металла! У нас Вы найдете много вариантов предметов домашнего обихода" /> :
+            {!isSectionForgedProductsOpen ? <CatalogCardsEven handleClickOpenSection={() => handleClickOpenSection('forgedProducts')} name="Кованные изделия" image={forgedProducts} description="Кузнечное дело - одно из древних ремесел Беларуси. Придумайте собственные изделия с использованием кованого металла! У нас Вы найдете подходящие для себя изделия для домашнего обихода" /> :
               <div className="catalog__section">
                 <ForderProducts handleClickReturnBack={handleCloseSection} />
               </div>}
