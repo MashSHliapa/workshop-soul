@@ -162,7 +162,8 @@
 }
 
 .blog__card-events:hover .icon-title__icon {
-  background: #d8c562;
+  background: url('../../components/images/icon_eye_yellow.svg') center no-repeat;
+  background-size: 100% 100%;
 }
 
 .blog__card-events:hover .icon-title__title {
