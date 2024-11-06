@@ -1,14 +1,14 @@
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
-import { RootState } from '../../redux/store'
-import { IPropsItems } from '../../types/interfaces'
-import label from '../../components/images/newitems/new_label.png'
-import './NewItem.scss'
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { RootState } from '../../redux/store';
+import { IPropsItems } from '../../types/interfaces';
+import label from '../../components/images/newitems/new_label.png';
+import './NewItem.scss';
 
 export function NewItem() {
-  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd) as { data: IPropsItems[] }
-  const { newItemId } = useParams<string>()
-  const selectedNewItem = posts.find((item) => item.id == Number(newItemId))
+  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd) as { data: IPropsItems[] };
+  const { newItemId } = useParams<string>();
+  const selectedNewItem = posts.find((item) => item.id == Number(newItemId));
 
   return (
     <div className="new-item">
@@ -20,12 +20,14 @@ export function NewItem() {
           <img src={label} alt="label" />
         </div>
         <div className="new-item__data">
-          <h4 className="new-item__title _title">{selectedNewItem?.item} <span>{selectedNewItem?.name}</span></h4>
+          <h4 className="new-item__title _title">
+            {selectedNewItem?.item} <span>{selectedNewItem?.name}</span>
+          </h4>
           <div className="new-item__separator _separator"></div>
           <div className="new-item__text-size">Размер: {selectedNewItem?.size}мм</div>
           <div className="new-item__text-material">Материал: {selectedNewItem?.material}</div>
         </div>
       </div>
     </div>
-  )
+  );
 }

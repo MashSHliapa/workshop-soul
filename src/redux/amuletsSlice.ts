@@ -1,9 +1,9 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import { requestAmulets } from '../services/posts'
 
-import { createSlice } from '@reduxjs/toolkit'
-import image1 from '../components/images/newitems/picture5.jpg'
-import image2 from '../components/images/newitems/picture6.jpg'
+import { createSlice } from '@reduxjs/toolkit';
+import image1 from '../components/images/newitems/picture5.jpg';
+import image2 from '../components/images/newitems/picture6.jpg';
 
 // export const fetchAmulets = createAsyncThunk('amulets/setAmulets', async () => {
 //   return await requestAmulets()
@@ -37,8 +37,8 @@ const amulets = createSlice({
   },
   reducers: {
     setAmulets(state, action) {
-      state.data = action.payload
-    }
+      state.data = action.payload;
+    },
   },
   // extraReducers: builder => {
   //   builder
@@ -54,7 +54,7 @@ const amulets = createSlice({
   //       state.error = 'что-то не так'
   //     })
   // }
-})
+});
 
-export const { setAmulets } = amulets.actions
-export const amuletsReducer = amulets.reducer
+export const { setAmulets } = amulets.actions;
+export const amuletsReducer = amulets.reducer;

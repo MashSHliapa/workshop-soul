@@ -1,6 +1,8 @@
-import { createContext } from 'react'
+import { createContext } from 'react';
 
 export const SliderContext = createContext({
   activeIndex: 0,
-  setActiveIndex: (index: number) => { index }
-})
+  setActiveIndex: (index: number) => {
+    index;
+  },
+});

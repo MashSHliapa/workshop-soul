@@ -1,7 +1,7 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import { requestFestivals } from '../services/posts'
 
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit';
 
 // export const fetchFestivals = createAsyncThunk('festivals/fetchFestivals', async () => {
 //   return await requestFestivals()
@@ -29,6 +29,6 @@ const festivals = createSlice({
   //       state.error = 'что-то не так'
   //     })
   // }
-})
+});
 
-export const festivalsReducer = festivals.reducer
+export const festivalsReducer = festivals.reducer;

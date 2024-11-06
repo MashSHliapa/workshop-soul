@@ -1,16 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { tradeFairsReducer } from './tradeFairsSlice'
-import { newItemsAddReducer } from './newItemsAddSlice'
-import { bijouterieReducer } from './bijouterieSlice'
-import { decorReducer } from './decorSlice'
-import { forgedProductsReducer } from './forgedProductsSlice'
-import { runesReducer } from './runesSlice'
-import { dreamCatchersReducer } from './dreamCatchersSlice'
-import { talismansReducer } from './talismansSlice'
-import { musicReducer } from './musicSlice'
-import { amuletsReducer } from './amuletsSlice'
-import { festivalsReducer } from './festivalsSlice'
-import { lightingReducer } from './lightingSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import { tradeFairsReducer } from './tradeFairsSlice';
+import { newItemsAddReducer } from './newItemsAddSlice';
+import { bijouterieReducer } from './bijouterieSlice';
+import { decorReducer } from './decorSlice';
+import { forgedProductsReducer } from './forgedProductsSlice';
+import { runesReducer } from './runesSlice';
+import { dreamCatchersReducer } from './dreamCatchersSlice';
+import { talismansReducer } from './talismansSlice';
+import { musicReducer } from './musicSlice';
+import { amuletsReducer } from './amuletsSlice';
+import { festivalsReducer } from './festivalsSlice';
+import { lightingReducer } from './lightingSlice';
 
 export const store = configureStore({
   reducer: {
@@ -27,6 +27,6 @@ export const store = configureStore({
     amulets: amuletsReducer,
     lighting: lightingReducer,
   },
-})
+});
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;

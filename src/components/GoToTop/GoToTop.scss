@@ -1,3 +1,5 @@
+@import '../Layout/Layout.scss';
+
 .goToTop {
   display: inline-flex;
   align-items: center;
@@ -8,7 +10,7 @@
     margin-top: -5px;
     font-size: 17px;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       font-size: 15px;
     }
   }
@@ -17,7 +19,7 @@
     width: 35px;
     height: 35px;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       width: 30px;
       height: 30px;
     }

@@ -1,6 +1,8 @@
+@import '../Layout/Layout.scss';
+
 .event-card {
   background-color: #ededed;
-  border: 1px solid #4E4E4E;
+  border: 1px solid #4e4e4e;
   border-radius: 10px;
 
   :hover {
@@ -12,17 +14,17 @@
     display: flex;
     gap: 40px;
     line-height: 1.5;
-    color: #1E1E1E;
+    color: #1e1e1e;
     text-align: start;
     padding: 35px 35px 35px 40px;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       flex-direction: column;
       gap: 10px;
       padding: 35px 25px 15px 25px;
     }
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       gap: 0px;
       padding: 20px 15px 15px 15px;
     }
@@ -31,16 +33,16 @@
   &__info-fairs {
     min-width: 280px;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       min-width: 250px;
     }
   }
 }
 
-.info-event>div:not(:last-child) {
+.info-event > div:not(:last-child) {
   margin-bottom: 24px;
 
-  @media screen and (max-width: 767.98px) {
+  @include breakpoint(sm) {
     margin-bottom: 20px;
   }
 }
@@ -50,7 +52,7 @@
   letter-spacing: -1.7px;
   position: relative;
 
-  @media screen and (max-width: 767.98px) {
+  @include breakpoint(sm) {
     text-align: center;
   }
 
@@ -59,11 +61,11 @@
     height: 220px;
     width: 220px;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       margin: 0 auto;
     }
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       height: 200px;
       width: 200px;
     }
@@ -76,13 +78,13 @@
   &__title {
     font-size: 24px;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       margin-bottom: 10px;
     }
   }
 
   &__subtitle {
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       font-size: 18px;
     }
   }
@@ -96,11 +98,11 @@
     font-size: 50px;
     margin: 0 7px 0 0px;
 
-    @media screen and (max-width: 991.98px) {
+    @include breakpoint(md) {
       font-size: 42px;
     }
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       font-size: 38px;
     }
   }
@@ -111,13 +113,13 @@
     position: absolute;
     bottom: 0;
 
-    @media screen and (max-width: 767.98px) {
+    @include breakpoint(sm) {
       display: none;
     }
   }
 }
 
-.description-event>*div:not(:last-child) {
+.description-event > *div:not(:last-child) {
   margin-bottom: 20px;
 }
 

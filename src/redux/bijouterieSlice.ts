@@ -1,9 +1,9 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import { requestBijouterie } from '../services/posts'
 
-import { createSlice } from '@reduxjs/toolkit'
-import image1 from '../components/images/newitems/picture9.jpg'
-import image2 from '../components/images/newitems/picture8.jpg'
+import { createSlice } from '@reduxjs/toolkit';
+import image1 from '../components/images/newitems/picture9.jpg';
+import image2 from '../components/images/newitems/picture8.jpg';
 
 // export const fetchBijouterie = createAsyncThunk('bijouterie/setBijouterie', async () => {
 //   return await requestBijouterie()
@@ -35,8 +35,8 @@ const bijouterieSlice = createSlice({
   },
   reducers: {
     setBijouterie(state, action) {
-      state.data = action.payload
-    }
+      state.data = action.payload;
+    },
   },
   // extraReducers: builder => {
   //   builder
@@ -52,6 +52,6 @@ const bijouterieSlice = createSlice({
   //       state.error = 'что-то не так'
   //     })
   // }
-})
+});
 
-export const bijouterieReducer = bijouterieSlice.reducer
+export const bijouterieReducer = bijouterieSlice.reducer;

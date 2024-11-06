@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom'
-import { Header } from '../Header/Header'
-import { Footer } from '../Footer/Footer'
-import './Layout.scss'
+import { Outlet } from 'react-router-dom';
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+import './Layout.scss';
 
 export function Layout() {
   return (
@@ -10,5 +10,5 @@ export function Layout() {
       <Outlet />
       <Footer />
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import imageTop from '../images/go_top.svg'
-import './GoToTop.scss'
+import imageTop from '../images/go_top.svg';
+import './GoToTop.scss';
 
 export function GoToTop() {
   return (
@@ -7,5 +7,5 @@ export function GoToTop() {
       <span className="goToTop__title">Наверх</span>
       <img src={imageTop} className="goToTop__image" />
     </a>
-  )
+  );
 }

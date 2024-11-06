@@ -1,11 +1,11 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import { requestNewItemsAdd } from '../services/posts'
 
-import { createSlice } from "@reduxjs/toolkit"
-import newitems5 from '../components/images/newitems/picture5.jpg'
-import image1 from '../../src/components/images/newitems/picture8.jpg'
-import newitems1 from '../components/images/newitems/new_items1.png'
-import newitems3 from '../components/images/newitems/picture7.jpg'
+import { createSlice } from '@reduxjs/toolkit';
+import newitems5 from '../components/images/newitems/picture5.jpg';
+import image1 from '../../src/components/images/newitems/picture8.jpg';
+import newitems1 from '../components/images/newitems/new_items1.png';
+import newitems3 from '../components/images/newitems/picture7.jpg';
 
 // export const fetchNewItemsAdd = createAsyncThunk('newItemsAdd/fetchNewItemsAdd', async () => {
 //   return await requestNewItemsAdd()
@@ -22,7 +22,8 @@ const newItemsAddSlice = createSlice({
         name: '«Бесконечно»',
         size: '40x25',
         material: 'серебряная цепочка, природный камень и дерево хвойных пород',
-        description: 'Прекрасное сочетание серебряного и природного камня. Все это делает подвеску, которая выглядит прекрасно.',
+        description:
+          'Прекрасное сочетание серебряного и природного камня. Все это делает подвеску, которая выглядит прекрасно.',
       },
       {
         id: 2,
@@ -70,6 +71,6 @@ const newItemsAddSlice = createSlice({
   //       state.error = 'что-то не так'
   //     })
   // }
-})
+});
 
-export const newItemsAddReducer = newItemsAddSlice.reducer
+export const newItemsAddReducer = newItemsAddSlice.reducer;

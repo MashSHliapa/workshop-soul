@@ -1,13 +1,13 @@
-import { useContext } from 'react'
-import { SliderContext } from '../Context/SliderContext'
-import './NavbarCategories.scss'
+import { useContext } from 'react';
+import { SliderContext } from '../Context/SliderContext';
+import './NavbarCategories.scss';
 
 export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSection: (section: string) => void }) {
-  const { setActiveIndex } = useContext(SliderContext)
+  const { setActiveIndex } = useContext(SliderContext);
 
   function handleClickOpenSectionEsoteric(section: string, index: number) {
-    handleClickOpenSection(section)
-    setActiveIndex(index)
+    handleClickOpenSection(section);
+    setActiveIndex(index);
   }
 
   return (
@@ -25,7 +25,10 @@ export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSe
           <ul className="navbar-categories__list-esoteric">
             {['ОБЕРЕГИ', 'РУНЫ', 'ТАЛИСМАНЫ', 'ЛОВЦЫ СНОВ'].map((item, index) => (
               <li className="navbar-categories__item-esoteric" key={index}>
-                <div className="navbar-categories__link-esoteric" onClick={() => handleClickOpenSectionEsoteric('esoteric', index)}>
+                <div
+                  className="navbar-categories__link-esoteric"
+                  onClick={() => handleClickOpenSectionEsoteric('esoteric', index)}
+                >
                   {item}
                 </div>
               </li>
@@ -54,5 +57,5 @@ export function NavbarCategories({ handleClickOpenSection }: { handleClickOpenSe
         </li>
       </ul>
     </div>
-  )
+  );
 }

@@ -22,12 +22,12 @@
     gap: 40px;
     max-height: 100%;
     max-width: 410px;
-    padding: 55px 60px 55px 60px;
+    padding: 55px 60px 40px 60px;
   }
 
   @include breakpoint(xs) {
     gap: 30px;
-    padding: 40px 25px 30px 25px;
+    padding: 40px 25px 10px 25px;
     max-width: 300px;
   }
 }
@@ -95,7 +95,7 @@
     align-items: center;
     gap: 10px;
     margin-left: auto;
-    color: #909090;
+    color: #18362b;
 
     &:hover {
       cursor: pointer;

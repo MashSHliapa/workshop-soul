@@ -1,9 +1,12 @@
-import { IPropsItems } from '../../types/interfaces'
-import vectorExpland from '../images/esoterics/vector_expland.svg'
-import vectorRollUp from '../images/esoterics/vector_rollup.svg'
+import { IPropsItems } from '../../types/interfaces';
+import vectorExpland from '../images/esoterics/vector_expland.svg';
+import vectorRollUp from '../images/esoterics/vector_rollup.svg';
 
-export const ItemEsotericCard: React.FC<{ post: IPropsItems; handleClickToggleDescription: (id: number) => void; isOpenDescription: boolean }> = (props) => {
-
+export const ItemEsotericCard: React.FC<{
+  post: IPropsItems;
+  handleClickToggleDescription: (id: number) => void;
+  isOpenDescription: boolean;
+}> = (props) => {
   const buttonVector = props.isOpenDescription ? vectorRollUp : vectorExpland;
 
   return (
@@ -14,11 +17,16 @@ export const ItemEsotericCard: React.FC<{ post: IPropsItems; handleClickToggleDe
             <img src={props.post.image} alt="img" />
           </div>
           <div className="item-card__info">
-            <h6 className="item-card__title _title">{props.post.item} <span>{props.post.name}</span></h6>
+            <h6 className="item-card__title _title">
+              {props.post.item} <span>{props.post.name}</span>
+            </h6>
             <div className="item-card__separator _separator"></div>
             <div className="item-card__text-size">Размер: {props.post.size} мм</div>
             <div className="item-card__text-material">Материал: {props.post.material}</div>
-            <button className="item-card__button _button-description" onClick={() => props.handleClickToggleDescription(props.post.id)}>
+            <button
+              className="item-card__button _button-description"
+              onClick={() => props.handleClickToggleDescription(props.post.id)}
+            >
               <div className="item-card__button-text">Узнать описание</div>
               <div className="item-card__button-image">
                 <img src={buttonVector} alt="vector" />
@@ -26,10 +34,8 @@ export const ItemEsotericCard: React.FC<{ post: IPropsItems; handleClickToggleDe
             </button>
           </div>
         </div>
-        {props.isOpenDescription && (
-          <div className="item-card__text-description">{props.post.description}</div>
-        )}
+        {props.isOpenDescription && <div className="item-card__text-description">{props.post.description}</div>}
       </div>
     </div>
-  )
-}
+  );
+};

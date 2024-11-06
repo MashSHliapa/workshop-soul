@@ -1,5 +1,5 @@
-import { IPropsSectionEsotericCard } from '../../types/interfaces'
-import './SectionEsotericCard.scss'
+import { IPropsSectionEsotericCard } from '../../types/interfaces';
+import './SectionEsotericCard.scss';
 
 export const SectionEsotericCard = ({ handleClickOpenSection, ...props }: IPropsSectionEsotericCard) => {
   return (
@@ -20,5 +20,5 @@ export const SectionEsotericCard = ({ handleClickOpenSection, ...props }: IProps
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

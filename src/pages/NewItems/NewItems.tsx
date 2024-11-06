@@ -1,18 +1,18 @@
 // import { useEffect } from 'react'
 // import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 // import { Action, ThunkDispatch } from '@reduxjs/toolkit'
-import Slider from 'react-slick'
-import { sliderSettings } from './sliderSettings'
-import { pathnameMainPage } from '../../helpers/pathnameMainPage'
-import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd'
-import { NewItem } from '../../components/NewItem/NewItem'
-import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs'
-import { RootState } from '../../redux/store'
+import Slider from 'react-slick';
+import { sliderSettings } from './sliderSettings';
+import { pathnameMainPage } from '../../helpers/pathnameMainPage';
+import { NewItemAdd } from '../../components/NewItemAdd/NewItemAdd';
+import { NewItem } from '../../components/NewItem/NewItem';
+import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
+import { RootState } from '../../redux/store';
 // import { fetchNewItemsAdd } from '../../redux/newItemsAddSlice'
 // import { IPropsItems } from '../../types/interfaces'
-import './NewItems.scss'
-import { useSelector } from 'react-redux'
+import './NewItems.scss';
+import { useSelector } from 'react-redux';
 
 export function NewItems() {
   // const { data: posts, loading, error } = useSelector((state: RootState) => state.newItemsAdd) as {
@@ -21,9 +21,9 @@ export function NewItems() {
   //   error: string | null
   // }
 
-  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd)
+  const { data: posts } = useSelector((state: RootState) => state.newItemsAdd);
   // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
-  const { newItemId } = useParams<{ newItemId: string }>()
+  const { newItemId } = useParams<{ newItemId: string }>();
 
   // useEffect(() => {
   //   dispatch(fetchNewItemsAdd())
@@ -37,15 +37,15 @@ export function NewItems() {
   //   return <div className="text-danger">{error}</div>
   // }
 
-  const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />)
+  const newItemsAdd = posts.map((item) => <NewItemAdd key={item.id} post={item} />);
   const numberItemInArr: number = Number(newItemId ?? 0) - 1;
 
-  const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== posts[numberItemInArr].id)
+  const itemsWithoutReceivedItem = newItemsAdd.filter((item) => item.props.post.id !== posts[numberItemInArr].id);
 
   const breadCrumbs = [
     { name: 'Главная', path: '/' },
-    { name: 'Новинки', path: '/new-items' }
-  ]
+    { name: 'Новинки', path: '/new-items' },
+  ];
 
   return (
     <div className="new-items" id="new-items">
@@ -65,18 +65,15 @@ export function NewItems() {
                   <div className="info__separator"></div>
                 </div>
                 <div className="info__description">
-                  <h3 className="info__title">{posts[numberItemInArr]?.item} <span> {posts[numberItemInArr]?.name}</span></h3>
-                  <div className="info__subtitle">
-                    {posts[numberItemInArr]?.description}
-                  </div>
+                  <h3 className="info__title">
+                    {posts[numberItemInArr]?.item} <span> {posts[numberItemInArr]?.name}</span>
+                  </h3>
+                  <div className="info__subtitle">{posts[numberItemInArr]?.description}</div>
                 </div>
               </div>
               <div className="info__slider slider-newItems">
                 <div className="slider-newItems slider">
-                  <Slider
-                    {...sliderSettings}>
-                    {itemsWithoutReceivedItem}
-                  </Slider>
+                  <Slider {...sliderSettings}>{itemsWithoutReceivedItem}</Slider>
                 </div>
               </div>
             </div>
@@ -84,5 +81,5 @@ export function NewItems() {
         </div>
       </div>
     </div>
-  )
+  );
 }

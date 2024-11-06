@@ -1,32 +1,32 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { requestMusic } from "../services/posts";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { requestMusic } from '../services/posts';
 
 export const fetchMusic = createAsyncThunk('music/setMusic', async () => {
-  return await requestMusic()
-})
+  return await requestMusic();
+});
 
 const music = createSlice({
   name: 'music',
   initialState: {
     data: [],
     loading: false,
-    error: null as null | string
+    error: null as null | string,
   },
   reducers: {},
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchMusic.pending, state => {
-        state.loading = true
+      .addCase(fetchMusic.pending, (state) => {
+        state.loading = true;
       })
       .addCase(fetchMusic.fulfilled, (state, action) => {
-        state.loading = false
-        state.data = action.payload
+        state.loading = false;
+        state.data = action.payload;
       })
-      .addCase(fetchMusic.rejected, state => {
-        state.loading = false
-        state.error = 'что-то не так'
-      })
-  }
-})
+      .addCase(fetchMusic.rejected, (state) => {
+        state.loading = false;
+        state.error = 'что-то не так';
+      });
+  },
+});
 
-export const musicReducer = music.reducer
+export const musicReducer = music.reducer;

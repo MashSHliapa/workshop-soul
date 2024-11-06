@@ -1,5 +1,5 @@
-import logo from '../images/logo.svg'
-import './Logo.scss'
+import logo from '../images/logo.svg';
+import './Logo.scss';
 
 export function Logo() {
   return (
@@ -8,5 +8,5 @@ export function Logo() {
         <img src={logo} alt="logo" />
       </div>
     </div>
-  )
+  );
 }

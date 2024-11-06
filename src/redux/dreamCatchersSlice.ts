@@ -1,9 +1,9 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import { requestDreamCathers } from '../services/posts'
 
-import { createSlice } from '@reduxjs/toolkit'
-import image1 from '../components/images/newitems/picture7.jpg'
-import image2 from '../components/images/newitems/picture8.jpg'
+import { createSlice } from '@reduxjs/toolkit';
+import image1 from '../components/images/newitems/picture7.jpg';
+import image2 from '../components/images/newitems/picture8.jpg';
 
 // export const fetchDreamCatchers = createAsyncThunk('dreamCatchers/setDreamCatchers', async () => {
 //   return await requestDreamCathers()
@@ -35,8 +35,8 @@ const dreamCatchers = createSlice({
   },
   reducers: {
     setDreamCatchers(state, action) {
-      state.data = action.payload
-    }
+      state.data = action.payload;
+    },
   },
   // extraReducers: builder => {
   //   builder
@@ -52,6 +52,6 @@ const dreamCatchers = createSlice({
   //     state.error = 'что-то не так'
   //   })
   // }
-})
+});
 
-export const dreamCatchersReducer = dreamCatchers.reducer
+export const dreamCatchersReducer = dreamCatchers.reducer;

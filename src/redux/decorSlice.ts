@@ -1,10 +1,10 @@
 // import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // import { requestDecor } from '../services/posts'
 
-import { createSlice } from '@reduxjs/toolkit'
-import image1 from '../components/images/catalog/light.jpg'
-import image2 from '../components/images/catalog/music.jpg'
-import image3 from '../components/images/catalog/forged_products.jpg'
+import { createSlice } from '@reduxjs/toolkit';
+import image1 from '../components/images/catalog/light.jpg';
+import image2 from '../components/images/catalog/music.jpg';
+import image3 from '../components/images/catalog/forged_products.jpg';
 
 // export const fetchDecor = createAsyncThunk('decor/setDecorLogo', async () => {
 //   return await requestDecor()
@@ -44,8 +44,8 @@ const decorSlice = createSlice({
   },
   reducers: {
     setDecor(state, action) {
-      state.data = action.payload
-    }
+      state.data = action.payload;
+    },
   },
   // extraReducers: builder => {
   //   builder
@@ -61,6 +61,6 @@ const decorSlice = createSlice({
   //       state.error = 'что-то не так'
   //     })
   // }
-})
+});
 
-export const decorReducer = decorSlice.reducer
+export const decorReducer = decorSlice.reducer;

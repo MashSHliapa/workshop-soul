@@ -1,3 +1,5 @@
+@import '../Layout/Layout.scss';
+
 .new-item {
   border: none;
   position: relative;
@@ -8,20 +10,20 @@
     min-height: 690px;
     max-height: 690px;
     padding: 43px 50px 35px 50px;
-    color: #18362B;
+    color: #18362b;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0px 30px 30px 10px rgba(0, 0, 0, 0.25);
     border: #a8b1ae 1px solid;
 
-    @media screen and (max-width: 1199.98px) {
+    @include breakpoint(lg) {
       max-width: 450px;
       min-width: 450px;
       min-height: 670px;
       max-height: 670px;
     }
 
-    @media screen and (max-width: 991.98px) {
+    @include breakpoint(md) {
       max-width: 390px;
       min-width: 390px;
       padding: 30px 40px 25px 40px;
@@ -29,7 +31,7 @@
       max-height: 600px;
     }
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       max-width: 270px;
       min-width: 270px;
       min-height: 530px;
@@ -42,15 +44,15 @@
     margin-top: 15px;
     font-size: 16px;
 
-    @media screen and (max-width: 991.98px) {
+    @include breakpoint(md) {
       font-size: 14px;
     }
   }
 
-  &__data>*:not(:last-child) {
+  &__data > *:not(:last-child) {
     margin-bottom: 10px;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       margin-bottom: 7px;
     }
   }
@@ -74,14 +76,14 @@
     top: -28px;
     right: -28px;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       top: -16px;
       right: -16px;
     }
   }
 
   &__image-label img {
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       width: 136px;
     }
   }
@@ -89,7 +91,7 @@
   &__title {
     font-size: 24px;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       font-size: 22px;
     }
   }
@@ -100,7 +102,7 @@
     font-size: 16px;
     font-weight: 500;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       padding-top: 3px;
     }
   }
@@ -108,7 +110,7 @@
   &__separator {
     height: 3px;
 
-    @media screen and (max-width: 575.98px) {
+    @include breakpoint(xs) {
       height: 2px;
     }
   }
