@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { requestMusic } from '../services/posts';
 
-export const fetchMusic = createAsyncThunk('music/setMusic', async () => {
+export const fetchMusic = createAsyncThunk('music/fetchMusic', async () => {
   return await requestMusic();
 });
 

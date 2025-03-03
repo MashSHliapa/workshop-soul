@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { requestForgedProducts } from '../services/posts';
 
-export const fetchForgetProducts = createAsyncThunk('forgedProducts/setForgedProducts', async () => {
+export const fetchForgetProducts = createAsyncThunk('forgedProducts/fetchForgetProducts', async () => {
   return await requestForgedProducts();
 });
 
