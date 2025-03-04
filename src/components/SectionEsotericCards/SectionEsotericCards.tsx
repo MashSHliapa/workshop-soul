@@ -15,6 +15,7 @@ import amulets from '../images/esoterics/amulet.jpg';
 import runes from '../images/esoterics/runes.jpg';
 import talismans from '../images/esoterics/talisman.jpg';
 import dreamCatcher from '../images/esoterics/dream_catcher.jpg';
+import './SectionEsotericCards.scss';
 
 export const SectionEsotericCards = ({ handleClickReturnBack }: { handleClickReturnBack: () => void }) => {
   const [openSection, setOpenSection] = useState<null | string>(null);
@@ -52,7 +53,7 @@ export const SectionEsotericCards = ({ handleClickReturnBack }: { handleClickRet
   }, [handleClickReturnBack]);
 
   return (
-    <div className="sectionEsotericCards pt-5" id="esoteric">
+    <div className="sectionEsotericCards" id="esoteric">
       <div className="sectionEsotericCards__container">
         {openSection === null ? (
           <div className="sectionEsotericCards__body">

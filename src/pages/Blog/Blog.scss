@@ -88,12 +88,14 @@
     line-height: 1.3;
   }
 
+  &__button-wrapper {
+    display: flex;
+  }
+
   &__button {
-    align-self: center;
     padding: 17px 50px;
 
     @include breakpoint(md) {
-      align-self: center;
       padding: 17px 50px;
     }
 
@@ -105,6 +107,13 @@
       padding: 14px 30px;
     }
   }
+
+  // &__button a {
+  //   border: #1e1e1e 3px solid;
+  //   display: flex;
+  //   width: 100%;
+  //   height: 100%;
+  // }
 }
 
 .blog-about {

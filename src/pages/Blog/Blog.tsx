@@ -59,11 +59,11 @@ export function Blog() {
                   являются: тематические ярмарки, ярмарки выходного дня, рождественские ярмарки и многие другие{' '}
                 </h5>
               </div>
-              <button className="card-blog__button _button">
-                <NavLink to="/blog/tradeFairs" target="_top">
+              <div className="card-blog__button-wrapper">
+                <NavLink to="/blog/tradeFairs" className="card-blog__button _button" target="_top">
                   Читать далее
                 </NavLink>
-              </button>
+              </div>
             </div>
 
             <div className="blog__card-blog card-blog blog__card-events card-events">
@@ -80,11 +80,11 @@ export function Blog() {
                   яркий праздник, на котором можно встретить ценителей различных видов искусств и ремёсел.
                 </h5>
               </div>
-              <button className="card-blog__button _button">
-                <NavLink to="/blog/festivals" target="_top">
+              <div className="card-blog__button-wrapper">
+                <NavLink to="/blog/festivals" className="card-blog__button _button" target="_top">
                   Читать далее
                 </NavLink>
-              </button>
+              </div>
             </div>
           </div>
         </div>

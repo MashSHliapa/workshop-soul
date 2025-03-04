@@ -1,30 +1,34 @@
-// import { useEffect } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { Action, ThunkDispatch } from '@reduxjs/toolkit'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { EventCard } from '../../components/EventCard/EventCard';
 import { TitleBlog } from '../../components/TitleBlog/TitleBlog';
 import { BreadCrumbs } from '../../components/BreadCrumbs/BreadCrumbs';
 import { NoneEventsCard } from '../../components/NoneEventsCard/NoneEventsCard';
+import { Loading } from '../../components/Loading/Loading';
 import { RootState } from '../../redux/store';
-// import { fetchFestivals } from '../../redux/festivalsSlice'
+import { fetchFestivals } from '../../redux/festivalsSlice';
 import { IPropsEventCard } from '../../types/interfaces';
-import { useSelector } from 'react-redux';
 
 export function Festivals() {
-  const { data: posts } = useSelector((state: RootState) => state.festivals);
-  // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>()
+  const { data: posts, loading, error } = useSelector((state: RootState) => state.festivals);
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action>>();
 
-  // useEffect(() => {
-  //   dispatch(fetchFestivals())
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(fetchFestivals());
+  }, [dispatch]);
 
-  // if (loading) {
-  //   return <div>Loading...</div>
-  // }
+  if (loading) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
 
-  // if (error) {
-  //   return <div className="text-danger">{error}</div>
-  // }
+  if (error) {
+    return <div className="text-danger">{error}</div>;
+  }
 
   const festivalsPage = posts.map((item: IPropsEventCard) => <EventCard key={item.id} post={item} />);
 

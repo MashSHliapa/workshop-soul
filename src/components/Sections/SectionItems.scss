@@ -1,10 +1,22 @@
 @import '../Layout/Layout.scss';
 
 .section-items {
-  padding-top: 50px;
+  padding-top: 20px;
+
+  @include breakpoint(xs) {
+    padding-top: 10px;
+  }
 
   &_first {
-    margin-top: -50px;
+    margin-top: 35px;
+
+    @include breakpoint(md) {
+      margin-top: 55px;
+    }
+
+    @include breakpoint(xs) {
+      margin-top: 35px;
+    }
   }
 
   &__header-box {

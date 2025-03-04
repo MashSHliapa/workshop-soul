@@ -5,11 +5,11 @@
   background: linear-gradient(#cfcfcf, #fffefe);
 
   &__body {
-    padding: 60px 0 142px;
+    padding: 60px 0 70px;
     line-height: 1.5;
 
     @include breakpoint(sm) {
-      padding: 40px 0 65px;
+      padding: 40px 0 60px;
     }
 
     @include breakpoint(xs) {
@@ -173,7 +173,7 @@
 
 .categories {
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 15px;
 
   &__body {
     position: relative;

@@ -29,5 +29,4 @@ const amulets = createSlice({
   },
 });
 
-export const { setAmulets } = amulets.actions;
 export const amuletsReducer = amulets.reducer;

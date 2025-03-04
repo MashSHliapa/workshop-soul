@@ -1,0 +1,9 @@
+@import '../Layout/Layout.scss';
+
+.sectionEsotericCards {
+  padding-top: 20px;
+
+  @include breakpoint(xs) {
+    padding-top: 10px;
+  }
+}
